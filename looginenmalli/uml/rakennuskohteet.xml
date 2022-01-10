@@ -160,7 +160,7 @@
 					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000048_2C0F_458b_8723_698EF841789B" value="1"/>
 				</ownedAttribute>
 			</packagedElement>
-			<packagedElement xmi:type="uml:Class" xmi:id="EAID_F6E74E53_1547_4937_BE4F_11DFC3813D6A" name="MateriaaliMäärä" visibility="public">
+			<packagedElement xmi:type="uml:Class" xmi:id="EAID_F6E74E53_1547_4937_BE4F_11DFC3813D6A" name="MateriaalinMäärä" visibility="public">
 				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_F9FE6748_657E_4420_88CD_CFA8DA7CAC03" name="materiaaliLaji" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
 					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000049_657E_4420_88CD_CFA8DA7CAC03" value="1"/>
 					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000050_657E_4420_88CD_CFA8DA7CAC03" value="1"/>
@@ -683,7 +683,7 @@
 				<extendedProperties tagged="0" package_name="Rakennettu ymparisto"/>
 				<packageproperties version="1.0" owner="ior" xmiver="Enterprise Architect XMI 2.1/UML 2.1"/>
 				<paths xmlpath="Z:\rakennuskohteet\looginenmalli\uml\rakennuskohteet.xml"/>
-				<times created="2021-12-16 15:21:46" modified="2021-12-21 14:39:22" lastloaddate="2021-12-21 13:35:46" lastsavedate="2021-12-22 16:14:17"/>
+				<times created="2021-12-16 15:21:46" modified="2021-12-21 14:39:22" lastloaddate="2021-12-21 13:35:46" lastsavedate="2022-01-10 14:44:09"/>
 				<flags iscontrolled="TRUE" isprotected="FALSE" batchsave="0" batchload="0" usedtd="FALSE" logxml="FALSE" packageFlags="Recurse=1;"/>
 			</element>
 			<element xmi:idref="EAID_2700DA8D_FDF6_4002_B76A_DB6A939F02E9" xmi:type="uml:Class" name="Energiatiedot" scope="public">
@@ -1140,10 +1140,10 @@
 					</attribute>
 				</attributes>
 			</element>
-			<element xmi:idref="EAID_F6E74E53_1547_4937_BE4F_11DFC3813D6A" xmi:type="uml:Class" name="MateriaaliMäärä" scope="public">
+			<element xmi:idref="EAID_F6E74E53_1547_4937_BE4F_11DFC3813D6A" xmi:type="uml:Class" name="MateriaalinMäärä" scope="public">
 				<model package="EAPK_D6C3D384_E1AB_459d_A379_08AC00D747A1" tpos="0" ea_localid="80286" ea_eleType="element"/>
 				<properties isSpecification="false" sType="Class" nType="0" scope="public" stereotype="DataType" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
-				<project author="ior" version="1.0" phase="1.0" created="2021-12-17 22:48:04" modified="2021-12-21 14:39:22" complexity="1" status="Proposed"/>
+				<project author="ior" version="1.0" phase="1.0" created="2021-12-17 22:48:04" modified="2022-01-10 14:41:43" complexity="1" status="Proposed"/>
 				<code product_name="Java" gentype="Java"/>
 				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<tags>
@@ -1277,7 +1277,7 @@
 						<initial/>
 						<documentation/>
 						<model ea_localid="114490" ea_guid="{658222F3-FF68-4f27-947E-C5E173114BCD}"/>
-						<properties type="MateriaaliMäärä" derived="0" collection="false" static="0" duplicates="0" changeability="changeable"/>
+						<properties type="MateriaalinMäärä" derived="0" collection="false" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0" scale="0"/>
 						<containment containment="Not Specified" position="5"/>
 						<stereotype/>
@@ -2533,7 +2533,7 @@
 					<tags/>
 				</source>
 				<target xmi:idref="EAID_75FFA532_FF9F_4880_AA35_1DC37E0CF36A">
-					<model ea_localid="80268" type="Class" name="VersioituObjekti"/>
+					<model ea_localid="80409" type="Class" name="VersioituObjekti"/>
 					<role visibility="Public" targetScope="instance"/>
 					<type aggregation="none" containment="Unspecified"/>
 					<constraints/>
@@ -2706,7 +2706,7 @@
 					<tags/>
 				</source>
 				<target xmi:idref="EAID_75FFA532_FF9F_4880_AA35_1DC37E0CF36A">
-					<model ea_localid="80268" type="Class" name="VersioituObjekti"/>
+					<model ea_localid="80409" type="Class" name="VersioituObjekti"/>
 					<role visibility="Public" targetScope="instance"/>
 					<type aggregation="none" containment="Unspecified"/>
 					<constraints/>
@@ -2911,7 +2911,7 @@
 					<tags/>
 				</source>
 				<target xmi:idref="EAID_CCDEA216_16F7_47c8_9BFD_D0AFF7E8788F">
-					<model ea_localid="80259" type="Class" name="RakennetunYmpäristönKohde"/>
+					<model ea_localid="80401" type="Class" name="RakennetunYmpäristönKohde"/>
 					<role visibility="Public" targetScope="instance"/>
 					<type aggregation="none" containment="Unspecified"/>
 					<constraints/>
@@ -3187,7 +3187,7 @@
 					<tags/>
 				</source>
 				<target xmi:idref="EAID_C63FD523_5D07_4688_A598_9DC9706263D9">
-					<model ea_localid="80273" type="Interface" name="Kiinteistö"/>
+					<model ea_localid="80414" type="Interface" name="Kiinteistö"/>
 					<role name="sijaintikiinteistö" visibility="Public" targetScope="instance"/>
 					<type multiplicity="0..*" aggregation="none" containment="Unspecified"/>
 					<constraints/>
@@ -3222,7 +3222,7 @@
 					<tags/>
 				</source>
 				<target xmi:idref="EAID_CCDEA216_16F7_47c8_9BFD_D0AFF7E8788F">
-					<model ea_localid="80259" type="Class" name="RakennetunYmpäristönKohde"/>
+					<model ea_localid="80401" type="Class" name="RakennetunYmpäristönKohde"/>
 					<role visibility="Public" targetScope="instance"/>
 					<type aggregation="none" containment="Unspecified"/>
 					<constraints/>
@@ -3325,7 +3325,7 @@
 					<tags/>
 				</source>
 				<target xmi:idref="EAID_7AD3A66E_E93F_41a4_9FCA_5D088A04274F">
-					<model ea_localid="80275" type="Interface" name="Osoite"/>
+					<model ea_localid="80416" type="Interface" name="Osoite"/>
 					<role name="kohteenOsoite" visibility="Public" targetScope="instance"/>
 					<type multiplicity="0..*" aggregation="none" containment="Unspecified"/>
 					<constraints/>
@@ -3360,7 +3360,7 @@
 					<tags/>
 				</source>
 				<target xmi:idref="EAID_75FFA532_FF9F_4880_AA35_1DC37E0CF36A">
-					<model ea_localid="80268" type="Class" name="VersioituObjekti"/>
+					<model ea_localid="80409" type="Class" name="VersioituObjekti"/>
 					<role visibility="Public" targetScope="instance"/>
 					<type aggregation="none" containment="Unspecified"/>
 					<constraints/>
@@ -3394,7 +3394,7 @@
 					<tags/>
 				</source>
 				<target xmi:idref="EAID_75FFA532_FF9F_4880_AA35_1DC37E0CF36A">
-					<model ea_localid="80268" type="Class" name="VersioituObjekti"/>
+					<model ea_localid="80409" type="Class" name="VersioituObjekti"/>
 					<role visibility="Public" targetScope="instance"/>
 					<type aggregation="none" containment="Unspecified"/>
 					<constraints/>
