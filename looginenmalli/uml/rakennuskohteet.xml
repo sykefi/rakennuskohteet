@@ -683,7 +683,7 @@
 				<extendedProperties tagged="0" package_name="Rakennettu ymparisto"/>
 				<packageproperties version="1.0" owner="ior" xmiver="Enterprise Architect XMI 2.1/UML 2.1"/>
 				<paths xmlpath="Z:\rakennuskohteet\looginenmalli\uml\rakennuskohteet.xml"/>
-				<times created="2021-12-16 15:21:46" modified="2021-12-21 14:39:22" lastloaddate="2021-12-21 13:35:46" lastsavedate="2022-01-10 14:44:09"/>
+				<times created="2021-12-16 15:21:46" modified="2021-12-21 14:39:22" lastloaddate="2021-12-21 13:35:46" lastsavedate="2022-01-11 17:26:22"/>
 				<flags iscontrolled="TRUE" isprotected="FALSE" batchsave="0" batchload="0" usedtd="FALSE" logxml="FALSE" packageFlags="Recurse=1;"/>
 			</element>
 			<element xmi:idref="EAID_2700DA8D_FDF6_4002_B76A_DB6A939F02E9" xmi:type="uml:Class" name="Energiatiedot" scope="public">
@@ -2266,7 +2266,7 @@
 					<tag xmi:id="EAID_F9638764_49E8_2849_817D_3A771C8C16A7" name="noPropertyType" value="false#NOTES#Values: true,false&#xA;Default: false&#xA;Description: Suppress creation of a named complex type ( property type ) that supports inline or byReference encoding&#xA;" modelElement="EAID_D81D2689_6414_4e5d_8102_0331C8040671"/>
 				</tags>
 				<xrefs value="$XREFPROP=$XID={6F7636CF-6E38-4eb0-9123-9132C39DA1A7}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=DataType;FQName=GML::DataType;@ENDSTEREO;$DES;$CLT={D81D2689-6414-4e5d-8102-0331C8040671}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
-				<extendedProperties tagged="0" package_name="Rakennuskohteet ja huoneistot" ea_attsclassified="{F4005524-B891-45b5-A857-87747C09C5ED},{B18649E1-3196-4d93-81D7-D77054CC0FEA}"/>
+				<extendedProperties tagged="0" package_name="Rakennuskohteet ja huoneistot" ea_attsclassified="{B18649E1-3196-4d93-81D7-D77054CC0FEA},{F4005524-B891-45b5-A857-87747C09C5ED}"/>
 				<attributes>
 					<attribute xmi:idref="EAID_29816E47_B068_4bc9_969A_1CA392AB59C9" name="valmistumisvuosi" scope="Public">
 						<initial/>
@@ -2356,7 +2356,7 @@
 					<tag xmi:id="EAID_F9638764_49E8_2849_8CCD_506A68452F05" name="noPropertyType" value="false#NOTES#Values: true,false&#xA;Default: false&#xA;Description: Suppress creation of a named complex type ( property type ) that supports inline or byReference encoding&#xA;" modelElement="EAID_AEABB49A_5F34_4013_AFBF_4A6D86D0271D"/>
 				</tags>
 				<xrefs value="$XREFPROP=$XID={66A90111-AD15-44b8-8951-6F1B6E7547C1}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=DataType;FQName=GML::DataType;@ENDSTEREO;$DES;$CLT={AEABB49A-5F34-4013-AFBF-4A6D86D0271D}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
-				<extendedProperties tagged="0" package_name="Rakennuskohteet ja huoneistot" ea_attsclassified="{16671824-DA7B-4c42-94E4-F2FCDCEA424F},{7525292D-5FDA-4da0-A7FF-7A351E0AB9CC}"/>
+				<extendedProperties tagged="0" package_name="Rakennuskohteet ja huoneistot" ea_attsclassified="{7525292D-5FDA-4da0-A7FF-7A351E0AB9CC},{16671824-DA7B-4c42-94E4-F2FCDCEA424F}"/>
 				<attributes>
 					<attribute xmi:idref="EAID_3427E527_3B47_4d6c_9572_9B4B690EA28A" name="tilavuus" scope="Public">
 						<initial/>
@@ -2446,7 +2446,7 @@
 					<tag xmi:id="EAID_F9638764_49E8_2849_9C43_CAB5394F01F7" name="noPropertyType" value="false#NOTES#Values: true,false&#xA;Default: false&#xA;Description: Suppress creation of a named complex type ( property type ) that supports inline or byReference encoding&#xA;" modelElement="EAID_242ECCF2_13D9_47b7_B6D4_A69B116F0FD9"/>
 				</tags>
 				<xrefs value="$XREFPROP=$XID={A0EF22FE-C5BA-4e12-92A6-0EED6F5A83E3}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=DataType;FQName=GML::DataType;@ENDSTEREO;$DES;$CLT={242ECCF2-13D9-47b7-B6D4-A69B116F0FD9}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
-				<extendedProperties tagged="0" package_name="Rakennuskohteet ja huoneistot" ea_attsclassified="{73CCF449-652D-4565-A4F1-9EF1C817A981},{44FCB0B7-8DC5-442e-892B-74D5C7B79132},{08D5AAE6-7738-4adc-B0AE-0324DED2587E}"/>
+				<extendedProperties tagged="0" package_name="Rakennuskohteet ja huoneistot" ea_attsclassified="{44FCB0B7-8DC5-442e-892B-74D5C7B79132},{73CCF449-652D-4565-A4F1-9EF1C817A981},{08D5AAE6-7738-4adc-B0AE-0324DED2587E}"/>
 				<attributes>
 					<attribute xmi:idref="EAID_A0473BA8_5D3E_4d49_ACCC_74B42076C44A" name="varusteenLaji" scope="Public">
 						<initial/>
@@ -2533,7 +2533,7 @@
 					<tags/>
 				</source>
 				<target xmi:idref="EAID_75FFA532_FF9F_4880_AA35_1DC37E0CF36A">
-					<model ea_localid="80409" type="Class" name="VersioituObjekti"/>
+					<model ea_localid="80463" type="Class" name="VersioituObjekti"/>
 					<role visibility="Public" targetScope="instance"/>
 					<type aggregation="none" containment="Unspecified"/>
 					<constraints/>
@@ -2706,7 +2706,7 @@
 					<tags/>
 				</source>
 				<target xmi:idref="EAID_75FFA532_FF9F_4880_AA35_1DC37E0CF36A">
-					<model ea_localid="80409" type="Class" name="VersioituObjekti"/>
+					<model ea_localid="80463" type="Class" name="VersioituObjekti"/>
 					<role visibility="Public" targetScope="instance"/>
 					<type aggregation="none" containment="Unspecified"/>
 					<constraints/>
@@ -2911,7 +2911,7 @@
 					<tags/>
 				</source>
 				<target xmi:idref="EAID_CCDEA216_16F7_47c8_9BFD_D0AFF7E8788F">
-					<model ea_localid="80401" type="Class" name="RakennetunYmpäristönKohde"/>
+					<model ea_localid="80455" type="Class" name="RakennetunYmpäristönKohde"/>
 					<role visibility="Public" targetScope="instance"/>
 					<type aggregation="none" containment="Unspecified"/>
 					<constraints/>
@@ -3187,7 +3187,7 @@
 					<tags/>
 				</source>
 				<target xmi:idref="EAID_C63FD523_5D07_4688_A598_9DC9706263D9">
-					<model ea_localid="80414" type="Interface" name="Kiinteistö"/>
+					<model ea_localid="80468" type="Interface" name="Kiinteistö"/>
 					<role name="sijaintikiinteistö" visibility="Public" targetScope="instance"/>
 					<type multiplicity="0..*" aggregation="none" containment="Unspecified"/>
 					<constraints/>
@@ -3222,7 +3222,7 @@
 					<tags/>
 				</source>
 				<target xmi:idref="EAID_CCDEA216_16F7_47c8_9BFD_D0AFF7E8788F">
-					<model ea_localid="80401" type="Class" name="RakennetunYmpäristönKohde"/>
+					<model ea_localid="80455" type="Class" name="RakennetunYmpäristönKohde"/>
 					<role visibility="Public" targetScope="instance"/>
 					<type aggregation="none" containment="Unspecified"/>
 					<constraints/>
@@ -3325,7 +3325,7 @@
 					<tags/>
 				</source>
 				<target xmi:idref="EAID_7AD3A66E_E93F_41a4_9FCA_5D088A04274F">
-					<model ea_localid="80416" type="Interface" name="Osoite"/>
+					<model ea_localid="80470" type="Interface" name="Osoite"/>
 					<role name="kohteenOsoite" visibility="Public" targetScope="instance"/>
 					<type multiplicity="0..*" aggregation="none" containment="Unspecified"/>
 					<constraints/>
@@ -3360,7 +3360,7 @@
 					<tags/>
 				</source>
 				<target xmi:idref="EAID_75FFA532_FF9F_4880_AA35_1DC37E0CF36A">
-					<model ea_localid="80409" type="Class" name="VersioituObjekti"/>
+					<model ea_localid="80463" type="Class" name="VersioituObjekti"/>
 					<role visibility="Public" targetScope="instance"/>
 					<type aggregation="none" containment="Unspecified"/>
 					<constraints/>
@@ -3394,7 +3394,7 @@
 					<tags/>
 				</source>
 				<target xmi:idref="EAID_75FFA532_FF9F_4880_AA35_1DC37E0CF36A">
-					<model ea_localid="80409" type="Class" name="VersioituObjekti"/>
+					<model ea_localid="80463" type="Class" name="VersioituObjekti"/>
 					<role visibility="Public" targetScope="instance"/>
 					<type aggregation="none" containment="Unspecified"/>
 					<constraints/>
