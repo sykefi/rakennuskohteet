@@ -348,30 +348,42 @@
 				</ownedAttribute>
 			</packagedElement>
 			<packagedElement xmi:type="uml:Class" xmi:id="EAID_DBB42D27_6258_4a82_A202_039763DA7F7D" name="RakennuksenOsa" visibility="public">
-				<generalization xmi:type="uml:Generalization" xmi:id="EAID_70E309C5_E5D1_401c_AD18_4A0603A4F399" general="EAID_8A24BAAB_B741_497d_A213_B573E8A0A68B"/>
-				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_dst75169B_E05C_4709_8340_DDADE0C0900A" name="osittelu" visibility="public" association="EAID_9375169B_E05C_4709_8340_DDADE0C0900A" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
-					<type xmi:idref="EAID_393BA78C_D256_413f_A1D0_4BE69B8F45D7"/>
+				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_dstC28504_B8EB_4ff0_B667_8952A1FE01DD" name="rakennus" visibility="public" association="EAID_40C28504_B8EB_4ff0_B667_8952A1FE01DD" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
+					<type xmi:idref="EAID_8478A99D_FBBA_4b5f_AA95_B3E4D18441D0"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000109__B8EB_4ff0_B667_8952A1FE01DD" value="1"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000110__B8EB_4ff0_B667_8952A1FE01DD" value="1"/>
 				</ownedAttribute>
+				<generalization xmi:type="uml:Generalization" xmi:id="EAID_70E309C5_E5D1_401c_AD18_4A0603A4F399" general="EAID_8A24BAAB_B741_497d_A213_B573E8A0A68B"/>
 				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_src4828BD_4268_4769_BE04_9497939E2CA0" name="sisältyväTila" visibility="public" association="EAID_A84828BD_4268_4769_BE04_9497939E2CA0" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
 					<type xmi:idref="EAID_A9685F26_DEA7_4fdf_8033_3F6FE9F49826"/>
-					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000109__4268_4769_BE04_9497939E2CA0" value="0"/>
-					<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_LI000110__4268_4769_BE04_9497939E2CA0" value="-1"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000111__4268_4769_BE04_9497939E2CA0" value="0"/>
+					<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_LI000112__4268_4769_BE04_9497939E2CA0" value="-1"/>
 				</ownedAttribute>
+			</packagedElement>
+			<packagedElement xmi:type="uml:Association" xmi:id="EAID_40C28504_B8EB_4ff0_B667_8952A1FE01DD" visibility="public">
+				<memberEnd xmi:idref="EAID_dstC28504_B8EB_4ff0_B667_8952A1FE01DD"/>
+				<memberEnd xmi:idref="EAID_srcC28504_B8EB_4ff0_B667_8952A1FE01DD"/>
+				<ownedEnd xmi:type="uml:Property" xmi:id="EAID_srcC28504_B8EB_4ff0_B667_8952A1FE01DD" visibility="public" association="EAID_40C28504_B8EB_4ff0_B667_8952A1FE01DD" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
+					<type xmi:idref="EAID_DBB42D27_6258_4a82_A202_039763DA7F7D"/>
+				</ownedEnd>
 			</packagedElement>
 			<packagedElement xmi:type="uml:Association" xmi:id="EAID_9375169B_E05C_4709_8340_DDADE0C0900A" visibility="public">
 				<memberEnd xmi:idref="EAID_dst75169B_E05C_4709_8340_DDADE0C0900A"/>
+				<ownedEnd xmi:type="uml:Property" xmi:id="EAID_dst75169B_E05C_4709_8340_DDADE0C0900A" visibility="public" association="EAID_9375169B_E05C_4709_8340_DDADE0C0900A" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
+					<type xmi:idref="EAID_393BA78C_D256_413f_A1D0_4BE69B8F45D7"/>
+				</ownedEnd>
 				<memberEnd xmi:idref="EAID_src75169B_E05C_4709_8340_DDADE0C0900A"/>
 			</packagedElement>
 			<packagedElement xmi:type="uml:Class" xmi:id="EAID_393BA78C_D256_413f_A1D0_4BE69B8F45D7" name="RakennuksenOsittelu" visibility="public">
 				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_28A77CE3_D0E3_42cb_9D83_E84C755044DF" name="ositteluperuste" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
-					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000111_D0E3_42cb_9D83_E84C755044DF" value="1"/>
-					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000112_D0E3_42cb_9D83_E84C755044DF" value="1"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000113_D0E3_42cb_9D83_E84C755044DF" value="1"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000114_D0E3_42cb_9D83_E84C755044DF" value="1"/>
 					<type xmi:idref="EAJava_int"/>
 				</ownedAttribute>
 				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_src75169B_E05C_4709_8340_DDADE0C0900A" name="osa" visibility="public" association="EAID_9375169B_E05C_4709_8340_DDADE0C0900A" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="composite">
 					<type xmi:idref="EAID_DBB42D27_6258_4a82_A202_039763DA7F7D"/>
-					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000113__E05C_4709_8340_DDADE0C0900A" value="0"/>
-					<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_LI000114__E05C_4709_8340_DDADE0C0900A" value="-1"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000115__E05C_4709_8340_DDADE0C0900A" value="0"/>
+					<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_LI000116__E05C_4709_8340_DDADE0C0900A" value="-1"/>
 				</ownedAttribute>
 			</packagedElement>
 			<packagedElement xmi:type="uml:Class" xmi:id="EAID_4C777AE3_65F4_4855_811B_A5B5C5EBFC75" name="RakennuksenVaruste" visibility="public">
@@ -380,52 +392,52 @@
 			<packagedElement xmi:type="uml:Class" xmi:id="EAID_8478A99D_FBBA_4b5f_AA95_B3E4D18441D0" name="Rakennus" visibility="public">
 				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_2BABFBE5_5F96_4141_9BD3_EE21FA1060D9" name="pysyväRakennusTunnus" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
 					<type xmi:idref="EAID_0A614EA9_13B7_4ebe_85ED_AA187D27CBD1"/>
-					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000115_5F96_4141_9BD3_EE21FA1060D9" value="0"/>
-					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000116_5F96_4141_9BD3_EE21FA1060D9" value="1"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000117_5F96_4141_9BD3_EE21FA1060D9" value="0"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000118_5F96_4141_9BD3_EE21FA1060D9" value="1"/>
 				</ownedAttribute>
 				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_B02B8E3F_4523_478d_8A74_89EA6A03BCE6" name="osittelu" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
 					<type xmi:idref="EAID_393BA78C_D256_413f_A1D0_4BE69B8F45D7"/>
-					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000117_4523_478d_8A74_89EA6A03BCE6" value="0"/>
-					<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_LI000118_4523_478d_8A74_89EA6A03BCE6" value="-1"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000119_4523_478d_8A74_89EA6A03BCE6" value="0"/>
+					<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_LI000120_4523_478d_8A74_89EA6A03BCE6" value="-1"/>
 				</ownedAttribute>
 				<generalization xmi:type="uml:Generalization" xmi:id="EAID_138BCC0B_D314_4cc5_9848_979435AC1D27" general="EAID_8A24BAAB_B741_497d_A213_B573E8A0A68B"/>
 				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_dst86A903_61C2_4040_90D3_7B269B4745AF" name="sisältyväTila" visibility="public" association="EAID_9086A903_61C2_4040_90D3_7B269B4745AF" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
 					<type xmi:idref="EAID_A9685F26_DEA7_4fdf_8033_3F6FE9F49826"/>
-					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000119__61C2_4040_90D3_7B269B4745AF" value="0"/>
-					<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_LI000120__61C2_4040_90D3_7B269B4745AF" value="-1"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000121__61C2_4040_90D3_7B269B4745AF" value="0"/>
+					<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_LI000122__61C2_4040_90D3_7B269B4745AF" value="-1"/>
 				</ownedAttribute>
 			</packagedElement>
 			<packagedElement xmi:type="uml:Class" xmi:id="EAID_C21003F4_E9DC_464b_85A7_D55DD5B0ECFE" name="Rakennuskohde" visibility="public">
 				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_DBBA01DA_83E2_457d_8971_4B42519ABBE2" name="sijainti" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
 					<type xmi:idref="EAID_9D020219_A045_48aa_BB9C_40EB82AB36D9"/>
-					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000121_83E2_457d_8971_4B42519ABBE2" value="1"/>
-					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000122_83E2_457d_8971_4B42519ABBE2" value="1"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000123_83E2_457d_8971_4B42519ABBE2" value="1"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000124_83E2_457d_8971_4B42519ABBE2" value="1"/>
 				</ownedAttribute>
 				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_342CA488_E666_4d1d_9C65_68182BD80228" name="liittymä" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
 					<type xmi:idref="EAID_60A3039A_8CB5_47ec_8190_18624B70E288"/>
-					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000123_E666_4d1d_9C65_68182BD80228" value="0"/>
-					<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_LI000124_E666_4d1d_9C65_68182BD80228" value="-1"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000125_E666_4d1d_9C65_68182BD80228" value="0"/>
+					<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_LI000126_E666_4d1d_9C65_68182BD80228" value="-1"/>
 				</ownedAttribute>
 				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_dst495CC9_5B2E_4b18_B134_B1695C26AE27" name="tietomalli" visibility="public" association="EAID_8E495CC9_5B2E_4b18_B134_B1695C26AE27" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="composite">
 					<type xmi:idref="EAID_756CA55C_8F0B_4da9_954A_42E08A4FF6BE"/>
-					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000125__5B2E_4b18_B134_B1695C26AE27" value="0"/>
-					<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_LI000126__5B2E_4b18_B134_B1695C26AE27" value="-1"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000127__5B2E_4b18_B134_B1695C26AE27" value="0"/>
+					<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_LI000128__5B2E_4b18_B134_B1695C26AE27" value="-1"/>
 				</ownedAttribute>
 				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_dst1AAC88_F4C8_4ead_9B05_D39686940E63" name="sijaintikiinteistö" visibility="public" association="EAID_C11AAC88_F4C8_4ead_9B05_D39686940E63" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
 					<type xmi:idref="EAID_C63FD523_5D07_4688_A598_9DC9706263D9"/>
-					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000127__F4C8_4ead_9B05_D39686940E63" value="0"/>
-					<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_LI000128__F4C8_4ead_9B05_D39686940E63" value="-1"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000129__F4C8_4ead_9B05_D39686940E63" value="0"/>
+					<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_LI000130__F4C8_4ead_9B05_D39686940E63" value="-1"/>
 				</ownedAttribute>
 				<generalization xmi:type="uml:Generalization" xmi:id="EAID_E2B630DE_5C8E_4de4_9062_1061AF3B8AE6" general="EAID_CCDEA216_16F7_47c8_9BFD_D0AFF7E8788F"/>
 				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_src705742_A3D3_4f8b_9C6B_C12B0A75F914" name="rakennussuunnitelma" visibility="public" association="EAID_77705742_A3D3_4f8b_9C6B_C12B0A75F914" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="composite">
 					<type xmi:idref="EAID_915025C3_905F_4153_AE3D_3C724B45EB60"/>
-					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000129__A3D3_4f8b_9C6B_C12B0A75F914" value="0"/>
-					<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_LI000130__A3D3_4f8b_9C6B_C12B0A75F914" value="-1"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000131__A3D3_4f8b_9C6B_C12B0A75F914" value="0"/>
+					<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_LI000132__A3D3_4f8b_9C6B_C12B0A75F914" value="-1"/>
 				</ownedAttribute>
 				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_srcE7FD98_7D95_457c_849D_A287A1A097F7" name="erityissuunnitelma" visibility="public" association="EAID_E3E7FD98_7D95_457c_849D_A287A1A097F7" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="composite">
 					<type xmi:idref="EAID_07777D5C_7444_4f9c_8C40_E9380BAF18A8"/>
-					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000131__7D95_457c_849D_A287A1A097F7" value="0"/>
-					<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_LI000132__7D95_457c_849D_A287A1A097F7" value="-1"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000133__7D95_457c_849D_A287A1A097F7" value="0"/>
+					<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_LI000134__7D95_457c_849D_A287A1A097F7" value="-1"/>
 				</ownedAttribute>
 			</packagedElement>
 			<packagedElement xmi:type="uml:Association" xmi:id="EAID_8E495CC9_5B2E_4b18_B134_B1695C26AE27" visibility="public">
@@ -446,18 +458,18 @@
 			<packagedElement xmi:type="uml:Class" xmi:id="EAID_9D020219_A045_48aa_BB9C_40EB82AB36D9" name="RakennuskohteenSijaintitiedot" visibility="public">
 				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_E28DE0E3_CF1D_4a99_B910_0141B12C7BAC" name="kuntanumero" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
 					<type xmi:idref="EAID_0A614EA9_13B7_4ebe_85ED_AA187D27CBD1"/>
-					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000133_CF1D_4a99_B910_0141B12C7BAC" value="0"/>
-					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000134_CF1D_4a99_B910_0141B12C7BAC" value="1"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000135_CF1D_4a99_B910_0141B12C7BAC" value="0"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000136_CF1D_4a99_B910_0141B12C7BAC" value="1"/>
 				</ownedAttribute>
 				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_B5CFA9F3_C2E8_4ca2_B71D_92C75EE4174B" name="sijaintikeskipiste" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
 					<type xmi:idref="EAID_2E900284_8E24_449b_920A_CA436229BFAD"/>
-					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000135_C2E8_4ca2_B71D_92C75EE4174B" value="0"/>
-					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000136_C2E8_4ca2_B71D_92C75EE4174B" value="1"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000137_C2E8_4ca2_B71D_92C75EE4174B" value="0"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000138_C2E8_4ca2_B71D_92C75EE4174B" value="1"/>
 				</ownedAttribute>
 				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_dst68C0D7_880C_447f_806E_3E7D310CAAB7" name="kohteenOsoite" visibility="public" association="EAID_7668C0D7_880C_447f_806E_3E7D310CAAB7" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
 					<type xmi:idref="EAID_7AD3A66E_E93F_41a4_9FCA_5D088A04274F"/>
-					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000137__880C_447f_806E_3E7D310CAAB7" value="0"/>
-					<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_LI000138__880C_447f_806E_3E7D310CAAB7" value="-1"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000139__880C_447f_806E_3E7D310CAAB7" value="0"/>
+					<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_LI000140__880C_447f_806E_3E7D310CAAB7" value="-1"/>
 				</ownedAttribute>
 			</packagedElement>
 			<packagedElement xmi:type="uml:Association" xmi:id="EAID_7668C0D7_880C_447f_806E_3E7D310CAAB7" visibility="public">
@@ -471,8 +483,8 @@
 			<packagedElement xmi:type="uml:Class" xmi:id="EAID_915025C3_905F_4153_AE3D_3C724B45EB60" name="Rakennussuunnitelma" visibility="public">
 				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_450A0E4C_6020_44b7_8B2A_DF6E2AEF9617" name="tiedosto" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
 					<type xmi:idref="EAID_0BA484E8_5D47_413f_8608_FAB8C6790242"/>
-					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000139_6020_44b7_8B2A_DF6E2AEF9617" value="1"/>
-					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000140_6020_44b7_8B2A_DF6E2AEF9617" value="1"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000141_6020_44b7_8B2A_DF6E2AEF9617" value="1"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000142_6020_44b7_8B2A_DF6E2AEF9617" value="1"/>
 				</ownedAttribute>
 				<generalization xmi:type="uml:Generalization" xmi:id="EAID_60059D1D_1084_4b69_9D0E_20386A27BCE9" general="EAID_75FFA532_FF9F_4880_AA35_1DC37E0CF36A"/>
 				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_dst705742_A3D3_4f8b_9C6B_C12B0A75F914" name="suunniteltuKohde" visibility="public" association="EAID_77705742_A3D3_4f8b_9C6B_C12B0A75F914" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
@@ -482,56 +494,56 @@
 			<packagedElement xmi:type="uml:Class" xmi:id="EAID_8A24BAAB_B741_497d_A213_B573E8A0A68B" name="RakennusTaiSenOsa" visibility="public" isAbstract="true">
 				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_B18649E1_3196_4d93_81D7_D77054CC0FEA" name="statustiedot" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
 					<type xmi:idref="EAID_D81D2689_6414_4e5d_8102_0331C8040671"/>
-					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000141_3196_4d93_81D7_D77054CC0FEA" value="0"/>
-					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000142_3196_4d93_81D7_D77054CC0FEA" value="1"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000143_3196_4d93_81D7_D77054CC0FEA" value="0"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000144_3196_4d93_81D7_D77054CC0FEA" value="1"/>
 				</ownedAttribute>
 				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_AEEBD196_7A1C_4d3b_AD54_5998FDC8F22A" name="materiaalitiedot" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
 					<type xmi:idref="EAID_C6BE96C7_3BB0_4e16_AF3C_E866590EB555"/>
-					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000143_7A1C_4d3b_AD54_5998FDC8F22A" value="0"/>
-					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000144_7A1C_4d3b_AD54_5998FDC8F22A" value="1"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000145_7A1C_4d3b_AD54_5998FDC8F22A" value="0"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000146_7A1C_4d3b_AD54_5998FDC8F22A" value="1"/>
 				</ownedAttribute>
 				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_0DCE3F5B_145A_4b2e_BEC6_FE15BCD5D0E6" name="energiatiedot" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
 					<type xmi:idref="EAID_2700DA8D_FDF6_4002_B76A_DB6A939F02E9"/>
-					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000145_145A_4b2e_BEC6_FE15BCD5D0E6" value="0"/>
-					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000146_145A_4b2e_BEC6_FE15BCD5D0E6" value="1"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000147_145A_4b2e_BEC6_FE15BCD5D0E6" value="0"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000148_145A_4b2e_BEC6_FE15BCD5D0E6" value="1"/>
 				</ownedAttribute>
 				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_732FD11D_BDB4_4371_9B53_9B30F40CD57D" name="sisätilojenTiedot" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
 					<type xmi:idref="EAID_E97CF99D_6503_401a_9674_59EE3A7B74C9"/>
-					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000147_BDB4_4371_9B53_9B30F40CD57D" value="0"/>
-					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000148_BDB4_4371_9B53_9B30F40CD57D" value="1"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000149_BDB4_4371_9B53_9B30F40CD57D" value="0"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000150_BDB4_4371_9B53_9B30F40CD57D" value="1"/>
 				</ownedAttribute>
 				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_7525292D_5FDA_4da0_A7FF_7A351E0AB9CC" name="ulkokuorenTiedot" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
 					<type xmi:idref="EAID_AEABB49A_5F34_4013_AFBF_4A6D86D0271D"/>
-					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000149_5FDA_4da0_A7FF_7A351E0AB9CC" value="0"/>
-					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000150_5FDA_4da0_A7FF_7A351E0AB9CC" value="1"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000151_5FDA_4da0_A7FF_7A351E0AB9CC" value="0"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000152_5FDA_4da0_A7FF_7A351E0AB9CC" value="1"/>
 				</ownedAttribute>
 				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_548E6E54_A982_40ca_95F1_277D30DC60BD" name="käyttötiedot" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
 					<type xmi:idref="EAID_53BE9B49_1546_4ff4_BCAF_393A0DB7F882"/>
-					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000151_A982_40ca_95F1_277D30DC60BD" value="0"/>
-					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000152_A982_40ca_95F1_277D30DC60BD" value="1"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000153_A982_40ca_95F1_277D30DC60BD" value="0"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000154_A982_40ca_95F1_277D30DC60BD" value="1"/>
 				</ownedAttribute>
 				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_44FCB0B7_8DC5_442e_892B_74D5C7B79132" name="varuste" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
 					<type xmi:idref="EAID_242ECCF2_13D9_47b7_B6D4_A69B116F0FD9"/>
-					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000153_8DC5_442e_892B_74D5C7B79132" value="0"/>
-					<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_LI000154_8DC5_442e_892B_74D5C7B79132" value="-1"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000155_8DC5_442e_892B_74D5C7B79132" value="0"/>
+					<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_LI000156_8DC5_442e_892B_74D5C7B79132" value="-1"/>
 				</ownedAttribute>
 				<generalization xmi:type="uml:Generalization" xmi:id="EAID_11AD1AC7_4658_4190_9859_7E405DAD5763" general="EAID_C21003F4_E9DC_464b_85A7_D55DD5B0ECFE"/>
 				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_src797F82_F83C_4de4_B9BE_E988C48D56A9" name="huoneisto" visibility="public" association="EAID_1C797F82_F83C_4de4_B9BE_E988C48D56A9" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
 					<type xmi:idref="EAID_ED55AA62_665B_4bf4_A8E3_C010E60519FF"/>
-					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000155__F83C_4de4_B9BE_E988C48D56A9" value="0"/>
-					<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_LI000156__F83C_4de4_B9BE_E988C48D56A9" value="-1"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000157__F83C_4de4_B9BE_E988C48D56A9" value="0"/>
+					<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_LI000158__F83C_4de4_B9BE_E988C48D56A9" value="-1"/>
 				</ownedAttribute>
 			</packagedElement>
 			<packagedElement xmi:type="uml:Class" xmi:id="EAID_756CA55C_8F0B_4da9_954A_42E08A4FF6BE" name="Rakennustietomalli" visibility="public">
 				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_84924A8D_1CC1_460f_A698_A2880FF36B38" name="laji" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
-					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000157_1CC1_460f_A698_A2880FF36B38" value="1"/>
-					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000158_1CC1_460f_A698_A2880FF36B38" value="1"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000159_1CC1_460f_A698_A2880FF36B38" value="1"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000160_1CC1_460f_A698_A2880FF36B38" value="1"/>
 					<type xmi:idref="EAJava_int"/>
 				</ownedAttribute>
 				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_C5BCED81_9F06_48c4_A20F_83AB8F6A1920" name="tiedosto" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
 					<type xmi:idref="EAID_0BA484E8_5D47_413f_8608_FAB8C6790242"/>
-					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000159_9F06_48c4_A20F_83AB8F6A1920" value="1"/>
-					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000160_9F06_48c4_A20F_83AB8F6A1920" value="1"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000161_9F06_48c4_A20F_83AB8F6A1920" value="1"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000162_9F06_48c4_A20F_83AB8F6A1920" value="1"/>
 				</ownedAttribute>
 				<generalization xmi:type="uml:Generalization" xmi:id="EAID_14CA5B91_C8C4_47f3_8C08_E04DCCD9B166" general="EAID_75FFA532_FF9F_4880_AA35_1DC37E0CF36A"/>
 				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_src495CC9_5B2E_4b18_B134_B1695C26AE27" name="kohde" visibility="public" association="EAID_8E495CC9_5B2E_4b18_B134_B1695C26AE27" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
@@ -541,98 +553,98 @@
 			<packagedElement xmi:type="uml:Class" xmi:id="EAID_E97CF99D_6503_401a_9674_59EE3A7B74C9" name="SisätilojenTiedot" visibility="public">
 				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_A303BC46_847E_4690_B6D2_3EF57CE4D151" name="kerrosala" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
 					<type xmi:idref="EAID_C42C8A3D_C337_497c_960F_8892EC1B2BD2"/>
-					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000161_847E_4690_B6D2_3EF57CE4D151" value="0"/>
-					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000162_847E_4690_B6D2_3EF57CE4D151" value="1"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000163_847E_4690_B6D2_3EF57CE4D151" value="0"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000164_847E_4690_B6D2_3EF57CE4D151" value="1"/>
 				</ownedAttribute>
 				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_AF70E10D_8752_4eb0_B464_28554CB96A80" name="kokonaisala" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
 					<type xmi:idref="EAID_C42C8A3D_C337_497c_960F_8892EC1B2BD2"/>
-					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000163_8752_4eb0_B464_28554CB96A80" value="0"/>
-					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000164_8752_4eb0_B464_28554CB96A80" value="1"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000165_8752_4eb0_B464_28554CB96A80" value="0"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000166_8752_4eb0_B464_28554CB96A80" value="1"/>
 				</ownedAttribute>
 				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_0DEB8F83_6FCE_4aee_A918_1423472AA2F3" name="rakennusoikeudellinenKerrosala" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
 					<type xmi:idref="EAID_C42C8A3D_C337_497c_960F_8892EC1B2BD2"/>
-					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000165_6FCE_4aee_A918_1423472AA2F3" value="0"/>
-					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000166_6FCE_4aee_A918_1423472AA2F3" value="1"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000167_6FCE_4aee_A918_1423472AA2F3" value="0"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000168_6FCE_4aee_A918_1423472AA2F3" value="1"/>
 				</ownedAttribute>
 				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_49C40CA2_10FD_448b_8826_434D2D2DE755" name="huoneistoala" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
 					<type xmi:idref="EAID_C42C8A3D_C337_497c_960F_8892EC1B2BD2"/>
-					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000167_10FD_448b_8826_434D2D2DE755" value="0"/>
-					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000168_10FD_448b_8826_434D2D2DE755" value="1"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000169_10FD_448b_8826_434D2D2DE755" value="0"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000170_10FD_448b_8826_434D2D2DE755" value="1"/>
 				</ownedAttribute>
 				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_C8064E62_33BC_461d_BCBC_F16F2BB866FD" name="kellariala" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
 					<type xmi:idref="EAID_C42C8A3D_C337_497c_960F_8892EC1B2BD2"/>
-					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000169_33BC_461d_BCBC_F16F2BB866FD" value="0"/>
-					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000170_33BC_461d_BCBC_F16F2BB866FD" value="1"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000171_33BC_461d_BCBC_F16F2BB866FD" value="0"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000172_33BC_461d_BCBC_F16F2BB866FD" value="1"/>
 				</ownedAttribute>
 				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_79C3AD85_6F10_4c1a_8E2A_D7ACDBACA811" name="kokoontumistilanHenkilömäärä" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
-					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000171_6F10_4c1a_8E2A_D7ACDBACA811" value="0"/>
-					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000172_6F10_4c1a_8E2A_D7ACDBACA811" value="1"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000173_6F10_4c1a_8E2A_D7ACDBACA811" value="0"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000174_6F10_4c1a_8E2A_D7ACDBACA811" value="1"/>
 					<type xmi:idref="EAJava_int"/>
 				</ownedAttribute>
 			</packagedElement>
 			<packagedElement xmi:type="uml:Class" xmi:id="EAID_D81D2689_6414_4e5d_8102_0331C8040671" name="Statustiedot" visibility="public">
 				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_29816E47_B068_4bc9_969A_1CA392AB59C9" name="valmistumisvuosi" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
-					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000173_B068_4bc9_969A_1CA392AB59C9" value="0"/>
-					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000174_B068_4bc9_969A_1CA392AB59C9" value="1"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000175_B068_4bc9_969A_1CA392AB59C9" value="0"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000176_B068_4bc9_969A_1CA392AB59C9" value="1"/>
 					<type xmi:idref="EAJava_int"/>
 				</ownedAttribute>
 				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_CC828F3A_7B58_46c5_9204_97AE627C4995" name="elinkaarenVaihe" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
-					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000175_7B58_46c5_9204_97AE627C4995" value="1"/>
-					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000176_7B58_46c5_9204_97AE627C4995" value="1"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000177_7B58_46c5_9204_97AE627C4995" value="1"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000178_7B58_46c5_9204_97AE627C4995" value="1"/>
 					<type xmi:idref="EAJava_int"/>
 				</ownedAttribute>
 				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_3B7DE551_41D4_4d0a_9D6C_0E31C90F1883" name="tilapäinen" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
-					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000177_41D4_4d0a_9D6C_0E31C90F1883" value="1"/>
-					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000178_41D4_4d0a_9D6C_0E31C90F1883" value="1"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000179_41D4_4d0a_9D6C_0E31C90F1883" value="1"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000180_41D4_4d0a_9D6C_0E31C90F1883" value="1"/>
 					<type xmi:idref="EAJava_boolean"/>
 				</ownedAttribute>
 				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_400FD028_8E0A_4d53_8368_AC568EC9D612" name="valmistumispäivämäärä" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
 					<type xmi:idref="EAID_5F1B0A70_92F5_42ef_9431_155EB96F7E5D"/>
-					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000179_8E0A_4d53_8368_AC568EC9D612" value="0"/>
-					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000180_8E0A_4d53_8368_AC568EC9D612" value="1"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000181_8E0A_4d53_8368_AC568EC9D612" value="0"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000182_8E0A_4d53_8368_AC568EC9D612" value="1"/>
 				</ownedAttribute>
 				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_8578A8CF_DFA4_45c7_9159_FEAD6AE7C7C2" name="purkamisenMääräaika" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
 					<type xmi:idref="EAID_5F1B0A70_92F5_42ef_9431_155EB96F7E5D"/>
-					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000181_DFA4_45c7_9159_FEAD6AE7C7C2" value="0"/>
-					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000182_DFA4_45c7_9159_FEAD6AE7C7C2" value="1"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000183_DFA4_45c7_9159_FEAD6AE7C7C2" value="0"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000184_DFA4_45c7_9159_FEAD6AE7C7C2" value="1"/>
 				</ownedAttribute>
 			</packagedElement>
 			<packagedElement xmi:type="uml:Class" xmi:id="EAID_AEABB49A_5F34_4013_AFBF_4A6D86D0271D" name="UlkokuorenTiedot" visibility="public">
 				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_3427E527_3B47_4d6c_9572_9B4B690EA28A" name="tilavuus" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
 					<type xmi:idref="EAID_C42C8A3D_C337_497c_960F_8892EC1B2BD2"/>
-					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000183_3B47_4d6c_9572_9B4B690EA28A" value="0"/>
-					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000184_3B47_4d6c_9572_9B4B690EA28A" value="1"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000185_3B47_4d6c_9572_9B4B690EA28A" value="0"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000186_3B47_4d6c_9572_9B4B690EA28A" value="1"/>
 				</ownedAttribute>
 				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_71BDEA03_DDA2_47ce_B983_1522C8FB7641" name="korkeus" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
 					<type xmi:idref="EAID_C42C8A3D_C337_497c_960F_8892EC1B2BD2"/>
-					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000185_DDA2_47ce_B983_1522C8FB7641" value="0"/>
-					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000186_DDA2_47ce_B983_1522C8FB7641" value="1"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000187_DDA2_47ce_B983_1522C8FB7641" value="0"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000188_DDA2_47ce_B983_1522C8FB7641" value="1"/>
 				</ownedAttribute>
 				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_D23737E0_1C18_415c_B5EF_E33E01112702" name="muoto" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
 					<type xmi:idref="EAID_74ADE5A7_8C5B_4676_A74C_33CC59B23B9B"/>
-					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000187_1C18_415c_B5EF_E33E01112702" value="0"/>
-					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000188_1C18_415c_B5EF_E33E01112702" value="1"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000189_1C18_415c_B5EF_E33E01112702" value="0"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000190_1C18_415c_B5EF_E33E01112702" value="1"/>
 				</ownedAttribute>
 				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_D995967C_EA82_4b13_B003_91D7675B8CA5" name="kerrosluku" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
-					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000189_EA82_4b13_B003_91D7675B8CA5" value="0"/>
-					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000190_EA82_4b13_B003_91D7675B8CA5" value="1"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000191_EA82_4b13_B003_91D7675B8CA5" value="0"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000192_EA82_4b13_B003_91D7675B8CA5" value="1"/>
 					<type xmi:idref="EAJava_int"/>
 				</ownedAttribute>
 				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_B1571214_044B_4208_8279_3EC5422D2915" name="suhdeMaanpintaan" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
-					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000191_044B_4208_8279_3EC5422D2915" value="0"/>
-					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000192_044B_4208_8279_3EC5422D2915" value="1"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000193_044B_4208_8279_3EC5422D2915" value="0"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000194_044B_4208_8279_3EC5422D2915" value="1"/>
 					<type xmi:idref="EAJava_int"/>
 				</ownedAttribute>
 			</packagedElement>
 			<packagedElement xmi:type="uml:Class" xmi:id="EAID_242ECCF2_13D9_47b7_B6D4_A69B116F0FD9" name="Varuste" visibility="public">
 				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_A0473BA8_5D3E_4d49_ACCC_74B42076C44A" name="varusteenLaji" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
-					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000193_5D3E_4d49_ACCC_74B42076C44A" value="1"/>
-					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000194_5D3E_4d49_ACCC_74B42076C44A" value="1"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000195_5D3E_4d49_ACCC_74B42076C44A" value="1"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000196_5D3E_4d49_ACCC_74B42076C44A" value="1"/>
 					<type xmi:idref="EAJava_int"/>
 				</ownedAttribute>
 				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_7DFDD140_A691_4f2a_A5F8_F928CE269BD8" name="kuuluuKohteeseen" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
-					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000195_A691_4f2a_A5F8_F928CE269BD8" value="0"/>
-					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000196_A691_4f2a_A5F8_F928CE269BD8" value="1"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000197_A691_4f2a_A5F8_F928CE269BD8" value="0"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000198_A691_4f2a_A5F8_F928CE269BD8" value="1"/>
 					<type xmi:idref="EAJava_boolean"/>
 				</ownedAttribute>
 			</packagedElement>
@@ -683,7 +695,7 @@
 				<extendedProperties tagged="0" package_name="Rakennettu ymparisto"/>
 				<packageproperties version="1.0" owner="ior" xmiver="Enterprise Architect XMI 2.1/UML 2.1"/>
 				<paths xmlpath="Z:\rakennuskohteet\looginenmalli\uml\rakennuskohteet.xml"/>
-				<times created="2021-12-16 15:21:46" modified="2021-12-21 14:39:22" lastloaddate="2021-12-21 13:35:46" lastsavedate="2022-01-11 17:26:22"/>
+				<times created="2021-12-16 15:21:46" modified="2021-12-21 14:39:22" lastloaddate="2021-12-21 13:35:46" lastsavedate="2022-01-12 13:49:39"/>
 				<flags iscontrolled="TRUE" isprotected="FALSE" batchsave="0" batchload="0" usedtd="FALSE" logxml="FALSE" packageFlags="Recurse=1;"/>
 			</element>
 			<element xmi:idref="EAID_2700DA8D_FDF6_4002_B76A_DB6A939F02E9" xmi:type="uml:Class" name="Energiatiedot" scope="public">
@@ -1715,6 +1727,7 @@
 				<xrefs value="$XREFPROP=$XID={44227FF2-1FC3-49ca-82A2-E2DB2B14B99F}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=FeatureType;FQName=GML::FeatureType;@ENDSTEREO;$DES;$CLT={DBB42D27-6258-4a82-A202-039763DA7F7D}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
 				<extendedProperties tagged="0" package_name="Rakennuskohteet ja huoneistot"/>
 				<links>
+					<Association xmi:id="EAID_40C28504_B8EB_4ff0_B667_8952A1FE01DD" start="EAID_DBB42D27_6258_4a82_A202_039763DA7F7D" end="EAID_8478A99D_FBBA_4b5f_AA95_B3E4D18441D0"/>
 					<Generalization xmi:id="EAID_70E309C5_E5D1_401c_AD18_4A0603A4F399" start="EAID_DBB42D27_6258_4a82_A202_039763DA7F7D" end="EAID_8A24BAAB_B741_497d_A213_B573E8A0A68B"/>
 					<Association xmi:id="EAID_9375169B_E05C_4709_8340_DDADE0C0900A" start="EAID_DBB42D27_6258_4a82_A202_039763DA7F7D" end="EAID_393BA78C_D256_413f_A1D0_4BE69B8F45D7"/>
 					<Association xmi:id="EAID_A84828BD_4268_4769_BE04_9497939E2CA0" start="EAID_A9685F26_DEA7_4fdf_8033_3F6FE9F49826" end="EAID_DBB42D27_6258_4a82_A202_039763DA7F7D"/>
@@ -1817,6 +1830,7 @@
 				<links>
 					<Generalization xmi:id="EAID_138BCC0B_D314_4cc5_9848_979435AC1D27" start="EAID_8478A99D_FBBA_4b5f_AA95_B3E4D18441D0" end="EAID_8A24BAAB_B741_497d_A213_B573E8A0A68B"/>
 					<Association xmi:id="EAID_9086A903_61C2_4040_90D3_7B269B4745AF" start="EAID_8478A99D_FBBA_4b5f_AA95_B3E4D18441D0" end="EAID_A9685F26_DEA7_4fdf_8033_3F6FE9F49826"/>
+					<Association xmi:id="EAID_40C28504_B8EB_4ff0_B667_8952A1FE01DD" start="EAID_DBB42D27_6258_4a82_A202_039763DA7F7D" end="EAID_8478A99D_FBBA_4b5f_AA95_B3E4D18441D0"/>
 				</links>
 			</element>
 			<element xmi:idref="EAID_C21003F4_E9DC_464b_85A7_D55DD5B0ECFE" xmi:type="uml:Class" name="Rakennuskohde" scope="public">
@@ -3002,6 +3016,41 @@
 				<xrefs/>
 				<tags/>
 			</connector>
+			<connector xmi:idref="EAID_40C28504_B8EB_4ff0_B667_8952A1FE01DD">
+				<source xmi:idref="EAID_DBB42D27_6258_4a82_A202_039763DA7F7D">
+					<model ea_localid="80295" type="Class" name="RakennuksenOsa"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_8478A99D_FBBA_4b5f_AA95_B3E4D18441D0">
+					<model ea_localid="80298" type="Class" name="Rakennus"/>
+					<role name="rakennus" visibility="Public" targetScope="instance"/>
+					<type multiplicity="1" aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="126251"/>
+				<properties ea_type="Association" direction="Source -&gt; Destination"/>
+				<modifiers isRoot="false" isLeaf="false"/>
+				<parameterSubstitutions/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels rb="1" rt="+rakennus"/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
 			<connector xmi:idref="EAID_70E309C5_E5D1_401c_AD18_4A0603A4F399">
 				<source xmi:idref="EAID_DBB42D27_6258_4a82_A202_039763DA7F7D">
 					<model ea_localid="80295" type="Class" name="RakennuksenOsa"/>
@@ -3050,23 +3099,23 @@
 				</source>
 				<target xmi:idref="EAID_393BA78C_D256_413f_A1D0_4BE69B8F45D7">
 					<model ea_localid="80296" type="Class" name="RakennuksenOsittelu"/>
-					<role name="osittelu" visibility="Public" targetScope="instance"/>
+					<role visibility="Public" targetScope="instance"/>
 					<type aggregation="composite" containment="Unspecified"/>
 					<constraints/>
-					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
-					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
 					<documentation/>
 					<xrefs/>
 					<tags/>
 				</target>
 				<model ea_localid="126073"/>
-				<properties ea_type="Association" direction="Bi-Directional"/>
+				<properties ea_type="Association" direction="Destination -&gt; Source"/>
 				<modifiers isRoot="false" isLeaf="false"/>
 				<parameterSubstitutions/>
 				<documentation/>
 				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
-				<labels lb="0..*" lt="+osa" rt="+osittelu"/>
-				<extendedProperties virtualInheritance="0"/>
+				<labels lb="0..*" lt="+osa"/>
+				<extendedProperties/>
 				<style/>
 				<xrefs/>
 				<tags/>
@@ -3805,9 +3854,9 @@
 			<diagram xmi:id="EAID_1B2D3F60_E388_4b31_A358_8ECA5C4A5C54">
 				<model package="EAPK_D6C3D384_E1AB_459d_A379_08AC00D747A1" localID="38764" owner="EAPK_D6C3D384_E1AB_459d_A379_08AC00D747A1"/>
 				<properties name="Rakennuskohteet ja huoneistot" type="Logical"/>
-				<project author="ior" version="1.0" created="2021-10-15 13:13:37" modified="2021-12-22 16:12:25"/>
+				<project author="ior" version="1.0" created="2021-10-15 13:13:37" modified="2022-01-12 13:49:32"/>
 				<style1 value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=1;HighlightForeign=1;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=0;PPgs.cy=0;DocSize.cx=815;DocSize.cy=1067;ShowDetails=0;Orientation=P;Zoom=100;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=32512;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;ShowShape=1;AllDockable=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;SPT=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;"/>
-				<style2 value="ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;KanbanActive=0;MatrixLineWidth=1;MatrixLineClr=0;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;SPT=1;MDGDgm=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;SuppressedCompartments=;Theme=:119;SaveTag=489D471B;"/>
+				<style2 value="ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;KanbanActive=0;MatrixLineWidth=1;MatrixLineClr=0;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;SPT=1;MDGDgm=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;SuppressedCompartments=;Theme=:119;SaveTag=1A8E36E7;"/>
 				<swimlanes value="locked=false;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=0;ufh=0;hh=0;cls=0;bw=0;hli=0;SwimlaneFont=lfh:-13,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;"/>
 				<matrixitems value="locked=false;matrixactive=false;swimlanesactive=true;kanbanactive=false;width=1;clrLine=0;"/>
 				<extendedProperties/>
@@ -3844,6 +3893,7 @@
 					<element geometry="Left=954;Top=39;Right=1190;Bottom=260;" subject="EAID_CCDEA216_16F7_47c8_9BFD_D0AFF7E8788F" seqno="30" style="DUID=4136BCEB;NSL=0;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;HideIcon=0;AttCustom=0;OpCustom=0;AttInh=1;RzO=1;BCol=16710133;"/>
 					<element geometry="EDGE=2;SX=0;SY=19;EX=0;EY=-4;$LLB=CX=5:CY=13:OX=3:OY=-26:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LLT=CX=79:CY=13:OX=1:OY=27:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LMT=;LMB=;LRT=CX=54:CY=13:OX=-7:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LRB=CX=16:CY=13:OX=-3:OY=3:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;IRHS=;ILHS=;Path=458:-653$458:-565$;" subject="EAID_9086A903_61C2_4040_90D3_7B269B4745AF" style="Mode=3;EOID=8C9985E2;SOID=3FDC77C4;Color=-1;LWidth=0;TREE=OS;Hidden=0;"/>
 					<element geometry="SX=-46;SY=0;EX=12;EY=0;EDGE=3;$LLB=CX=16:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LLT=CX=54:CY=13:OX=-6:OY=6:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LMT=;LMB=;LRT=CX=110:CY=13:OX=-8:OY=3:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRB=CX=16:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;IRHS=;ILHS=;Path=550:-830$206:-830$;" subject="EAID_A84828BD_4268_4769_BE04_9497939E2CA0" style="Mode=3;EOID=D18969C9;SOID=8C9985E2;Color=-1;LWidth=0;TREE=OS;Hidden=0;"/>
+					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=1;$LLB=;LLT=;LMT=;LMB=;LRT=CX=42:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRB=CX=5:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;IRHS=;ILHS=;Path=;" subject="EAID_40C28504_B8EB_4ff0_B667_8952A1FE01DD" style="Mode=3;EOID=3FDC77C4;SOID=D18969C9;Color=-1;LWidth=0;TREE=OS;Hidden=0;"/>
 					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=1;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_11AD1AC7_4658_4190_9859_7E405DAD5763" style="Mode=3;EOID=4BCA655C;SOID=E0DFB27A;Color=-1;LWidth=0;TREE=OS;Hidden=0;"/>
 					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=3;$LLB=;LLT=;LMT=;LMB=;LRT=CX=64:CY=13:OX=-5:OY=1:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRB=CX=16:CY=13:OX=1:OY=2:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;IRHS=;ILHS=;Path=;" subject="EAID_7668C0D7_880C_447f_806E_3E7D310CAAB7" style="Mode=3;EOID=181AD7CD;SOID=00FE3046;Color=-1;LWidth=0;Hidden=0;"/>
 					<element geometry="SX=11;SY=1;EX=11;EY=0;EDGE=3;$LLB=CX=16:CY=13:OX=-32:OY=3:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LLT=CX=91:CY=13:OX=106:OY=2:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LMT=;LMB=;LRT=CX=74:CY=13:OX=-4:OY=-1:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_77705742_A3D3_4f8b_9C6B_C12B0A75F914" style="Mode=3;EOID=4BCA655C;SOID=19C92E88;Color=-1;LWidth=0;TREE=OS;Hidden=0;"/>
@@ -3863,7 +3913,7 @@
 					<element geometry="EDGE=2;EX=-10;EY=0;SX=0;SY=119;$LLB=;LLT=CX=32:CY=13:OX=6:OY=-1:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LMT=;LMB=;LRT=CX=37:CY=13:OX=-2:OY=2:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LRB=CX=16:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;IRHS=;ILHS=;Path=622:-881$;" subject="EAID_79BB5354_D3F6_4d08_B1E2_12898269FE45" style="Mode=3;EOID=4036F5F1;SOID=C4D524E7;Color=-1;LWidth=0;TREE=OS;Hidden=0;"/>
 					<element geometry="EDGE=1;SX=0;SY=27;EX=4;EY=0;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_9E655B08_943F_4421_8146_5C0BB38162CE" style="Mode=3;EOID=8C9985E2;SOID=4036F5F1;Color=-1;LWidth=0;TREE=OS;Hidden=0;"/>
 					<element geometry="SX=17;SY=0;EX=83;EY=0;EDGE=3;$LLB=CX=16:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LLT=CX=78:CY=13:OX=-12:OY=1:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LMT=;LMB=;LRT=CX=74:CY=13:OX=89:OY=2:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRB=;IRHS=;ILHS=;Path=809:-263$507:-263$;" subject="EAID_E3E7FD98_7D95_457c_849D_A287A1A097F7" style="Mode=3;EOID=4BCA655C;SOID=DF602BE0;Color=-1;LWidth=0;TREE=OS;Hidden=0;"/>
-					<element geometry="SX=0;SY=-24;EX=0;EY=10;EDGE=2;$LLB=CX=16:CY=13:OX=5:OY=6:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LLT=CX=19:CY=13:OX=4:OY=-2:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LMT=;LMB=;LRT=CX=34:CY=13:OX=-3:OY=31:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_9375169B_E05C_4709_8340_DDADE0C0900A" style="Mode=3;EOID=F9C3FEF0;SOID=D18969C9;Color=-1;LWidth=0;TREE=OS;Hidden=0;"/>
+					<element geometry="SX=0;SY=0;EX=0;EY=10;EDGE=2;$LLB=CX=16:CY=13:OX=5:OY=6:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LLT=CX=19:CY=13:OX=4:OY=-2:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_9375169B_E05C_4709_8340_DDADE0C0900A" style="Mode=3;EOID=F9C3FEF0;SOID=D18969C9;Color=-1;LWidth=0;TREE=OS;Hidden=0;"/>
 				</elements>
 			</diagram>
 			<diagram xmi:id="EAID_572B857C_B7CA_42c3_BB7B_B00F7C0FB3CD">
