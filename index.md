@@ -4,5 +4,5 @@ title: "Rakennuskohteet"
 description: ""
 id: "rakennuskohteet"
 ---
-# Rakennuskohteiden ja huneistojen tietomalli
+# Rakennuskohteiden tietomalli
 
