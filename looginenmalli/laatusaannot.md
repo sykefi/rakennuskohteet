@@ -146,7 +146,7 @@ Aikavälejä kuvaavat attribuutit voidaan antaa joko sekä alku- että loppuajan
 
 ### Rakennus
 
-### RakenuksenOsa
+### RakennuksenOsa
 
 ### Rakennelma
 
