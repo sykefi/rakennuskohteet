@@ -1,2 +1,2 @@
-tocTab[tocTab.length] = new Array("0.1", "1", "Rakennuskohteet ja huoneistot", "EARoot/EA1/EA8.html", "4.png", "", "", "{D6C3D384-E1AB-459d-A379-08AC00D747A1}", "Package");
-tocTab[tocTab.length] = new Array("0.2", "1", "Yhteiset", "EARoot/EA2/EA53.html", "4.png", "", "", "{8C35E32F-0806-4134-A70C-FF48008FD604}", "Package");
+tocTab[tocTab.length] = new Array("0.1", "1", "Rakennuskohteet ja huoneistot", "EARoot/EA1/EA10.html", "4.png", "", "", "{D6C3D384-E1AB-459d-A379-08AC00D747A1}", "Package");
+tocTab[tocTab.length] = new Array("0.2", "1", "«ApplicationSchema» Yhteiset tietokomponentit", "EARoot/EA2/EA58.html", "4.png", "", "", "{8C35E32F-0806-4134-A70C-FF48008FD604}", "Package");
