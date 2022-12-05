@@ -161,3 +161,11 @@ Aikavälejä kuvaavat attribuutit voidaan antaa joko sekä alku- että loppuajan
 ### Huone
 
 ### Sisäänkäynti
+
+### RakennuskohteenMuutos
+
+RakennuskohteenMuutos-luokan assosiaation ```kohdeEnnenMuutosta``` tulee viitata [Rakennuskohde](dokumentaatio/#rakennuskohde)-luokan objektiin, johon suunniteltu muuutos kohdistuu. Mikäli kyseessä on uusi rakennuskohde (esim. uudisrakennus), ei assosiaatiota ```kohdeEnnenMuutosta``` käytetä.
+
+RakennuskohteenMuutos-luokan assosiaation ```kohdeMuutoksenJälkeen``` tulee viitata [Rakennuskohde](dokumentaatio/#rakennuskohde)-luokan objektiin, joka kuvaa rakennuskohteen uutta tilaa suunnitellun muutoksen toteuttamisen jälkeen.
+
+### HuoneistonMuutos
