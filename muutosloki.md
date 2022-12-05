@@ -5,5 +5,6 @@ id: "muutosloki"
 ---
 # Muutosloki
 
-## Muutokset versiosta 0.5 -> 1.0
-Täydentyy
+## 5.12.2022
+
+* Luurangot laatu- ja elinkaarisäännöistä lisätty

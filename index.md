@@ -1,6 +1,5 @@
 ---
 layout: "default"
-title: "Rakennuskohteet"
 description: ""
 id: "rakennuskohteet"
 ---
