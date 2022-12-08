@@ -173,10 +173,16 @@ RakennuskohteenToimenpide-luokan avulla voidaan kuvata sekä luvanvaraisia että
 {% include common/clause_end.html %}
 
 {% include common/clause_start.html type="req" id="laatu/vaat-toimenpiteen-kohde" %}
-[RakennuskohteenToimenpide](dokumentaatio/#rakennuskohteentoimenpide)-luokan objektin on sisällettävä vähintään yksi {% include common/moduleLink.html moduleId="rakennuskohteet" path="looginenmalli/dokumentaatio/#rakennuskohteenmuutos" title="RakennuskohteenMuutos" %}-luokan kuvaama tietokokonaisuus attribuutin ```suunniteltuMuutos``` arvona.
+[RakennuskohteenToimenpide](dokumentaatio/#rakennuskohteentoimenpide)-luokan objektin on sisällettävä vähintään yksi [RakennuskohteenMuutos](dokumentaatio/#rakennuskohteenmuutos)-luokan kuvaama tietokokonaisuus attribuutin ```suunniteltuMuutos``` arvona.
 {% include common/clause_end.html %}
 
 ### Rakennuskohde
+
+### RakennuskohteenMuutos
+
+RakennuskohteenMuutos-luokan assosiaation ```kohdeEnnenMuutosta``` tulee viitata [Rakennuskohde](dokumentaatio/#rakennuskohde)-luokan objektiin, johon suunniteltu muuutos kohdistuu. Mikäli kyseessä on uusi rakennuskohde (esim. uudisrakennus), ei assosiaatiota ```kohdeEnnenMuutosta``` käytetä.
+
+RakennuskohteenMuutos-luokan assosiaation ```kohdeMuutoksenJälkeen``` tulee viitata [Rakennuskohde](dokumentaatio/#rakennuskohde)-luokan objektiin, joka kuvaa rakennuskohteen uutta tilaa suunnitellun muutoksen toteuttamisen jälkeen.
 
 ### Rakennus
 
@@ -192,17 +198,13 @@ RakennuskohteenToimenpide-luokan avulla voidaan kuvata sekä luvanvaraisia että
 
 ### Huoneisto
 
+### HuoneistonMuutos
+
 ### Huone
 
 ### Sisäänkäynti
 
-### RakennuskohteenMuutos
 
-RakennuskohteenMuutos-luokan assosiaation ```kohdeEnnenMuutosta``` tulee viitata [Rakennuskohde](dokumentaatio/#rakennuskohde)-luokan objektiin, johon suunniteltu muuutos kohdistuu. Mikäli kyseessä on uusi rakennuskohde (esim. uudisrakennus), ei assosiaatiota ```kohdeEnnenMuutosta``` käytetä.
-
-RakennuskohteenMuutos-luokan assosiaation ```kohdeMuutoksenJälkeen``` tulee viitata [Rakennuskohde](dokumentaatio/#rakennuskohde)-luokan objektiin, joka kuvaa rakennuskohteen uutta tilaa suunnitellun muutoksen toteuttamisen jälkeen.
-
-### HuoneistonMuutos
 
 ### Ilmastoselvitys
 
@@ -218,12 +220,12 @@ RakennuskohteenMuutos-luokan assosiaation ```kohdeMuutoksenJälkeen``` tulee vii
 [Ilmastoselvitys](dokumentaatio/#ilmastoselvitys)-luokan ```rakennuksenTavoitteellinenKäyttöikä```-attribuutin arvon yksikön tulee olla yksi vuosi (```a```).
 {% include common/clause_end.html %}
 
-Ilmastoselvitys tulee voida aina liittää rakennukseen sen pysyvän rakennustunnuksen (PRT) kautta. Rakentamisen lupapäätösten tietomallissa [Ilmastoselvitys](dokumentaatio/#ilmaistoselvitys)-luokalla on ```1..*``` assosiaatio {% include common/moduleLink.html moduleId="rakennuskohteet" path="looginenmalli/dokumentaatio/#rakennuskohde" title="Rakennuskohde" %}-luokkaan, jonka konkreettisia aliluokkia ovat muun muassa {% include common/moduleLink.html moduleId="rakennuskohteet" path="looginenmalli/dokumentaatio/#rakennus" title="Rakennus" %} ja {% include common/moduleLink.html moduleId="rakennuskohteet" path="looginenmalli/dokumentaatio/#rakennuksenosa" title="RakennuksenOsa" %}. 
+Ilmastoselvitys tulee voida aina liittää rakennukseen sen pysyvän rakennustunnuksen (PRT) kautta. Rakentamisen lupapäätösten tietomallissa [Ilmastoselvitys](dokumentaatio/#ilmaistoselvitys)-luokalla on ```1..*``` assosiaatio [Rakennuskohde](dokumentaatio/#rakennuskohde)-luokkaan, jonka konkreettisia aliluokkia ovat muun muassa [Rakennus](dokumentaatio/#rakennus) ja [RakennuksenOsa](dokumentaatio/#rakennuksenosa). 
 
-Ilmastoselvitys liitetään tavallisesti joko suoraan koko rakennusta kuvaavaan {% include common/moduleLink.html moduleId="rakennuskohteet" path="looginenmalli/dokumentaatio/#rakennus" title="Rakennus" %}-luokan objektiin tai siihen {% include common/moduleLink.html moduleId="rakennuskohteet" path="looginenmalli/dokumentaatio/#rakennuksenosa" title="RakennuksenOsa" %}-luokan objektiin, jota luvanvaraisella toimenpiteellä muutetaan, tai joka syntyy suunnitellun laajennuksen tuloksena. Jälkimmäisessä tapauksessa yhteys pysyvään rakennustunnukseen syntyy {% include common/moduleLink.html moduleId="rakennuskohteet" path="looginenmalli/dokumentaatio/#rakennuksenosa" title="RakennuksenOsa" %}-luokan pakollisen ```rakennus:Rakennus```-assosiaation kautta.
+Ilmastoselvitys liitetään tavallisesti joko suoraan koko rakennusta kuvaavaan [Rakennus](dokumentaatio/#rakennus)-luokan objektiin tai siihen [RakennuksenOsa](dokumentaatio/#rakennuksenosa)-luokan objektiin, jota luvanvaraisella toimenpiteellä muutetaan, tai joka syntyy suunnitellun laajennuksen tuloksena. Jälkimmäisessä tapauksessa yhteys pysyvään rakennustunnukseen syntyy [RakennuksenOsa](dokumentaatio/#rakennuksenosa)-luokan pakollisen ```rakennus:Rakennus```-assosiaation kautta.
 
 {% include common/clause_start.html type="req" id="laatu/vaat-ilmastoselvitys-rakennuskohde-pysyva-rakennustunnus-oltava" %}
-Kuhunkin [Ilmastoselvitys](dokumentaatio/#ilmastoselvitys)-luokan objektiin tulee liittyä vähintään yksi (1) {% include common/moduleLink.html moduleId="rakennuskohteet" path="looginenmalli/dokumentaatio/#rakennuskohde" title="Rakennuskohde" %}-luokan aliluokkien objekti, jonka kautta ilmastoselvitys voidaan liittää rakennuksen pysyvään rakennustunnukseen. 
+Kuhunkin [Ilmastoselvitys](dokumentaatio/#ilmastoselvitys)-luokan objektiin tulee liittyä vähintään yksi (1) [Rakennuskohde](dokumentaatio/#rakennuskohde)-luokan aliluokkien objekti, jonka kautta ilmastoselvitys voidaan liittää rakennuksen pysyvään rakennustunnukseen. 
 {% include common/clause_end.html %}
 
 {% include common/clause_start.html type="req" id="laatu/vaat-ilmastoselvitys-kaikki-ostoenergian-lahteet-annettava" %}
