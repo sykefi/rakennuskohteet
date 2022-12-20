@@ -5,6 +5,11 @@ id: "muutosloki"
 ---
 # Muutosloki
 
+## 20.12.2022
+
+- Muutettu Rakennuskohde-luokka abstraktiksi, fixes #42
+- Poistettu luokat Rakentamistoimenpide ja Purkamistoimenpide, muutettu RakennuskohteenToimenpide-luokka konkreettiseksi ja lisätty siihen attribuutit purkamisenSyy, perusparannus ja korjausaste, fixes #41  
+
 ## 19.12.2022
 - Lisätty ja uudelleenryhmitelty tietotyyppejä Materiaalitiedot, RakennuksenKäyttötiedot ja Energiatiedot. Poistettu Statustiedot ja viety sen attribuutit suoraan rakennuskohde-luokkiin, fixes #9, #12, #22 
 - Poistettu RakennuskohteenToimenpide-luokasta suora assosiaatio asia RakentamislupaAsia-luokkaan, korvataan assosiaatiolla liittyväAsia luokkaan AlueidenkäyttöJaRakentamisasia, fixes #6
