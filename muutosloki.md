@@ -9,6 +9,7 @@ id: "muutosloki"
 
 - Muutettu Rakennuskohde-luokka abstraktiksi, fixes #42
 - Poistettu luokat Rakentamistoimenpide ja Purkamistoimenpide, muutettu RakennuskohteenToimenpide-luokka konkreettiseksi ja lisätty siihen attribuutit purkamisenSyy, perusparannus ja korjausaste, fixes #41  
+- Päivitetty uusin ry-yhteiset -riippuvuus, ei muutoksia rakennuskohteiden tietomallin luokkiin.
 
 ## 19.12.2022
 - Lisätty ja uudelleenryhmitelty tietotyyppejä Materiaalitiedot, RakennuksenKäyttötiedot ja Energiatiedot. Poistettu Statustiedot ja viety sen attribuutit suoraan rakennuskohde-luokkiin, fixes #9, #12, #22 
