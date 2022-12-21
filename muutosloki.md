@@ -9,6 +9,8 @@ id: "muutosloki"
 
 - Lisätty otsikkotason rakenne dokumentaatiosivulle.
 - Korjattu Rakennuskohteet-luokkakaavion asettelua.
+- Korjattu RakennuskohteenMuutos-luokan attribuutin ```varustemuutos``` tyypiksi RakennuksenVaruste.
+- Poistettu HuoneistonMuutos-luokasta väärä usage-suhde luokkaan RakennuksenVaruste.
 
 ## 20.12.2022
 
