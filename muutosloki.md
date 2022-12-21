@@ -11,6 +11,7 @@ id: "muutosloki"
 - Korjattu Rakennuskohteet-luokkakaavion asettelua.
 - Korjattu RakennuskohteenMuutos-luokan attribuutin ```varustemuutos``` tyypiksi RakennuksenVaruste.
 - Poistettu HuoneistonMuutos-luokasta väärä usage-suhde luokkaan RakennuksenVaruste.
+- Päivitetty elinkaarisääntöjä (edelleen keskeneräinen).
 
 ## 20.12.2022
 

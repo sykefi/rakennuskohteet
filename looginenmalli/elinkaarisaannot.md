@@ -203,25 +203,114 @@ Yksittäisen tietokohteen yksityiskohtainen muutoshistoria tietovarastossa saada
 
 Attribuutin ```viimeisinMuutos``` arvo kuvaa ajanhetkeä, jolloin ko. tietokohteeseen on tehty sisällöllinen muutos tiedontuottajan tietojärjestelmässä. Tiedontuottajan järjestelmän osalta ei vaadita tiukkaa versiontipolitiikkaa, eli ```paikallinenTunnus```-attribuutin päivittämistä jokaisen tietokohteen muutoksen johdosta. ```viimeisinMuutos```-attribuutin päivittämien riittää kuvaamaan tiedon todellisen muuttumisajankohdan.
 
-## Rakennuskohteen suunnittelu
 
-TODO: uusi attribuutti, joka kertoo selkeästi, onko Rakennuskohde osa suunnitelmaa vai kuvaako se toteutettua kohdetta?
+## Suunnitelman ja toteuman mukaiset Rakennuskohteet
 
-### Uuden rakennuskohteen suunnitelma
+Tietomallissa sekä suunnitellut että rakentamishankkeiden lopputuloksina toteutuneet rakennuskohteiden tiedot kuvataan saman [Rakennuskohde](dokumentaatio/#rakennuskohde)-luokan avulla.
 
-### Rakennuskohteen muutoksen suunnitelma
+{% include common/clause_start.html type="req" id="elinkaari/vaat-suunniteltu-rakennuskohde" %}
+[Rakennuskohde](dokumentaatio/#rakennuskohde)-luokan objekti, jonka ```tiedonLaji```-attribuutin arvo viittaa [RakennuskohteenTiedonLaji](dokumentaatio/#rakennuskohteentiedonlaji)-koodiston koodiin ```1 - Suunnitelman mukainen tieto```, kuvaa rakennuskohteen suunnitelua tilaa siihen kohdistuvan muutoksen toteuttamisen jälkeen.
+{% include common/clause_end.html %}
 
-### Olemassaolevien rakennuskohteiden yhdistäminen
+{% include common/clause_start.html type="req" id="elinkaari/vaat-toteutunut-rakennuskohde" %}
+[Rakennuskohde](dokumentaatio/#rakennuskohde)-luokan objekti, jonka ```tiedonLaji```-attribuutin arvo viittaa [RakennuskohteenTiedonLaji](dokumentaatio/#rakennuskohteentiedonlaji)-koodiston koodiin ```2 - Toteuman mukainen tieto```, kuvaa rakennuskohteen toteutunutta tilaa siihen kohdistuvan muutoksen toteuttamisen jälkeen.
+{% include common/clause_end.html %}
 
-### Olemassaolevan rakennuskohteen jakaminen kahdeksi eri rakennuskohteeksi
+### Muutossuunnitelman yhteys aiempaan toteumaan
+{% include common/clause_start.html type="req" id="elinkaari/vaat-suunnitellun-rakennuskohteen-lahtokohta" %}
+Kun toteutettuun rakennuskohteeseen laaditaan muutos-, laajennus- tai korjaussuunnitelma, tehdään kyseisen rakennuskohteen suunniteltua muutosta edeltävän tilan mukaisesta [Rakennuskohde](dokumentaatio/#rakennuskohde)-luokan objektista (T1) uusi versio (S1), jonka ```identiteettiTunnus``` pysyy samana, mutta ```tiedonLaji```-attribuutin arvoksi tulee  ```1 - Suunnitelman mukainen tieto```. Objektilla T1 ei tässä tapauksessa saa olla ```korvattuObjektilla```-assosiaatiota objektiin S1, eikä objektilla S1 saa olla ```korvaaObjektin```-assosiaatiota objektiin T1. Objektilla S1 tulee olla assosiaatio ```liittyväKohde``` määritteen ```rooli``` arvolla ```Suunnitelman lähtökohta``` objektiin T1.
 
-### Huoneistotietojen muutosten suunnittelu
+Mikäli muutosta edeltävää toteutettua tilaa vastaavaa [Rakennuskohde](dokumentaatio/#rakennuskohde)-luokan objektia T1 ei ole saatavilla, luodaan uusi [Rakennuskohde](dokumentaatio/#rakennuskohde)-luokan objekti (S1), joka kuvaa rakennuskohteen suunnitelua muutettua tilaa, ja jonka ```tiedonLaji```-attribuutin arvoksi tulee  ```1 - Suunnitelman mukainen tieto```. 
+{% include common/clause_end.html %}
 
-### Rakentamisluvavaraiset toimenpiteet
+### Muutossuunnitelmien päivitys ja yhteys uuteen toteumaan
+{% include common/clause_start.html type="req" id="elinkaari/vaat-rakennuskohteen-suunnitelman-muutos" %}
+Kun rakennuskohteen suunnitelmaa päivitetään, tehdään kyseisen rakennuskohteen edeltävän suunnitelman mukaisesta [Rakennuskohde](dokumentaatio/#rakennuskohde)-luokan objektista (S1) uusi versio (S2), jonka ```identiteettiTunnus``` pysyy samana, ja ```tiedonLaji```-attribuutin arvoksi tulee  ```1 - Suunnitelman mukainen tieto```. Objektilla S1 tulee olla  ```korvattuObjektilla```-assosiaatio objektiin S2, ja objektilla S2 tulee olla ```korvaaObjektin```-assosiaatio objektiin S1. Objektilla S2 tulee olla assosiaatio ```liittyväKohde``` määritteen ```rooli``` arvolla ```Suunnitelman lähtökohta``` objektiin T1.
+{% include common/clause_end.html %}
 
-TODO: viittaus lupapäätösten tietomalliin, tässä ei oteta kantaa miten rakennuskohteiden muutokset tuodaan tietomalliin.
+{% include common/clause_start.html type="req" id="elinkaari/vaat-rakennuskohteen-uusi-toteuma" %}
+Kun rakennuskohteen muutostoimenpide on toteutettu, tehdään kyseisen rakennuskohteen viimeisimmän suunnitelman mukaisesta [Rakennuskohde](dokumentaatio/#rakennuskohde)-luokan objektista (S2) uusi versio (T2), jonka tiedot vastaavat rakennuskohteen uutta toteutunutta tilaa. Objektin T2  ```identiteettiTunnus``` pysyy samana, ja ```tiedonLaji```-attribuutin arvoksi tulee  ```2 - Toteuman mukainen tieto```. Objektilla T2 tulee olla  ```korvaaObjektin```-assosiaatio muutosta edeltäneeseen kyseisen rakennuskohteen toteutunutta tilaa kuvaavaan objektiin (T1), ja objektilla T1 tulee olla ```korvattuObjektilla```-assosiaatio objektiin T2. Objektilla T2 tulee olla assosiaatio ```liittyväKohde``` määritteen ```rooli``` arvolla ```Toteutettu suunnitelma``` objektiin S2, ja  assosiaatio ```liittyväKohde``` määritteen ```rooli``` arvolla ```Alkuperäinen suunnitelma``` siihen [Rakennuskohde](dokumentaatio/#rakennuskohde)-luokan objektiin (S1), joka kuvaa alkuperäistä muutossuunnitelmaa.
+{% include common/clause_end.html %}
 
-## Rakennuskohteen tai sen muutoksen käyttöönotto
+### Rakennusten ja rakennelmien elinkaaren vaiheet ja suunnitellut muutokset
+
+Luokilla [RakennusTaiSenOsa](dokumentaatio/rakennustaisenosa) ja [RakennelmaTaiSenOsa](dokumentaatio/rakennelmataisenosa) on attribuutti ```elinkaarenVaihe```, joka arvojoukko on koodiston [RakennuksenElinkaarenVaihe](dokumentaatio/#rakennuksenelinkaarenvaihe) mukainen. 
+
+{% include common/clause_start.html type="req" id="elinkaari/vaat-uudisrakennuksen-elinkaaren-vaihe-ja-suunnitelma" %}
+Uudisrakennuksen tai -rakennelman tai niiden uusien osien tapauksessa luokkien [RakennusTaiSenOsa](dokumentaatio/rakennustaisenosa) tai [RakennelmaTaiSenOsa](dokumentaatio/rakennelmataisenosa) attribuutin ```tiedonLaji``` arvon ollessa ```1 - Suunnitelman mukainen tieto```, tulee sen attribuutilla ```elinkaarenVaihe``` olla joko arvo ```01 - suunnitteilla``` tai ```02 - rakenteilla```.
+{% include common/clause_end.html %}
+
+{% include common/clause_start.html type="req" id="elinkaari/vaat-toteutetun-rakennuksen-elinkaaren-vaihe" %}
+Toteutettua rakennuskohdetta kuvaavan [RakennusTaiSenOsa](dokumentaatio/rakennustaisenosa) ja [RakennelmaTaiSenOsa](dokumentaatio/rakennelmataisenosa) luokan attribuutin ```tiedonLaji``` arvon ollessa ```2 - Toteuman mukainen tieto```, tulee sen attribuutilla ```elinkaarenVaihe``` olla jokin arvoista ```02 - rakenteilla```, ```03 - käytössä``` tai ```04 - käyttökiellossa/käyttökelvoton```, ```05 - tuhoutunut``` tai ```06 - purettu```. Arvoa ```02 - rakenteilla``` voidaan käyttää vain, mikäli rakennuskohde on valmistunut, mutta sen käyttöönottokatselmusta ei ole vielä hyväksytysti pidetty.
+{% include common/clause_end.html %}
+
+{% include common/clause_start.html type="req" id="elinkaari/vaat-rakennuksen-elinkaaren-vaihe-ja-muutossuunnitelma" %}
+Muutettavan, laajennettavan, korjattavan tai purettavan rakennuksen tai -rakennelman tai niiden uusien osien tapauksessa luokkien [RakennusTaiSenOsa](dokumentaatio/rakennustaisenosa) tai [RakennelmaTaiSenOsa](dokumentaatio/rakennelmataisenosa) attribuutin ```tiedonLaji``` arvon ollessa ```1 - Suunnitelman mukainen tieto```, tulee sen attribuutin ```elinkaarenVaihe``` arvon vastata kuvata suunnitelman toteuttamisen jälkeistä tavoitetilaa: joko ```03 - käytössä``` tai ```06 - purettu```.
+{% include common/clause_end.html %}
+
+
+{% include common/clause_start.html type="req" id="elinkaari/vaat-rakennuksen-elinkaaren-vaiheen-sallitut-muutokset" %}
+Luokkien [RakennusTaiSenOsa](dokumentaatio/rakennustaisenosa) tai [RakennelmaTaiSenOsa](dokumentaatio/rakennelmataisenosa) attribuutin ```elinkaarenVaihe``` arvo voi muuttua [RakennuskohteenToimenpide](dokumentaatio/#rakennuskohteentoimenpide)-luokan kuvaamana vain seuraavasti:
+
+* Arvosta ```01 - suunnitteilla``` arvoihin ```02 - rakenteilla``` tai ```03 - käytössä```.
+* Arvosta ```02 - rakenteilla``` arvoihin ```03 - käytössä``` tai ```04 - käyttökiellossa/käyttökelvoton```, ```05 - tuhoutunut``` tai ```06 - purettu```.
+* Arvosta ```03 - käytössä``` arvoihin ```04 - käyttökiellossa/käyttökelvoton```, ```05 - tuhoutunut``` tai ```06 - purettu```.
+* Arvosta ```04 - käyttökiellossa/käyttökelvoton``` arvoihin ```02 - rakenteilla```, ```03 - käytössä```, ```05 - tuhoutunut``` tai ```06 - purettu```.
+* Arvoista ```05 - tuhoutunut``` tai ```06 - purettu``` ei ole sallittuja muutoksia.
+{% include common/clause_end.html %}
+
+## Rakennuskohteiden suunnitelmatiedot
+
+Sekä uusien rakennuskohteiden suunnitelmat että aiemmin toteutettujen rakennuskohteiden muutos-, laajennus-, korjaus- ja purkamissuunnitelmat kuvataan [RakennuskohteenToimenpide](dokumentaatio/#rakennuskohteentoimenpide)-luokan avulla. Luokka sisältää toimenpiteen kuvaustietojen lisäksi varsinaiset suunnitellut muutokset, jotka kuvataan luokan [RakennuskohteenMuutos](dokumentaatio/#rakennuskohteenmuutos)-luokan mukaisina rakenteisina ```suunniteltuMuutos```-attribuutin arvoina.
+
+Rakennettujen tilojen ja huoneistojen suunnitellut muutokset kuvataan osana [RakennuskohteenMuutos](dokumentaatio/#rakennuskohteenmuutos)-luokan tietoja.
+
+### Uudisrakennuskohteen rakentamistoimenpide
+{% include common/clause_start.html type="req" id="elinkaari/vaat-uudiskohteen-toimenpide" %}
+Uudisrakennuksen tai -rakennelman tai niiden uusien osien suunnitelma kuvataan luokan [RakennuskohteenToimenpide](dokumentaatio/#rakennuskohteentoimenpide) objektina, jonka attribuutilla ```toimenpiteenLaji``` on koodiston [RakentamistoimenpiteenLaji](dokumentaatio/#rakentamistoimenpiteenlaji) arvo ```01 - Uusi rakennus tai rakennelma``` tai ```02 - Laajentaminen```.
+
+Attribuuteille ```purkamisenSyy```, ```perusparannus``` ja ```korjausaste``` ei saa antaa arvoja.
+{% include common/clause_end.html %}
+
+{% include common/clause_start.html type="req" id="elinkaari/vaat-uudiskohteen-toimenpiteen-muutokset" %}
+Uudisrakennuksen tai -rakennelman tai niiden uusien osien suunnitelman kuvaamaan [RakennuskohteenToimenpide](dokumentaatio/#rakennuskohteentoimenpide)-luokan objektiin kuuluvan [RakennuskohteenMuutos](dokumentaatio/#rakennuskohteenmuutos)-luokan kuvaaman rakenteisen attribuutin ominaisuuksina annettavien pinta-alojen ja tilavuuksien muutostietojen tulee vastata koko suunnnitellun rakennuskohteen pinta-ala ja tilavuustietoja.
+{% include common/clause_end.html %}
+
+### Olemassaolevan rakennuskohteen muutos- laajennus- tai korjaustoimenpide
+{% include common/clause_start.html type="req" id="elinkaari/vaat-muutettavan-kohteen-toimenpide" %}
+Muutettavan, laajennettavan tai korjattavan rakennuksen tai -rakennelman tai niiden osien suunnitelma kuvataan luokan [RakennuskohteenToimenpide](dokumentaatio/#rakennuskohteentoimenpide) objektina, jonka attribuutilla ```toimenpiteenLaji``` on koodiston [RakentamistoimenpiteenLaji](dokumentaatio/#rakentamistoimenpiteenlaji) arvo ```02 - Laajentaminen```, ```03 - Uudelleen rakentamiseen verrattava muutostyö``` tai ```04 - Muu muutostyö```.
+
+Attribuutille ```purkamisenSyy``` ei saa antaa arvoa.
+{% include common/clause_end.html %}
+
+{% include common/clause_start.html type="req" id="elinkaari/vaat-muutettavan-kohteen-toimenpiteen-muutokset" %}
+Muutettavan, laajennettavan tai korjattavan rakennuksen tai -rakennelman tai niiden osien suunnitelman kuvaaman  [RakennuskohteenToimenpide](dokumentaatio/#rakennuskohteentoimenpide)-luokan objektiin kuuluvan [RakennuskohteenMuutos](dokumentaatio/#rakennuskohteenmuutos)-luokan kuvaaman rakenteisen attribuutin ominaisuuksina annettavien pinta-alojen ja tilavuuksien muutostietojen tulee vastata rakennuskohteen muutoksessa muuttuvia pinta-ala ja tilavuustietoja. Pinta-alojen tai tilavuuksien pienentyessä muutosattribuuttien arvot ovat negatiivisia.
+{% include common/clause_end.html %}
+
+{% include common/clause_start.html type="req" id="elinkaari/vaat-kohteen-varusteiden-muutokset" %}
+Rakennuskohteeseen sen muutostoimenpiteen johdosta kuuluvat lisättävät ja poistuvat varusteet kuvataan  [RakennuskohteenMuutos](dokumentaatio/#rakennuskohteenmuutos)-luokan Luokan [RakennuksenVaruste](dokumentaatio/#rakennuksenvaruste) mukaisen rakenteisen attribuutin ```varustemuutos``` avulla. Lisättävien varusteiden osalta käytetään attribuutin ```kuuluuKohteeseen``` arvoa ```true```, ja poistuvien varusteen osalta arvoa ```false```.
+{% include common/clause_end.html %}
+
+### Olemassaolevien rakennusten tai rakennelmien yhdistäminen
+
+kohdeEnnenMuutosta-assosiaatiolla viitataan niihin rakennuksiin tai rakennelmiin (eri PRT:t), jotka toimenpiteella yhdistetään yhdeksi, ja kohdeMuutoksenJälkeen siihen rakennukseen tai rakennelmaan (yksi PRT), joka kuvaa kohdetta yhdistämisen jälkeen.
+
+{% include common/note.html content="Vaatinee ristiintarkitusta ja harmonisointia DVV:n (PRT) rakennustietojen elinkaaren tapahtumien kanssa" %}
+
+### Olemassaolevan rakennusten tai rakennelmien jakaminen kahdeksi eri rakennuskohteeksi
+
+kohdeEnnenMuutosta-assosiaatiolla viitataan rakennukseen tai rakennelmaan (yksi PRT), joka toimenpiteella jaetaan useammaksi rakennukseksi tai rakennelmaksi, ja kohdeMuutoksenJälkeen niihin rakennuksiin tai rakennelmiin, joka kuvaavat kohteita jakamisen jälkeen (eri PRT:t).
+
+{% include common/note.html content="Vaatinee ristiintarkitusta ja harmonisointia DVV:n (PRT) rakennustietojen elinkaaren tapahtumien kanssa" %}
+
+### Rakennuksen osittelut
+
+* Käyttötarkoituksittain
+* Rakentamishistorian perusteella
+
+### Huoneistotietojen suunnitellut muutokset
+
+### Rakennuskohteen purkaminen kokonaan tai osittain
 
 ## Tietojen päivittäminen käyttöönoton jälkeen
 
@@ -229,7 +318,5 @@ TODO: viittaus lupapäätösten tietomalliin, tässä ei oteta kantaa miten rake
 
 ### Huoneistotietojen päivitykset
 
-## Rakennuksen osittelut
 
-* Käyttötarkoituksittain
-* Rakentamishistorian perusteella
+
