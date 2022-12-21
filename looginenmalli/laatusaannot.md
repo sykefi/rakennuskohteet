@@ -173,7 +173,7 @@ RakennuskohteenToimenpide-luokan avulla voidaan kuvata sekä luvanvaraisia että
 {% include common/clause_end.html %}
 
 {% include common/clause_start.html type="req" id="laatu/vaat-toimenpiteen-kohde" %}
-[RakennuskohteenToimenpide](dokumentaatio/#rakennuskohteentoimenpide)-luokan objektin on sisällettävä vähintään yksi [RakennuskohteenMuutos](dokumentaatio/#rakennuskohteenmuutos)-luokan kuvaama tietokokonaisuus attribuutin ```suunniteltuMuutos``` arvona.
+[RakennuskohteenToimenpide](dokumentaatio/#rakennuskohteentoimenpide)-luokan objektin on sisällettävä vähintään yksi [RakennuskohteenMuutos](dokumentaatio/#rakennuskohteenmuutos)-luokan kuvaama tietokokonaisuus attribuutin ```suunniteltuMuutos``` arvona. Yhteen RakennuskohteenToimenpide-luokan objektiin voi kuulua vain yhtä rakennusta tai rakennelmaa koskevia suunniteltuja muutoksia, mutta samaan toimenpiteeseen voi kuulua saman rakennuksen tai rakennelman eri osia koskevia suunniteltuja muutoksia. 
 {% include common/clause_end.html %}
 
 ### Rakennuskohde
