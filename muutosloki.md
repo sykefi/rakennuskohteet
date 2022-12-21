@@ -5,6 +5,11 @@ id: "muutosloki"
 ---
 # Muutosloki
 
+## 21.12.2022
+
+- Lisätty otsikkotason rakenne dokumentaatiosivulle.
+- Korjattu Rakennuskohteet-luokkakaavion asettelua.
+
 ## 20.12.2022
 
 - Muutettu Rakennuskohde-luokka abstraktiksi, fixes #42
