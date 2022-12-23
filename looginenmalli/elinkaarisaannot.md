@@ -2,7 +2,7 @@
 layout: "default"
 description: ""
 id: "elinkaarisaannot"
-status: "Keskeneräinen"
+status: "Luonnos"
 ---
 # Elinkaarisäännöt
 {:.no_toc}
@@ -380,12 +380,23 @@ Poistuva Rakennelma-luokan objekti tulee yhdistää muutosta kuvaavaan [Rakennus
 
 ### Huoneistotietojen muutokset
 
-Rakennettujen tilojen ja huoneistojen tietoja muutetaan osana [RakennuskohteenToimenpide](dokumentaatio/#rakennuskohteentoimenpide)-luokan avulla kuvattavaa rakennuksen tai sen osan rakentamistoimenpidettä. Suunnitellut tilojen ja huoneistojen muutokset kuvataan osana suunnitelman mukaisia [Rakennus](dokumentaatio/#rakennus)- tai [RakennuksenOsa](dokumentaatio/#rakennuksenosa)-objekteja, ks. vaatimus [elinkaari/vaat-suunniteltu-rakennuskohde](#elinkaari/vaat-suunniteltu-rakennuskohde). Toimenpiteen sisältämää suunniteltua muutosta kuvaavan [RakennuskohteenMuutos](dokumentaatio/#rakennuskohteenmuutos)-luokan attribuutti ```huoneistonMuutos``` sisältää uuden rakennetavan huoneiston, olemassaolevan huoneiston muutoksen tai huoneiston poiston tiedot.
+Rakennettujen tilojen ja huoneistojen tietoja voidaan muuttaa osana [RakennuskohteenToimenpide](dokumentaatio/#rakennuskohteentoimenpide)-luokan avulla kuvattavaa rakennuksen tai sen osan rakentamistoimenpidettä. Suunnitellut tilojen ja huoneistojen tiedot  kuvataan osana suunnitelman mukaisia [Rakennus](dokumentaatio/#rakennus)- tai [RakennuksenOsa](dokumentaatio/#rakennuksenosa)-objekteja, ks. vaatimus [elinkaari/vaat-suunniteltu-rakennuskohde](#elinkaari/vaat-suunniteltu-rakennuskohde). Toimenpiteen sisältämää suunniteltua muutosta kuvaavan [RakennuskohteenMuutos](dokumentaatio/#rakennuskohteenmuutos)-luokan attribuutti ```huoneistonMuutos``` sisältää uuden rakennetavan huoneiston, olemassaolevan huoneiston muutoksen tai huoneiston poiston tiedot.
 
 [HuoneistonMuutos](dokumentaatio/#huoneistonmuutos)-luokka tarjoaa [RakennuskohteenMuutos](dokumentaatio/#rakennuskohteenmuutos)-luokkaa rajoitetumman linkityksen rakennuksen sisältämien huoneistojen muutoshistorian seuraamiseen, sillä siihen liitetään vain suunnitellun tai toteutuneen huoneiston tila (attribuutti ```muuttunutHuoneisto```), ei huoneiston tilaa ennen muutosta. Huoneiston aiempikin tila on kuitenkin saatavissa epäsuorasti, sillä Rakennus-luokan objektin muutosta edeltävä tila, sisältäen huoneistojen tiedot, löytyy RakennuskohteenMuutos-luokan ```kohdeEnnenMuutosta``` avulla.
 
-- lisättävä Huoneisto: elinkaarenVaihe ja koodisto HuoneistonElinkaarenVaihe (koodit Suunnnitteilla, Muuttovalmis, Käytössä, Muuttokiellossa, Purettu, Tuhoutunut, Poistettu, Yhdistetty tai jaettu)
+{% include common/clause_start.html type="req" id="elinkaari/vaat-huoneisto-elinkaaren-vaiheen-sallitut-muutokset" %}
+[Huoneisto](dokumentaatio/#huoneisto)-luokan objektien ```elinkaarenVaihe``` arvot voivat muuttua [RakennuskohteenToimenpide](dokumentaatio/#rakennuskohteentoimenpide)-luokan kuvaamana vain seuraavasti:
 
+* Arvosta ```1 - Suunnitteilla``` arvoihin ```2 - Muuttovalmis```, ```3 - Käytössä``` tai ```4 - Muuttokiellossa```.
+* Arvosta ```2 - Muuttovalmis``` arvoihin ```3 - Käytössä```, ```4 - Muuttokiellossa```, ```5 - Purettu```, ```6 - Tuhoutunut```, ```7 - Poistettu``` tai ```8 - Yhdistetty tai jaettu```.
+* Arvosta ```3 - Käytössä``` arvoihin ```4 - Muuttokiellossa```, ```5 - Purettu```, ```6 - Tuhoutunut```, ```7 - Poistettu``` tai ```8 - Yhdistetty tai jaettu```.
+* Arvosta ```4 - Muuttokiellossa``` arvoihin ```2 - Muuttovalmis```, ```3 - Käytössä```, ```5 - Purettu```, ```6 - Tuhoutunut```, ```7 - Poistettu``` tai ```8 - Yhdistetty tai jaettu```.
+* Arvoista ```5 - Purettu```, ```6 - Tuhoutunut```, ```7 - Poistettu``` ja ```8 - Yhdistetty tai jaettu``` ei ole sallittuja siirtymiä.
+{% include common/clause_end.html %}
+
+{% include common/clause_start.html type="req" id="elinkaari/vaat-huoneiston-varusteiden-muutokset" %}
+Huoneistoon sen muutostoimenpiteen johdosta lisättävät ja poistuvat varusteet kuvataan  [HuoneistonMuutos](dokumentaatio/#huoneistonmuutos)-luokan Luokan [HuoneistonVaruste](dokumentaatio/#huoneistonvaruste) mukaisen rakenteisen attribuutin ```varustemuutos``` avulla. Lisättävien varusteiden osalta käytetään attribuutin ```kuuluuKohteeseen``` arvoa ```true```, ja poistuvien varusteen osalta arvoa ```false```.
+{% include common/clause_end.html %}
 
 ### Hissien ja sisäänkäyntien muutokset
 

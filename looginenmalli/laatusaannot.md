@@ -2,7 +2,7 @@
 layout: "default"
 description: ""
 id: "laatusaannot"
-status: "Keskeneräinen"
+status: "Luonnos"
 ---
 # Laatusäännöt
 {:.no_toc}
@@ -191,6 +191,9 @@ RakennuskohteenMuutos-luokan assosiaation ```kohdeEnnenMuutosta``` tulee viitata
 RakennuskohteenMuutos-luokan assosiaation ```kohdeMuutoksenJälkeen``` tulee viitata [Rakennuskohde](dokumentaatio/#rakennuskohde)-luokan objektiin, joka kuvaa rakennuskohteen uutta tilaa suunnitellun muutoksen toteuttamisen jälkeen.
 {% include common/clause_end.html %}
 
+### HuoneistonMuutos
+{% include common/question.html content="HuoneistonMuutos.muutoksenLaji-attribuutin arvojen (lisäys, muutos, poisto) arvojen yhteyttä liittyvien Huoneistojen ```elinkaarenVaihe```-attribuutin arvoihin tulisi ehkä tarkentaa. Kaikki kombinaatiot eivät liene mielekkäitä, esim. puretun huoneiston lisäys rakennukseen" %}
+
 ### Rakennus
 
 {% include common/clause_start.html type="req" id="laatu/vaat-rakennuksen-geometria" %}
@@ -251,7 +254,7 @@ Kunkin yhden [Rakennus](dokumentaatio/#rakennus)-luokan objektin sisältämien [
 
 ### Huoneisto
 
-### HuoneistonMuutos
+
 
 ### Huone
 
