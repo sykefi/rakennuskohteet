@@ -5,6 +5,19 @@ id: "muutosloki"
 ---
 # Muutosloki
 
+
+## 23.12.2022
+
+- Korjattu Rakennelma-luokan attribuutin ```väliaikainenTunnus```-attribuutin kardinaliteetti 1 -> 0..1
+- Lisätty Hissi-luokkaan attribuutti elinkaarenVaihe, ja koodistoluokka SiäänkäynninTaiHissinElinkaarenVaihe, fixes #45,
+- Lisätty Sisäänkäynti-luokkaan attribuutti elinkaarenVaihe, fixes #44 
+
+## 22.12.2022
+
+- Lisätty RakennuksenOsittelu-luokkaan kuvaus-attribuutti. Hyödyllinen, mikäli perusteen lajiksi valitaan "muu ositteluperuste".
+- Lisätty Huoneisto-luokkaan attribuutti elinkaarenVaihe ja sille koodistoluokka HuoneistonElinkaarenVaihe. Poistettu attribuutit muuttokiellossa ja muuttovalmis, jotka ilmenevät elinkaarenVaihe-attribuutin arvoina, fixes #43
+- Muutettu RakennuskohteenMuutos-luokan assosiaation ```paikka:Rakennuspaikka``` kardinaliteetti 1..* -> 1. Kunkin rakennuskohteen muutoksen on koskettava täsmälleen yhtä rakennuspaikkaa.
+
 ## 21.12.2022
 
 - Lisätty otsikkotason rakenne dokumentaatiosivulle.
