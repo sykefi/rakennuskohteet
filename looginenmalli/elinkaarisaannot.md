@@ -254,12 +254,12 @@ Luokkien [RakennusTaiSenOsa](dokumentaatio/rakennustaisenosa) tai [RakennelmaTai
 
 * Arvosta ```01 - suunnitteilla``` arvoihin ```02 - rakenteilla``` tai ```03 - käytössä```.
 * Arvosta ```02 - rakenteilla``` arvoihin ```03 - käytössä``` tai ```04 - käyttökiellossa/käyttökelvoton```, ```05 - tuhoutunut``` tai ```06 - purettu```.
-* Arvosta ```03 - käytössä``` arvoihin ```04 - käyttökiellossa/käyttökelvoton```, ```05 - tuhoutunut``` tai ```06 - purettu```.
-* Arvosta ```04 - käyttökiellossa/käyttökelvoton``` arvoihin ```02 - rakenteilla```, ```03 - käytössä```, ```05 - tuhoutunut``` tai ```06 - purettu```.
-* Arvoista ```05 - tuhoutunut``` tai ```06 - purettu``` ei ole sallittuja muutoksia.
+* Arvosta ```03 - käytössä``` arvoihin ```04 - käyttökiellossa/käyttökelvoton```, ```05 - tuhoutunut```, ```06 - purettu```, ```07 - yhdistetty tai jaettu``` tai ```08 - rakennelma muutettu rakennukseksi```
+* Arvosta ```04 - käyttökiellossa/käyttökelvoton``` arvoihin ```02 - rakenteilla```, ```03 - käytössä```, ```05 - tuhoutunut```, ```06 - purettu```, ```07 - yhdistetty tai jaettu``` tai ```08 - rakennelma muutettu rakennukseksi```.
+* Arvoista ```05 - tuhoutunut```, ```06 - purettu```, ```07 - yhdistetty tai jaettu``` ja ```08 - rakennelma muutettu rakennukseksi``` ei ole sallittuja muutoksia.
 {% include common/clause_end.html %}
 
-## Rakennuskohteiden suunnitelmatiedot
+## Rakennuskohteiden muutostoimenpiteet
 
 Sekä uusien rakennuskohteiden suunnitelmat että aiemmin toteutettujen rakennuskohteiden muutos-, laajennus-, korjaus- ja purkamissuunnitelmat kuvataan [RakennuskohteenToimenpide](dokumentaatio/#rakennuskohteentoimenpide)-luokan avulla. Luokka sisältää toimenpiteen kuvaustietojen lisäksi varsinaiset suunnitellut muutokset, jotka kuvataan luokan [RakennuskohteenMuutos](dokumentaatio/#rakennuskohteenmuutos)-luokan mukaisina rakenteisina ```suunniteltuMuutos```-attribuutin arvoina.
 
@@ -291,32 +291,156 @@ Muutettavan, laajennettavan tai korjattavan rakennuksen tai -rakennelman tai nii
 Rakennuskohteeseen sen muutostoimenpiteen johdosta kuuluvat lisättävät ja poistuvat varusteet kuvataan  [RakennuskohteenMuutos](dokumentaatio/#rakennuskohteenmuutos)-luokan Luokan [RakennuksenVaruste](dokumentaatio/#rakennuksenvaruste) mukaisen rakenteisen attribuutin ```varustemuutos``` avulla. Lisättävien varusteiden osalta käytetään attribuutin ```kuuluuKohteeseen``` arvoa ```true```, ja poistuvien varusteen osalta arvoa ```false```.
 {% include common/clause_end.html %}
 
+
 ### Olemassaolevien rakennusten tai rakennelmien yhdistäminen
 
-kohdeEnnenMuutosta-assosiaatiolla viitataan niihin rakennuksiin tai rakennelmiin (eri PRT:t), jotka toimenpiteella yhdistetään yhdeksi, ja kohdeMuutoksenJälkeen siihen rakennukseen tai rakennelmaan (yksi PRT), joka kuvaa kohdetta yhdistämisen jälkeen.
+Rakennuskohteen toimenpide voi johtaa kahden tai useamman olemassaolevan, omalla pysyvällä rakennustunnuksella tunnistettavan rakennuksen tai rakennelman yhdistämiseen yhdeksi rakennukseksi. Jäljelle jäävä rakennus voi olla joko jompi kumpi alkuperäisistä rakennuksista tai uusi rakennus tai rakennelma.
 
 {% include common/note.html content="Vaatinee ristiintarkitusta ja harmonisointia DVV:n (PRT) rakennustietojen elinkaaren tapahtumien kanssa" %}
 
-### Olemassaolevan rakennusten tai rakennelmien jakaminen kahdeksi eri rakennuskohteeksi
+{% include common/clause_start.html type="req" id="elinkaari/vaat-yhdistaminen-kohteen-osittelut" %}
+Mikäli yhdistämisessä jäljelle jäävä tai uutena luotu Rakennus- tai Rakennelma-luokan objekti koostuu on valmiiksi osista, päivitetään osittelut vastaamaan uutta kokonaisuutta vastaavasti kuin rakennuksen tai rakennelman laajentamistoimenpiteen tapauksessa. Mikäli taas yhdistämisessä jäljelle jäävä tai uutena luotu Rakennus- tai Rakennelma-luokan objekti ei aiemmin koostunut [RakennuksenOsa](dokumentaatio/#rakennuksenosa)- tai [RakennelmanOsa](dokumentaatio/#rakennelmanosa)-luokkien objekteista, tulee yhdistämisessä laatia uudet, poistuvia erillisiä Rakennus- ja Rakennelma-luokkien objekteja vastaavat RakennuksenOsa- ja RakennelmanOsa-luokat, jotka yhdistetään ne kokoavaan Rakennus- tai Rakennelma-luokan objektiin assosiaation ```rakennus``` tai ```rakennelma``` avulla. Yhdistettävien rakennusten tapauksessa luodaan uusi [RakennuksenOsittelu](dokumentaatio/#rakennuksenosittelu)-luokan kuvaama rakenteinen attribuutti ```osittelu```, jonka attribuutti ```ositteluperuste``` saa arvon ```2 - Rakentamishistoriaan perustuva osittelu```, ja johon uudet RakennuksenOsa-luokan objektit liitetään assosiaatiolla ```osa```. Yhdistettävien rakennelmien tapauksessa uudet RakennelmanOsa-luokan objektit liitetään suoraan Rakennelma-luokan objektiin sen assosiaatiolla ```osa```.
+{% include common/clause_end.html %}
 
-kohdeEnnenMuutosta-assosiaatiolla viitataan rakennukseen tai rakennelmaan (yksi PRT), joka toimenpiteella jaetaan useammaksi rakennukseksi tai rakennelmaksi, ja kohdeMuutoksenJälkeen niihin rakennuksiin tai rakennelmiin, joka kuvaavat kohteita jakamisen jälkeen (eri PRT:t).
+{% include common/clause_start.html type="req" id="elinkaari/vaat-yhdistaminen-kohde-ennen-jalkeen" %}
+Yhdistämisen sisältävää muutosta kuvaavaan [RakennuskohteenMuutos](dokumentaatio/#rakennuskohteenmuutos)-luokan objektiin tulee yhdistää assosiaation ```kohdeEnnenMuutosta``` avulla kaikkiin niihin Rakennus- tai Rakennelma-luokan objekteihin, jotka kuvaavat yhdistetyn rakennuksen tai rakennelman osia ennen niiden yhdistämistä. Samaan RakennuskohteenMuutos-luokan objektiin tulee yhdistää assosiaation ```kohdeMuutoksenJälkeen``` avulla jäljelle jäävä tai uutena luoto Rakennus- tai Rakennelma-luokan objekti.
+{% include common/clause_end.html %}
+
+#### Yhdistyminen olemassaolevaan kohteeseen
+
+{% include common/clause_start.html type="req" id="elinkaari/vaat-kohteen-yhdistaminen-toiseen" %}
+Kun kaksi tai useampi [Rakennus](dokumentaatio/#rakennus)- tai [Rakennelma](dokumentaatio/#rakennelma)-luokan objektia yhdistetään samaksi Rakennus- tai Rakennelma-kohteeksi osana [RakennuskohteenToimenpide](dokumentaatio/#rakennuskohteentoimenpide)-luokan kuvaamaa rakentamistoimenpidettä siten, että yksi alkuperäisistä rakennuksista tai rakennelmista laajenee siihen yhdistettävillä entisten erillisten kohteiden muodostamilla osilla, tulee yhdistetyn Rakennus- tai Rakennelma-kohteen tiedot päivittää kuvaamaan uutta yhdistettyä rakennusta tai rakennelmaa. 
+
+Jäljelle jäävän Rakennus- tai Rakennelma-luokan objektin attribuutin ```pysyväRakennusTunnus``` arvo säilyy muuttumattomana, samoin kuin sen ```identiteettiTunnus```-attribuutin arvo. Poistuvien, jäljelle jäävän kohteen uusiksi osiksi yhdistettyjen Rakennus- tai Rakennelma-luokan objektien attribuutin ```elinkaarenVaihe``` arvoksi tulee ```07 - Yhdistetty tai jaettu```.
+{% include common/clause_end.html %}
+
+#### Yhdistyminen uudeksi kohteeksi
+
+{% include common/clause_start.html type="req" id="elinkaari/vaat-kohteen-yhdistaminen-toiseen" %}
+Kun kaksi tai useampi [Rakennus](dokumentaatio/#rakennus)- tai [Rakennelma](dokumentaatio/#rakennelma)-luokan objektia yhdistetään samaksi Rakennus- tai Rakennelma-kohteeksi osana [RakennuskohteenToimenpide](dokumentaatio/#rakennuskohteentoimenpide)-luokan kuvaamaa rakentamistoimenpidettä siten, että yhdistetylle kohteelle luodaan uusi Rakennus- tai Rakennelma-luokan objekti, tulee uuden Rakennus- tai Rakennelma-kohteen tiedoissa kuvava koko yhdistettyn rakennuksen tai rakennelman tiedot. 
+
+Uudelle Rakennus- tai Rakennelma-luokan objektille annetaan uudet attribuuttien ```pysyväRakennusTunnus```- ja ```identiteettiTunnus``` arvot. Poistuvien, uuden kohteen uusiksi osiksi yhdistettyjen Rakennus- tai Rakennelma-luokan objektien attribuutin ```elinkaarenVaihe``` arvoksi tulee ```07 - yhdistetty tai jaettu```.
+{% include common/clause_end.html %}
+
+### Olemassaolevan rakennusten tai rakennelmien jakaminen eri rakennuskohteiksi
+
+Rakennuskohteen toimenpide voi johtaa olemassaolevan, omalla pysyvällä rakennustunnuksella tunnistettavan rakennuksen tai rakennelman jakamiseen kahdeksi tai useammaksi rakennukseksi tai rakennelmaksi, joilla on kullakin oma pysyvä rakennustunnus. Alkuperäinen jaettava kohde voi olla yksi jäljelle jäävistä kohteista, tai sen elinkaari voi kokonaan päättyä.
 
 {% include common/note.html content="Vaatinee ristiintarkitusta ja harmonisointia DVV:n (PRT) rakennustietojen elinkaaren tapahtumien kanssa" %}
 
-### Rakennuksen osittelut
+{% include common/clause_start.html type="req" id="elinkaari/vaat-jakamienn-kohde-ennen-jalkeen" %}
+Jakamisen sisältävää muutosta kuvaavaan [RakennuskohteenMuutos](dokumentaatio/#rakennuskohteenmuutos)-luokan objektiin tulee yhdistää assosiaation ```kohdeEnnenMuutosta``` avulla siihen Rakennus- tai Rakennelma-luokan objektiin, joka kuvaa rakennusta tai rakennelmaa ennen sen jakamista. Samaan RakennuskohteenMuutos-luokan objektiin tulee yhdistää assosiaation ```kohdeMuutoksenJälkeen``` avulla sekä mahdollinen jäljelle jäävä että uutena luodut Rakennus- tai Rakennelma-luokan objektit.
 
-* Käyttötarkoituksittain
-* Rakentamishistorian perusteella
+Jakamisessa mahdollisesti jäljelle jäävän Rakennus- tai Rakennelma-luokan objektin tiedot sisältäen sen mahdolliset osittelut päivitetään vastaamaan uutta kokonaisuutta vastaavasti kuin rakennuksen tai rakennelman muutostoimenpiteen tapauksessa.
+{% include common/clause_end.html %}
 
-### Huoneistotietojen suunnitellut muutokset
+#### Rakennuskohteesta jaetaan osia eri rakennuskohteiksi
+
+{% include common/clause_start.html type="req" id="elinkaari/vaat-kohteen-yhdistaminen-toiseen" %}
+Kun [Rakennus](dokumentaatio/#rakennus)- tai [Rakennelma](dokumentaatio/#rakennelma)-luokan objekti jaetaan kahdeksi tai useammaksi Rakennus- tai Rakennelma-kohteeksi osana [RakennuskohteenToimenpide](dokumentaatio/#rakennuskohteentoimenpide)-luokan kuvaamaa rakentamistoimenpidettä siten, että yksi alkuperäisistä rakennuksista tai rakennelmista jää jäljelle alkuperäistä pienempänä, tulee sekä alkuperäisen että uutena luotavien Rakennus- tai Rakennelma-kohteiden tiedot antaa siten, että ne kuvaavat uusia jaettuja rakennuksia tai rakennelmia. 
+
+Jäljelle jäävän Rakennus- tai Rakennelma-luokan objektin attribuutin ```pysyväRakennusTunnus``` arvo säilyy muuttumattomana, samoin kuin sen ```identiteettiTunnus```-attribuutin arvo.  Uusille Rakennus- tai Rakennelma-luokkien objektille annetaan uudet attribuuttien ```pysyväRakennusTunnus```- ja ```identiteettiTunnus``` arvot.
+{% include common/clause_end.html %}
+
+#### Rakennuskohde korvataan eri rakennuskohteilla
+
+{% include common/clause_start.html type="req" id="elinkaari/vaat-kohteen-yhdistaminen-toiseen" %}
+Kun [Rakennus](dokumentaatio/#rakennus)- tai [Rakennelma](dokumentaatio/#rakennelma)-luokan objekti korvataan kahdella tai useammalla uudella Rakennus- tai Rakennelma-luokan objektilla osana [RakennuskohteenToimenpide](dokumentaatio/#rakennuskohteentoimenpide)-luokan kuvaamaa rakentamistoimenpidettä ilman että alkuperäistä rakennuskohdetta puretaan, tulee uusien rakennuskohteiden tiedot antaa siten, että ne kuvaavat uusi jaettuja rakennuksia tai rakennelmia. 
+
+Poistuvan, elinkaarensa päättävän Rakennus- tai Rakennelma-luokan objektin attribuutin attribuutin ```elinkaarenVaihe``` arvoksi tulee ```07 - yhdistetty tai jaettu```.  Uusille Rakennus- tai Rakennelma-luokkien objektille annetaan uudet attribuuttien ```pysyväRakennusTunnus```- ja ```identiteettiTunnus``` arvot.
+{% include common/clause_end.html %}
+
+### Monimutkaiset jakamis- ja yhdistämistoimenpiteet
+
+Yhden rakentamistoimenpiteen avulla voidaan kuvata myös muutoksia, jotka sisältävät sekä olemassaolevien rakennuskohteiden jakamista erillisiksi rakennuskohteiksi että niiden yhdistämistä samoiksi rakennuskohteiksi. Esimerkiksi kaksi olemassaolevaa, toisiinsa kiinni rakennettua rakennusta muutetaan kolmeksi erilliseksi rakennukseksi siten, että toinen alkuperäisistä rakennuksista jää jäljelle samalla pysyvällä rakennustunnuksella, mutta osa sen tilasta siirtyy toiseen uusista rakennuksista. Toisen alkuperäisen rakennnuksen elinkaari päättyy muutokseen. Tuloksena luodaan kaksi uutta rakennusta, joista toiseen kuuluu tiloja molemmmista alkuperäisistä rakennuksista ja toiseen vain osa poistuvasta alkuperäisestä rakennuksesta.
+
+{% include common/clause_start.html type="req" id="elinkaari/vaat-monimutkaiset-toimenpiteet" %}
+Mikäli [RakentamiskohteenToimenpide](dokumentaatio/#rakentamiskohteentoimenpide)-luokan objektina kuvatussa muutoksessa tehdään sekä olemassa olevien rakennuskohteiden jakamista osiin että niiden yhdistämistä samoiksi rakennuskohteiksi, tulee kaikki muutostoimenpiteen piiriin kuuluvat olemassa olevat [Rakennuskohde](dokumentaatio/#rakennuskohde)-luokan objektit liittää [RakennuskohteenMuutos](dokumentaatio/#rakennuskohteenmuutos)-luokan objektiin assosiaation ```kohdeEnnenMuutosta``` avulla. Samaan RakennuskohteenMuutos-luokan objektiin tulee yhdistää assosiaation ```kohdeMuutoksenJälkeen``` avulla kaikki muutoksen jälkeen jäljelle jäävät tai uutena luodut Rakennuskohde-luokan objektit.
+
+Kaikkien muutoksessa poistuvien, elinkaarensa päättävien Rakennus- ja Rakennelma-luokan objektien ```elinkaarenVaihe```-attribuuttien arvoksi tulee asettaa ```07 - yhdistetty tai jaettu```.
+{% include common/clause_end.html %}
+
+{% include common/clause_start.html type="req" id="elinkaari/vaat-rakentaminen-ja-purkaminen-erikseen" %}
+Mikäli samassa rakentamishankkeessa tehdään sekä uuden rakennuskohteen rakentamista tai olemassa olevan muuttamista että vanhan rakennuskohteen purkamista kokonaan tai osittain, tulee purkaminen kuvata eri [RakentamiskohteenToimenpide](dokumentaatio/#rakentamiskohteentoimenpide)-luokan objektin avulla kuin rakentaminen ja muuttaminen.
+{% include common/clause_end.html %}
+
+### Rakennelman korvaaminen rakennuksella
+
+Entinen rakennelma voidaan korvata uudella rakennuksella rakentamistoimenpiteen seurauksena.
+
+{% include common/clause_start.html type="req" id="elinkaari/vaat-rakennelman-muutos-rakennukseksi" %}
+Kun rakennelma korvataan uudella rakennuksella osana [RakennuskohteenToimenpide](dokumentaatio/#rakennuskohteentoimenpide)-luokan kuvaamaa rakentamistoimenpidettä, tulee luoda uusi [Rakennus](dokumentaatio/#rakennus)-luokan objekti. Uudelle Rakennus-objektille annetaan uudet attribuuttien ```pysyväRakennusTunnus```- ja ```identiteettiTunnus``` arvot. Poistuvan [Rakennelma](dokumentaatio/#rakennelma)-luokan objektin attribuutin ```elinkaarenVaihe``` arvoksi tulee ```08 - rakennelma korvattu rakennuksella```.
+
+Poistuva Rakennelma-luokan objekti tulee yhdistää muutosta kuvaavaan [RakennuskohteenMuutos](dokumentaatio/#rakennuskohteenmuutos)-luokan objektiin assosiaation ```kohdeEnnenMuutosta``` avulla. Uusi Rakennus-luokan objekti tule yhdistää samaan RakennuskohteenMuutos-luokan objektiin assosiaation ```kohdeMuutoksenJälkeen``` avulla.
+{% include common/clause_end.html %}
+
+### Rakennuksen osittelujen lisäykset ja muutokset
+
+[Rakennus](dokumentaatio/#rakennus) voidaan jakaa loogisiin tai fyysisiin osiin, joista kukin kuvataan [RakennuksenOsa](dokumentaatio/#rakennuksenosa)-luokan objektin avulla, ks. [Laatusäännöt, Rakennuksen osittelut](laatusaannot.html/#rakennuksenosittelut). [RakennuskohteenMuutos](dokumentaatio/#rakennuskohteenmuutos)-luokan kuvaamaan rakennuksen tietojen muutoksen yhteydessä rakennuksen osittelua voidaan muuttaa tai lisätä sille uusi osittelu. Osittelun lisääminen tai muuttaminen ei välttämättä liity rakentamis-, muutos-, korjaamis- tai laajennustoimenpiteeseen, vaan sen kirjaaminen Rakennuksen tietoihin voi olla tarpeen puhtaasti olemassa olevan rakennuksen tietojen täydentämiseksi.
+
+### Huoneistotietojen muutokset
+
+Rakennettujen tilojen ja huoneistojen tietoja muutetaan osana [RakennuskohteenToimenpide](dokumentaatio/#rakennuskohteentoimenpide)-luokan avulla kuvattavaa rakennuksen tai sen osan rakentamistoimenpidettä. Suunnitellut tilojen ja huoneistojen muutokset kuvataan osana suunnitelman mukaisia [Rakennus](dokumentaatio/#rakennus)- tai [RakennuksenOsa](dokumentaatio/#rakennuksenosa)-objekteja, ks. vaatimus [elinkaari/vaat-suunniteltu-rakennuskohde](#elinkaari/vaat-suunniteltu-rakennuskohde). Toimenpiteen sisältämää suunniteltua muutosta kuvaavan [RakennuskohteenMuutos](dokumentaatio/#rakennuskohteenmuutos)-luokan attribuutti ```huoneistonMuutos``` sisältää uuden rakennetavan huoneiston, olemassaolevan huoneiston muutoksen tai huoneiston poiston tiedot.
+
+[HuoneistonMuutos](dokumentaatio/#huoneistonmuutos)-luokka tarjoaa [RakennuskohteenMuutos](dokumentaatio/#rakennuskohteenmuutos)-luokkaa rajoitetumman linkityksen rakennuksen sisältämien huoneistojen muutoshistorian seuraamiseen, sillä siihen liitetään vain suunnitellun tai toteutuneen huoneiston tila (attribuutti ```muuttunutHuoneisto```), ei huoneiston tilaa ennen muutosta. Huoneiston aiempikin tila on kuitenkin saatavissa epäsuorasti, sillä Rakennus-luokan objektin muutosta edeltävä tila, sisältäen huoneistojen tiedot, löytyy RakennuskohteenMuutos-luokan ```kohdeEnnenMuutosta``` avulla.
+
+- lisättävä Huoneisto: elinkaarenVaihe ja koodisto HuoneistonElinkaarenVaihe (koodit Suunnnitteilla, Muuttovalmis, Käytössä, Muuttokiellossa, Purettu, Tuhoutunut, Poistettu, Yhdistetty tai jaettu)
+
+
+### Hissien ja sisäänkäyntien muutokset
+
+[Rakennus](dokumentaatio/#rakennus)-luokan objektiin voi liittyä nolla tai useampia [Hissi](dokumentaatio/#hissi)- ja [Sisäänkäynti](dokumentaatio/#sisäänkäynti)-luokan objekteja. Assosiaation tyyppi on kompositio, joten hissit ja sisäänkäynnit kuuluvat elinkaarensa aikana vain yhteen rakennukseen, eivätkä ne voi olla olemassa, jos rakennus lakkaa olemasta. Tietomallissa hissillä tarkoitetaan siis juuri tiettyyn rakennukseen rakennettua hissiä, jota ei voida siirtää toiseen rakennukseen, ei tiettyä hissikoneistoa. Vastaavasti sisäänkäynnillä tarkoitetaan tietyn rakennuksen ovean tai aukkoa, josta on kulku kohteeseen sen ulkopuolelta, ei tiettyä fyysistä ovea tai sen rakenteita.
+
+{% include common/clause_start.html type="req" id="elinkaari/vaat-hissi-sisaankaynti-elinkaaren-vaiheen-sallitut-muutokset" %}
+[Hissi](dokumentaatio/#hissi)- ja [Sisäänkäynti](dokumentaatio/#sisäänkäynti)-luokan objektien ```elinkaarenVaihe```-attribuuttien arvot voivat muuttua [RakennuskohteenToimenpide](dokumentaatio/#rakennuskohteentoimenpide)-luokan kuvaamana vain seuraavasti:
+
+* Arvosta ```1 - Suunnitteilla``` arvoihin ```2 - Käytössä```, ```3 - Tilapäisesti pois käytöstä``` tai ```5 - Poistettu```.
+* Arvosta ```2 - Käytössä``` arvoihin ```3 - Tilapäisesti pois käytöstä```, ```4 - Poistettu käytöstä```, ```5 - Poistettu``` tai ```6 - Purettu```.
+* Arvosta ```3 - Tilapäisesti pois käytöstä``` arvoihin ```2 - Käytössä```, ```4 - Poistettu käytöstä```, ```5 - Poistettu``` tai ```6 - Purettu```.
+* Arvosta ```4 - Poistettu käytöstä``` arvoihin ```2 - Käytössä```, ```3 - Tilapäisesti pois käytöstä```, ```5 - Poistettu``` tai ```6 - Purettu```.
+* Arvoista ```5 - Poistettu``` ja ```6 - Purettu``` ei ole sallittuja siirtymiä.
+{% include common/clause_end.html %}
+
+
+{% include common/clause_start.html type="req" id="elinkaari/vaat-hissin-sisaankaynnin-ja-rakennuksen-elinkaaret" %}
+Mikäli [Rakennus](dokumentaatio)-luokan objektin ```elinkaarenVaihe```-attribuutin arvo muuttuu alla esitettyihin tiloihin, on myös siihen mahdollisesti liitettyjen [Hissi](dokumentaatio/#hissi)- ja [Sisäänkäynti](dokumentaatio/#sisäänkäynti)-luokan objektien ```elinkaarenVaihe```-attribuuttien muututtava seuraavasti:
+
+| Rakennuksen elinkaarenVaihe         | Hissin tai Sisäänkäynnin elinkaarenVaihe      |
+|-------------------------------------|-----------------------------------------------|
+| ```05 - tuhoutunut```               | ```5 - Poistettu``` *                        |
+| ```06 - purettu```                  | ```6 - Purettu``` *                          |
+| ```07 - yhdistetty tai jaettu```    | ```5 - Poistettu``` *                        |
+
+*) ellei ```elinkaarenVaihe``` ole jo ennestään joko ```5 - Poistettu``` tai ```6 - Purettu```.
+
+Mikäli [Rakennus](dokumentaatio)-luokan objektin ```elinkaarenVaihe```-attribuutin arvo on ```01 - suunnitteilla```, siihen mahdollisesti liitettyjen [Hissi](dokumentaatio/#hissi)- ja [Sisäänkäynti](dokumentaatio/#sisäänkäynti)-luokan objektien ```elinkaarenVaihe```-attribuuttien arvojen on oltava ```1 - Suunnitteilla```.
+
+[Hissi](dokumentaatio/#hissi)- ja [Sisäänkäynti](dokumentaatio/#sisäänkäynti)-luokan objektien ```elinkaarenVaihe```-attribuuttien muutokset eivät vaadi muutoksia niihin liittyviin [Rakennus](dokumentaatio/#rakennus)-luokan objekteihin.
+{% include common/clause_end.html %}
 
 ### Rakennuskohteen purkaminen kokonaan tai osittain
 
-## Tietojen päivittäminen käyttöönoton jälkeen
+Purettaessa Rakennus tai Rakennelma osittain, muutetaan purettavan osan elinkaaren vaiheeksi *purettu*. Purettavan osan kuvaava RakennuksenOsa tai RakennelmanOsa muodostetaan tarvittaessa purkamistoimenpiteen kuvauksen yhteydessä. 
 
-### Rakennuskohteen tietojen päivitykset
+{% include common/clause_start.html type="req" id="elinkaari/vaat-kohteen-purkamistoimenpide" %}
+Rakennuksen tai rakennelman tai niiden uusien osien suunniteltu purkaminen kuvataan luokan [RakennuskohteenToimenpide](dokumentaatio/#rakennuskohteentoimenpide) objektina, jonka attribuutilla ```toimenpiteenLaji``` on koodiston [RakentamistoimenpiteenLaji](dokumentaatio/#rakentamistoimenpiteenlaji) arvo ```05 - Purkaminen``` tai ```08 - Rakennuksen osittainen purkaminen```.
 
-### Huoneistotietojen päivitykset
+Attribuutin ```purkamisenSyy``` avulla voidaan kuvata, miksi purkaminen tehdään. Atttribuuteille ```perusparannus``` ja ```korjausaste``` ei saa antaa arvoja.
+
+Mikäli purkamistoimenpiteen kuvaava [RakennuskohteenToimenpide](dokumentaatio/#rakennuskohteentoimenpide)-luokan objekti liittyy sen ```suunniteltuMuutos```-attribuutin ja edelleen sen ```kohdeEnnenMuutosta```-assosiaation kautta luokkien [Rakennus](dokumentaatio/#rakennus), [RakennuksenOsa](dokumentaatio/#rakennuksenosa),  [Rakennelma](dokumentaatio/#rakennelma), tai [RakennelmanOsa](dokumentaatio/#rakennelmanosa) objekteihin, tulee näiden objektien ```elinkaarenVaihe```-attribuutin arvojen olla jokin seuraavista: ```02 - rakenteilla```, ```03 - käytössä``` tai ```04 - käyttökiellossa/käyttökelvoton``` tai ```05 - tuhoutunut```. Saman ```suunniteltuMuutos```-attribuutin sisältämän ```kohdeMuutoksenJälkeen```-assosiaatiolla viitattavan [Rakennus](dokumentaatio/#rakennus)-, [RakennuksenOsa](dokumentaatio/#rakennuksenosa)-,  [Rakennelma](dokumentaatio/#rakennelma)-, tai [RakennelmanOsa](dokumentaatio/#rakennelmanosa)-luokkien objektien ```elinkaarenVaihe```-attribuuttien arvojen tulee olla ```06 - purettu```.
+{% include common/clause_end.html %}
+
+{% include common/clause_start.html type="req" id="elinkaari/vaat-osittainen-purkaminen-rakennuksen-osat" %}
+Mikäli rakennus puretaan osittain, on purettava osa mahdollisuuksien mukaan kuvattava omana [RakennuksenOsa](dokumentaatio/#rakennuksenosa)-luokan objektinaan, joka on liitetty siihen [Rakennus](dokumentaatio/#rakennnus)-luokan objektiin, jonka osaan purkaminen kohdistuu, käyttäen [RakennuksenOsittelu](dokumentaatio/#rakennuksenosittelu)-luokan attribuutin ```osittelunPeruste``` arvoa ```2 - Rakentamishistoriaan perustuva osittelu```. Tälläinen osittelu ja purettavaa osaa kuvaava RakennuksenOsa-luokan objekti kuvataan [RakennuskohteenToimenpide](dokumentaatio/#rakennuskohteentoimenpide)-luokan objektin ```suunniteltuMuutos```-attribuutin ja edelleen sen ```kohdeMuutoksenJälkeen```-assosiaatiolla liitettävässä Rakennus-luokan objektin ```osittelu```-attribuutin arvona.
+{% include common/clause_end.html %}
+
+{% include common/clause_start.html type="req" id="elinkaari/vaat-osittainen-purkaminen-rakennelman-osat" %}
+Mikäli rakennelma puretaan osittain, on purettava osa mahdollisuuksien mukaan kuvattava omana [RakennelmanOsa](dokumentaatio/#rakennelmanosa)-luokan objektinaan, joka on liitetty siihen [Rakennelma](dokumentaatio/#rakennelma)-luokan objektiin, jonka osaan purkaminen kohdistuu. Tälläinen purettavaa osaa kuvaava RakennelmanOsa-luokan objekti kuvataan [RakennuskohteenToimenpide](dokumentaatio/#rakennuskohteentoimenpide)-luokan objektin ```suunniteltuMuutos```-attribuutin ja edelleen sen ```kohdeMuutoksenJälkeen```-assosiaatiolla liitettävän Rakennelma-luokan objektin ```osa```-assosiaation avulla.
+{% include common/clause_end.html %}
+
+## Tietojen päivittäminen ilman toimenpiteitä
+
+Tietomallissa ei ole määritelty omaa luokkaa rakennuskohteen tietosisältöä täydentäville tai korjaaville tietopäivityksille, johoin ei liity rakennuskohteiden muutostoimenpiteitä, koska tällaisten tietopäivitysten kuvailutietojen siirtämiseen eri tietojärjestelmien välillä ei nähdä harmonisointitarvetta. Järjestelmäkohtaisissa tietomalleissa voidaan kuitenkin käyttää [RakennuskohteenMuutos](dokumentaatio/#rakennuskohteenmuutos)-luokan mukaista rakennetta päivityksen varsinaisen muutostietosisällön kuvaamiseen vastaavasti kuin [Rakentamistoimenpide](dokumentaatio/#rakentamistoimenpide)-luokan ```suunniteltuMuutos```-attribuutissa.
 
 
 

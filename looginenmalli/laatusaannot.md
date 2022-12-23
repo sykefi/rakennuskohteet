@@ -72,6 +72,14 @@ Pistemäiset geometriat toteuttavat ISO 19107 -standardin määrittelemän ```Po
 Aluemaiset geometriat toteuttavat ISO 19107 -standardin määrittelemän ```Surface```-rajapinnan.
 {% include common/clause_end.html %}
 
+{% include common/clause_start.html type="req" id="laatu/vaat-geom-3d-kappale-maar" %}
+3-ulotteiset kappalegeometriat toteuttavat joko ISO 19107 -standardin määrittelemän ```Solid```-rajapinnan.
+{% include common/clause_end.html %}
+
+{% include common/clause_start.html type="req" id="laatu/vaat-geom-kokoelmat-maar" %}
+Geometriakokoelmat toteuttavat ISO 19107 -standardin määrittelemän ```Collection```-rajapinnan. Monipiste (multipoint) -geometriat rakentuvat ```Point```-rajapinnan, monialue (multisurface) -geometriat ```Surface```-rajapinnan ja monikappale (multisolid) -geometriat ```Solid```-rajapinnan toteuttavista osista (```element```-attribuutti).
+{% include common/clause_end.html %}
+
 {% include common/note.html content="Tietomalli ei vaadi kaikkien ISO 19107 -standardin mukaisten geometriatyyppien tukemista. Loogisen tietomallin mukaiset fyysiset tietomallit voivat rajoittaa mahdollisia geometriatyyppejä ja niiden ominaisuuksia." %}
 
 #### Sallitut koordinaatistot ja koordinaattijärjestys
@@ -136,12 +144,6 @@ Aikavälejä kuvaavat attribuutit voidaan antaa joko sekä alku- että loppuajan
 
 ## Luokkakohtaiset säännöt
 
-### Rakennustietomalli
-
-### Rakennussuunnitelma
-
-### Erityissuunnitelma
-
 ### Rakennuspaikka
 
 {% include common/clause_start.html type="req" id="laatu/vaat-rakennuspaikan-osoite" %}
@@ -166,33 +168,84 @@ mMikäli vähintään yksi [Rakennuspaikka](dokumentaatio/#rakennuspaikka)-luoka
 [RakennuskohteenToimenpide](dokumentaatio/#rakennuskohteentoimenpide) kuvaa toimenpiteen, joka kohdistuu yhden Rakennuskohteen rakentamiseen, korjaamiseen, laajentamiseen tai purkamiseen. Erikoistapauksena sama toimenpide voi kohdistua useampaan kuin yhteen Rakennuskohteeseen silloin, kun toimenpiteen johdosta yhdistetään useampia aiemmin erillisiä Rakennuskohteita yhdeksi tai kun pilkotaan yksi Rakennnuskohde useammaksi Rakennuskohteeksi.
 {% include common/clause_end.html %}
 
-RakennuskohteenToimenpide-luokan avulla voidaan kuvata sekä luvanvaraisia että ei-luvanvaraisia toimenpiteitä.
-
 {% include common/clause_start.html type="req" id="laatu/vaat-rakennuskohteen-toimenpide-rakennuspaikat" %}
-[Rakennuspaikat](dokumentaatio/#rakennuspaikka), joihin rakennuskohteen toimenpide kohdistuu, tulee liittyä [RakennuskohteenToimenpide](dokumentaatio/#rakennuskohteentoimenpide)-luokan objektiin assosiaation ```paikka``` avulla.
+[Rakennuspaikan](dokumentaatio/#rakennuspaikka), johon rakennuskohteen toimenpide kohdistuu, tulee liittyä [RakennuskohteenToimenpide](dokumentaatio/#rakennuskohteentoimenpide)-luokan objektiin assosiaation ```paikka``` avulla.
 {% include common/clause_end.html %}
 
 {% include common/clause_start.html type="req" id="laatu/vaat-toimenpiteen-kohde" %}
-[RakennuskohteenToimenpide](dokumentaatio/#rakennuskohteentoimenpide)-luokan objektin on sisällettävä vähintään yksi [RakennuskohteenMuutos](dokumentaatio/#rakennuskohteenmuutos)-luokan kuvaama tietokokonaisuus attribuutin ```suunniteltuMuutos``` arvona. Yhteen RakennuskohteenToimenpide-luokan objektiin voi kuulua vain yhtä rakennusta tai rakennelmaa koskevia suunniteltuja muutoksia, mutta samaan toimenpiteeseen voi kuulua saman rakennuksen tai rakennelman eri osia koskevia suunniteltuja muutoksia. 
+[RakennuskohteenToimenpide](dokumentaatio/#rakennuskohteentoimenpide)-luokan objektin on sisällettävä vähintään yksi [RakennuskohteenMuutos](dokumentaatio/#rakennuskohteenmuutos)-luokan kuvaama tietokokonaisuus attribuutin ```suunniteltuMuutos``` arvona. Samaan rakennuskohteen toimenpiteeseen voi kuulua saman rakennuksen tai rakennelman eri osia koskevia suunniteltuja muutoksia. 
 {% include common/clause_end.html %}
 
 ### Rakennuskohde
 
+{% include common/clause_start.html type="req" id="laatu/vaat-rakennuskohteen-geometria" %}
+[Rakennuskohde](dokumentaatio/#rakennuskohde)-luokan jonkin konkreettisen aliluokan objektilla on oltava ```geometria``` attribuutin arvo, joka kuvaa kyseisen rakennuskohteen maantieteellisen sijainnin.
+{% include common/clause_end.html %}
+
 ### RakennuskohteenMuutos
-
+{% include common/clause_start.html type="req" id="laatu/vaat-kohde-ennen-muutosta" %}
 RakennuskohteenMuutos-luokan assosiaation ```kohdeEnnenMuutosta``` tulee viitata [Rakennuskohde](dokumentaatio/#rakennuskohde)-luokan objektiin, johon suunniteltu muuutos kohdistuu. Mikäli kyseessä on uusi rakennuskohde (esim. uudisrakennus), ei assosiaatiota ```kohdeEnnenMuutosta``` käytetä.
+{% include common/clause_end.html %}
 
+{% include common/clause_start.html type="req" id="laatu/vaat-kohde-muutoksen-jalkeen" %}
 RakennuskohteenMuutos-luokan assosiaation ```kohdeMuutoksenJälkeen``` tulee viitata [Rakennuskohde](dokumentaatio/#rakennuskohde)-luokan objektiin, joka kuvaa rakennuskohteen uutta tilaa suunnitellun muutoksen toteuttamisen jälkeen.
+{% include common/clause_end.html %}
 
 ### Rakennus
 
+{% include common/clause_start.html type="req" id="laatu/vaat-rakennuksen-geometria" %}
+[Rakennus](dokumentaatio/#rakennus)-luokan objektilla on oltava ```geometria``` attribuutin arvo, joka kuvaa kyseisen rakennuksen maantieteellisen sijainnin aluemaisena tai 3-ulotteisena geometriana. Mikäli geometria annetaan aluemaisena, sen tulee vastata rakennuksen pohjapinta-alaa.
+{% include common/clause_end.html %}
+
+#### Rakennuksen osittelut
+
+{% include common/clause_start.html type="req" id="laatu/vaat-rakennuksen-osittelu-maaritelma" %}
+[Rakennus](dokumentaatio/#rakennus)-luokan ```osittelu```-attribuutin avulla kuvataan rakennuksen osittelut, joissa rakennus on jaettu [RakennuksenOsa](dokumentaatio/#rakennuksenosa)-luokan avulla kuvattaviin loogisiin tai fyysisiin osiin esimerkiksi sen rakentamishistorian tai käyttötarkoituksen perusteella.
+{% include common/clause_end.html %}
+
+Osittelut mahdollistavat esimerkiksi [RakennuskohteenMuutos](dokumentaatio/#rakennuskohteenmuutos)-, [Ilmastoselvitys](dokumentaatio/#ilmastoselvitys)- ja [Materiaaliselostus](dokumentaatio/#materiaaliselostus)-luokkien objektien kohdistamisen  vain osaan rakennusta.
+
+{% include common/clause_start.html type="req" id="laatu/vaat-rakennuksen-osittelun-geometriat" %}
+[Rakennus](dokumentaatio/#rakennus)-luokan objektiin sen eri ```osittelu```-attribuuttien arvojen avulla liitettyjen [RakennuksenOsa](dokumentaatio/#rakennuksenosa)-luokan objektien ```geometria```-attribuutin ilmaisemat alueet voivat olla päällekkäisiä tai sisäkkäisiä keskenään tai leikata toisiaan.
+
+Kunkin yhden [Rakennus](dokumentaatio/#rakennus)-luokan objektin sisältämien [RakennuksenOsittelu](dokumentaatio/#rakennuksenosittelu)-luokan assosiaation ```osa``` avulla liitettyjen [RakennuksenOsa](dokumentaatio/#rakennuksenosa)-luokan objektien ```geometria```-attribuutin ilmaisemat alueet eivät kuitenkaan saa olla päällekkäisiä eivätkä leikata toisiaan, mikäli niitä ei ole rajattu pystysuunnassa ei-päällekkäisille korkeustasoille ```pystysuuntainenRajaus```-attribuutin arvojen avulla.
+{% include common/clause_end.html %}
+
+{% include common/clause_start.html type="req" id="laatu/vaat-rakennuksen-kayttotarkoitusosittelu" %}
+[Rakennus](dokumentaatio/#rakennus)-luokan objekti voi sisältää enintään yhden sellaisen rakenteisen ```osittelu```-attributin arvon, jonka attribuutin ```osittelunPeruste``` arvo on ```1 - Käyttötarkoitukseen perustuva osittelu```.
+{% include common/clause_end.html %}
+
+{% include common/clause_start.html type="req" id="laatu/vaat-rakennuksen-historiaosittelu" %}
+[Rakennus](dokumentaatio/#rakennus)-luokan objekti voi sisältää enintään yhden sellaisen rakenteisen ```osittelu```-attributin arvon, jonka attribuutin ```osittelunPeruste``` arvo on ```2 - Rakentamishistoriaan perustuva osittelu```.
+{% include common/clause_end.html %}
+
 ### RakennuksenOsa
+
+{% include common/clause_start.html type="req" id="laatu/vaat-rakennuksen-osan-geometria" %}
+[RakennuksenOsa](dokumentaatio/#rakennuksenosa)-luokan objektilla on oltava ```geometria``` attribuutin arvo, joka kuvaa kyseisen rakennuksen osan aluemaisena tai 3-ulotteisena geometriana. Mikäli geometria annetaan aluemaisena, sen tulee vastata rakennuksen osan pohjapinta-alaa.
+{% include common/clause_end.html %}
+
+{% include common/clause_start.html type="req" id="laatu/vaat-rakennuksen-osien-geometriat" %}
+[Rakennus](dokumentaatio/#rakennus)-luokan objektiin sisältyvien [RakennuksenOsittelu](dokumentaatio/#rakennuksenosittelu)-luokan assosiaation ```osa``` avulla liitettyjen [RakennuksenOsa](dokumentaatio/#rakennuksenosa)-luokan objektien ```geometria```-attribuutin arvojen tulee olla sen [Rakennus](dokumentaatio/#rakennus)-luokan objektin ```geometria```-attribuutin arvon sisällä, johon ne kuuluvat, poislukien osat, jotka ovat elinkaaren vaiheissa ```05 - tuhoutunut```, ```06 - purettu``` tai ```07 - yhdistetty tai jaettu```.
+{% include common/clause_end.html %}
 
 ### Rakennelma
 
+{% include common/clause_start.html type="req" id="laatu/vaat-rakennuksen-geometria" %}
+[Rakennelma](dokumentaatio/#rakennelma)-luokan objektilla on oltava ```geometria``` attribuutin arvo, joka kuvaa kyseisen rakennelman maantieteellisen sijainnin aluemaisena tai 3-ulotteisena geometriana. Mikäli geometria annetaan aluemaisena, sen tulee vastata rakennelman pohjapinta-alaa.
+{% include common/clause_end.html %}
+
 ### RakennelmanOsa
 
-### Erityisrakentamisalue
+{% include common/clause_start.html type="req" id="laatu/vaat-rakennelman-osan-geometria" %}
+[RakennelmanOsa](dokumentaatio/#rakennelmanosa)-luokan objektilla on oltava ```geometria``` attribuutin arvo, joka kuvaa kyseisen rakennelman osan aluemaisena tai 3-ulotteisena geometriana. Mikäli geometria annetaan aluemaisena, sen tulee vastata rakennelman osan pohjapinta-alaa.
+{% include common/clause_end.html %}
+
+{% include common/clause_start.html type="req" id="laatu/vaat-rakennelman-osien-geometriat" %}
+[Rakennelma](dokumentaatio/#rakennelma)-luokan objektiin assosiaation ```osa``` avulla sisältyvien [RakennelmanOsa](dokumentaatio/#rakennelmanosa)-luokkien objektien ```geometria```-attribuutin arvojen tulee olla sen [Rakennelma](dokumentaatio/#rakennelma)-luokan objektin ```geometria```-attribuutin arvon sisällä, johon ne kuuluvat, poislukien osat, jotka ovat elinkaaren vaiheissa ```05 - tuhoutunut```, ```06 - purettu``` tai ```07 - yhdistetty tai jaettu```.
+{% include common/clause_end.html %}
+
+### ErityistäTarkoitusVartenRakennettavaAlue
 
 ### RakennettuTila
 
@@ -204,6 +257,7 @@ RakennuskohteenMuutos-luokan assosiaation ```kohdeMuutoksenJälkeen``` tulee vii
 
 ### Sisäänkäynti
 
+RakennuksenSisäänkäynti-assosiaatioluokka
 
 
 ### Ilmastoselvitys
