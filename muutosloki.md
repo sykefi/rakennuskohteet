@@ -30,6 +30,10 @@ id: "muutosloki"
    - ```laatu/vaat-ensisijainen-jaahdytysenergian-lahde```
    - ```laatu/vaat-ensisijainen-sahkoenergian-lahde```
    - ```laatu/vaat-ensisijainen-ilmanvaihtotapa```
+   - ```laatu/vaat-sisaankaynnin-geometria```
+   - ```laatu/vaat-hissin-geometria```
+   - ```laatu/vaat-ilmastoselvitys-rakennuspaikan-pinta-ala```
+
 
 ## 23.12.2022
 

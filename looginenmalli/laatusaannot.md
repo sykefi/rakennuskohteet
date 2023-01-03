@@ -159,7 +159,7 @@ mMikäli vähintään yksi [Rakennuspaikka](dokumentaatio/#rakennuspaikka)-luoka
 {% include common/clause_end.html %}
 
 {% include common/clause_start.html type="req" id="laatu/vaat-rakennuspaikan-geometria" %}
-[Rakennuspaikka](dokumentaatio/#rakennuspaikka)-luokan objektilla on oltava ```geometria``` attribuutin arvo, joka kuvaa kyseisen rakennuspaikan maantieteellisen sijainnin tai alueen joko piste- tai aluemaisena.
+[Rakennuspaikka](dokumentaatio/#rakennuspaikka)-luokan objektilla on oltava ```geometria``` attribuutin arvo, joka kuvaa kyseisen rakennuspaikan sijainnin tai alueen joko piste- tai aluemaisena.
 {% include common/clause_end.html %}
 
 ### RakennuskohteenToimenpide
@@ -179,7 +179,13 @@ mMikäli vähintään yksi [Rakennuspaikka](dokumentaatio/#rakennuspaikka)-luoka
 ### Rakennuskohde
 
 {% include common/clause_start.html type="req" id="laatu/vaat-rakennuskohteen-geometria" %}
-[Rakennuskohde](dokumentaatio/#rakennuskohde)-luokan jonkin konkreettisen aliluokan objektilla on oltava ```geometria``` attribuutin arvo, joka kuvaa kyseisen rakennuskohteen maantieteellisen sijainnin.
+[Rakennuskohde](dokumentaatio/#rakennuskohde)-luokan jonkin konkreettisen aliluokan objektilla on oltava ```geometria``` attribuutin arvo, joka kuvaa kyseisen rakennuskohteen sijainnin.
+{% include common/clause_end.html %}
+
+### RakennuskohteenOmistaja
+
+{% include common/clause_start.html type="req" id="laatu/vaat-rakennuskohteen-omistaja" %}
+[RakennuskohteenOmistaja](dokumentaatio/#rakennuskohteenomistaja)-luokan objektin on sisällettävä vain joko ```tunnuksellinenOmistaja```-assosiaation tai ```tunnuksetonOmistaja```-attribuutin arvo. Ensisijaisesti on annettava {% include common/moduleLink.html moduleId="yhteisetkomponentit" path="looginenmalli/dokumentaatio/#toimija" title="Toimija" %}-rajapinnan mukainen tieto assosiaation ```tunnuksellinenOmistaja``` kautta. Mikäli omistajan yksilöivää tunnusta ei ole saatavissa, esimerkiksi ulkomaisen omistajan tapauksessa, annetaan omistajan tiedot luokan [TunnuksettomanOmistajanTiedot](dokumentaatio/#tunnuksettomanomistajantiedot) kuvaaman rakenteisen ```tunnuksetonOmistaja```-attribuutin avulla.
 {% include common/clause_end.html %}
 
 ### RakennuskohteenMuutos
@@ -197,7 +203,7 @@ RakennuskohteenMuutos-luokan assosiaation ```kohdeMuutoksenJälkeen``` tulee vii
 ### Rakennus
 
 {% include common/clause_start.html type="req" id="laatu/vaat-rakennuksen-geometria" %}
-[Rakennus](dokumentaatio/#rakennus)-luokan objektilla on oltava ```geometria``` attribuutin arvo, joka kuvaa kyseisen rakennuksen maantieteellisen sijainnin aluemaisena tai 3-ulotteisena geometriana. Mikäli geometria annetaan aluemaisena, sen tulee vastata rakennuksen pohjapinta-alaa.
+[Rakennus](dokumentaatio/#rakennus)-luokan objektilla on oltava ```geometria``` attribuutin arvo, joka kuvaa kyseisen rakennuksen sijainnin aluemaisena tai 3-ulotteisena geometriana. Mikäli geometria annetaan aluemaisena, sen tulee vastata rakennuksen pohjapinta-alaa.
 {% include common/clause_end.html %}
 
 {% include common/clause_start.html type="req" id="laatu/vaat-rakennuksen-ensisijainen-sisaankaynti" %}
@@ -247,7 +253,7 @@ Kunkin yhden [Rakennus](dokumentaatio/#rakennus)-luokan objektin sisältämien [
 ### Rakennelma
 
 {% include common/clause_start.html type="req" id="laatu/vaat-rakennuksen-geometria" %}
-[Rakennelma](dokumentaatio/#rakennelma)-luokan objektilla on oltava ```geometria``` attribuutin arvo, joka kuvaa kyseisen rakennelman maantieteellisen sijainnin aluemaisena tai 3-ulotteisena geometriana. Mikäli geometria annetaan aluemaisena, sen tulee vastata rakennelman pohjapinta-alaa.
+[Rakennelma](dokumentaatio/#rakennelma)-luokan objektilla on oltava ```geometria``` attribuutin arvo, joka kuvaa kyseisen rakennelman sijainnin aluemaisena tai 3-ulotteisena geometriana. Mikäli geometria annetaan aluemaisena, sen tulee vastata rakennelman pohjapinta-alaa.
 {% include common/clause_end.html %}
 
 ### RakennelmanOsa
@@ -274,6 +280,16 @@ Mikäli [Huoneisto](dokumentaatio/#huoneisto)-luokan objektilla ei ole attribuut
 
 {% include common/clause_start.html type="rec" id="laatu/suos-huoneiston-yhteys-rakennuksen-osaan" %}
 [Huoneisto](dokumentaatio/#huoneisto)-luokan objekti tulisi liittää kuhunkin [RakennuksenOsa](dokumentaatio/#rakennuksenosa)-luokan objektiin, johon se fyysisesti sisältyy käyttäen assosiaatiota ```sisältäväRakennuksenOsa```.
+{% include common/clause_end.html %}
+
+### Sisäänkäynti
+{% include common/clause_start.html type="req" id="laatu/vaat-sisaankaynnin-geometria" %}
+[Sisäänkäynti](dokumentaatio/#sisäänkäynti)-luokan objektilla on oltava ```geometria``` attribuutin arvo, joka kuvaa kyseisen sisäänkäynnin sijainnin pistemäisenä.
+{% include common/clause_end.html %}
+
+### Hissi
+{% include common/clause_start.html type="req" id="laatu/vaat-hissin-geometria" %}
+Mikäli [Hissi](dokumentaatio/#hissi)-luokan objektille annetaan ```geometria``` attribuutin arvo, sen on oltava kuvattava hissin sijainti pistemäisenä.
 {% include common/clause_end.html %}
 
 ### Materiaalitiedot
@@ -346,7 +362,11 @@ Kuhunkin [Ilmastoselvitys](dokumentaatio/#ilmastoselvitys)-luokan objektiin tule
 {% include common/clause_end.html %}
 
 {% include common/clause_start.html type="req" id="laatu/vaat-ilmastoselvitys-kaikki-ostoenergian-lahteet-annettava" %}
-Rakennusta tai sen osaa koskevan [Ilmastoselvitys](dokumentaatio/#ilmastoselvitys)-luokan objektin tulee sisältää tiedot ko. rakennuksen laskennallisesta ostoenergian kulutuksesta energialähteittäin. Kunkin energialähteen osuus ostoenergian arvioidusta kokonaiskulutuksesta annetaan oman ```rakennuksenLaskennallinenOstoenergianKulutus``` -attribuutin avulla.
+Rakennusta tai sen osaa koskevan [Ilmastoselvitys](dokumentaatio/#ilmastoselvitys)-luokan objektin tulee sisältää tiedot ko. rakennuksen laskennallisesta ostoenergian kulutuksesta energialähteittäin. Ostoenergian kulutus annetaan kunkin assosiaation ```kohde``` kautta liitetyn [RakennusTaiSenOsa](dokumentaatio/#rakennustaisenosa)-luokan rakenteisen ```energiatiedot```-attribuutin osana olevan ```laskennallinenOstoenergianKulutus```-attribuutin avulla kullekin energialajille.
+{% include common/clause_end.html %}
+
+{% include common/clause_start.html type="req" id="laatu/vaat-ilmastoselvitys-rakennuspaikan-pinta-ala" %}
+Rakennusta tai sen osaa koskevan [Ilmastoselvitys](dokumentaatio/#ilmastoselvitys)-luokan objektin tulee sisältää tiedot rakennuksen rakennuspaikan pinta-alasta. Kunkin assosiaation ```kohde``` kautta liitetyn [RakennusTaiSenOsa](dokumentaatio/#rakennustaisenosa)-luokan objektin ```paikka```-assosiaation kautta liitetyn [Rakennuspaikka](dokumentaatio/#rakennuspaikka)-luokan objektin tulee sisältää ```pintaAla```-attribuutin arvo.
 {% include common/clause_end.html %}
 
 #### Rakentamisen vähähiilisyyden arvioinnin tulosten arvot
