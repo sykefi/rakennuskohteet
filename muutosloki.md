@@ -6,10 +6,35 @@ id: "muutosloki"
 # Muutosloki
 
 
+## 3.1.2023
+- Päivitetty uusin ry-yhteiset dev.
+- Uudelleennimetty koodistoluokka SisäänkäynninTaiHissinElinkaarenVaihe -> RakennuksenToiminnallisenOsanElinkaarenVaihe.
+- Lisätty Y-alustan koodistoihin viittaavat vocabulary-tagien arvot koodistoluokille RakennuksenToiminnallisenOsanElinkaarenVaihe, RakennuskohteenTiedonLaji, RakennuksenOsittelunLaji, HuoneistonElinkaarenVaihe, fixes #47, #50, #58
+- Korjattu puuttunut Talotekniikka-luokan attribuutin verkostoliittymä tyyppi, fixes #55
+- Korjattu elinkaarisääntöä ```elinkaari/vaat-huoneisto-elinkaaren-vaiheen-sallitut-muutokset``` ottamaan huomioon lisätty koodi ```2 - Rakenteilla```
+- Korjattu elinkaarisääntöä ```elinkaari/vaat-hissi-sisaankaynti-elinkaaren-vaiheen-sallitut-muutokset``` ottamaan huomioon lisätty koodi ```2 - Rakenteilla```
+- Korjattu elinkaarisääntöä ```elinkaari/vaat-hissin-sisaankaynnin-ja-rakennuksen-elinkaaret``` ottamaan huomioon koodiston RakennuksenToiminnallisenOsanElinkaarenVaihe uudelleennumerointi.
+- Lisätty seuraavat laatusäännöt:
+   - ```laatu/vaat-rakennuksen-ensisijainen-sisaankaynti```
+   - ```laatu/suos-rakennuksen-osan-tilat```
+   - ```laatu/suos-rakennuksen-osan-huoneistot```
+   - ```laatu/suos-tilan-yhteys-rakennuksen-osaan```
+   - ```laatu/vaat-huoneiston-tunnus```
+   - ```laatu/suos-huoneiston-yhteys-rakennuksen-osaan```
+   - ```laatu/vaat-ensisijainen-kant-rak-rakennusaine```
+   - ```laatu/vaat-ensisijainen-julkisivumateriaali```
+   - ```laatu/vaat-rakennuksen-ensisijainen-kayttotarkoitus```
+   - ```laatu/vaat-ensisijainen-lammitystapa```
+   - ```laatu/vaat-ensisijainen-lammitysenergian-lahde```
+   - ```laatu/vaat-ensisijainen-jaahdytystapa```
+   - ```laatu/vaat-ensisijainen-jaahdytysenergian-lahde```
+   - ```laatu/vaat-ensisijainen-sahkoenergian-lahde```
+   - ```laatu/vaat-ensisijainen-ilmanvaihtotapa```
+
 ## 23.12.2022
 
 - Korjattu Rakennelma-luokan attribuutin ```väliaikainenTunnus```-attribuutin kardinaliteetti 1 -> 0..1
-- Lisätty Hissi-luokkaan attribuutti elinkaarenVaihe, ja koodistoluokka SiäänkäynninTaiHissinElinkaarenVaihe, fixes #45,
+- Lisätty Hissi-luokkaan attribuutti elinkaarenVaihe, ja koodistoluokka SisäänkäynninTaiHissinElinkaarenVaihe, fixes #45,
 - Lisätty Sisäänkäynti-luokkaan attribuutti elinkaarenVaihe, fixes #44 
 
 ## 22.12.2022

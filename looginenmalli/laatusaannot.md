@@ -200,6 +200,10 @@ RakennuskohteenMuutos-luokan assosiaation ```kohdeMuutoksenJälkeen``` tulee vii
 [Rakennus](dokumentaatio/#rakennus)-luokan objektilla on oltava ```geometria``` attribuutin arvo, joka kuvaa kyseisen rakennuksen maantieteellisen sijainnin aluemaisena tai 3-ulotteisena geometriana. Mikäli geometria annetaan aluemaisena, sen tulee vastata rakennuksen pohjapinta-alaa.
 {% include common/clause_end.html %}
 
+{% include common/clause_start.html type="req" id="laatu/vaat-rakennuksen-ensisijainen-sisaankaynti" %}
+[Rakennus](dokumentaatio/#rakennus)-luokan objektilla voi olla enintään yksi sellainen assosiaatio ```sisäänkäynti```, jonka assosiaatioluokan [RakennuksenSisäänkäynti](dokumentaatio/#rakennuksensisäänkäynti) attribuutin ```ensisijainen``` arvo on ```true```. 
+{% include common/clause_end.html %}
+
 #### Rakennuksen osittelut
 
 {% include common/clause_start.html type="req" id="laatu/vaat-rakennuksen-osittelu-maaritelma" %}
@@ -232,6 +236,14 @@ Kunkin yhden [Rakennus](dokumentaatio/#rakennus)-luokan objektin sisältämien [
 [Rakennus](dokumentaatio/#rakennus)-luokan objektiin sisältyvien [RakennuksenOsittelu](dokumentaatio/#rakennuksenosittelu)-luokan assosiaation ```osa``` avulla liitettyjen [RakennuksenOsa](dokumentaatio/#rakennuksenosa)-luokan objektien ```geometria```-attribuutin arvojen tulee olla sen [Rakennus](dokumentaatio/#rakennus)-luokan objektin ```geometria```-attribuutin arvon sisällä, johon ne kuuluvat, poislukien osat, jotka ovat elinkaaren vaiheissa ```05 - tuhoutunut```, ```06 - purettu``` tai ```07 - yhdistetty tai jaettu```.
 {% include common/clause_end.html %}
 
+{% include common/clause_start.html type="rec" id="laatu/suos-rakennuksen-osan-tilat" %}
+[RakennuksenOsa](dokumentaatio/#rakennuksenosa)-luokan objektiin tulisi liittää siihen fyysisesti sisältyvät [RakennettuTila](dokumentaatio/#rakennettutila)-luokan objektit attribuutin ```sisältyväTila``` avulla.
+{% include common/clause_end.html %}
+
+{% include common/clause_start.html type="rec" id="laatu/suos-rakennuksen-osan-huoneistot" %}
+[RakennuksenOsa](dokumentaatio/#rakennuksenosa)-luokan objektiin tulisi liittää siihen fyysisesti sisältyvät [Huoneisto](dokumentaatio/#huoneisto)-luokan objektit attribuutin ```sisältyväHuoneisto``` avulla.
+{% include common/clause_end.html %}
+
 ### Rakennelma
 
 {% include common/clause_start.html type="req" id="laatu/vaat-rakennuksen-geometria" %}
@@ -248,20 +260,68 @@ Kunkin yhden [Rakennus](dokumentaatio/#rakennus)-luokan objektin sisältämien [
 [Rakennelma](dokumentaatio/#rakennelma)-luokan objektiin assosiaation ```osa``` avulla sisältyvien [RakennelmanOsa](dokumentaatio/#rakennelmanosa)-luokkien objektien ```geometria```-attribuutin arvojen tulee olla sen [Rakennelma](dokumentaatio/#rakennelma)-luokan objektin ```geometria```-attribuutin arvon sisällä, johon ne kuuluvat, poislukien osat, jotka ovat elinkaaren vaiheissa ```05 - tuhoutunut```, ```06 - purettu``` tai ```07 - yhdistetty tai jaettu```.
 {% include common/clause_end.html %}
 
-### ErityistäTarkoitusVartenRakennettavaAlue
-
 ### RakennettuTila
+
+{% include common/clause_start.html type="rec" id="laatu/suos-tilan-yhteys-rakennuksen-osaan" %}
+[RakennettuTila](dokumentaatio/#rakennettutila)-luokan objekti tulisi liittää kuhunkin [RakennuksenOsa](dokumentaatio/#rakennuksenosa)-luokan objektiin, johon se fyysisesti sisältyy käyttäen assosiaatiota ```sisältäväRakennuksenOsa```.
+{% include common/clause_end.html %}
 
 ### Huoneisto
 
+{% include common/clause_start.html type="req" id="laatu/vaat-huoneiston-tunnus" %}
+Mikäli [Huoneisto](dokumentaatio/#huoneisto)-luokan objektilla ei ole attribuutin ```pysyväHuoneistoTunnus``` arvoa, sillä tulee olla attribuutin ```osoiteHuoneistoTunnus``` arvo.
+{% include common/clause_end.html %}
+
+{% include common/clause_start.html type="rec" id="laatu/suos-huoneiston-yhteys-rakennuksen-osaan" %}
+[Huoneisto](dokumentaatio/#huoneisto)-luokan objekti tulisi liittää kuhunkin [RakennuksenOsa](dokumentaatio/#rakennuksenosa)-luokan objektiin, johon se fyysisesti sisältyy käyttäen assosiaatiota ```sisältäväRakennuksenOsa```.
+{% include common/clause_end.html %}
+
+### Materiaalitiedot
+
+{% include common/clause_start.html type="req" id="laatu/vaat-ensisijainen-kant-rak-rakennusaine" %}
+[Materiaalitiedot](dokumentaatio/#materiaalitiedot)-luokan kuvaamassa rakenteisessa attribuutissa tulee olla enintään yksi sellainen attribuutin ```kantavienRakenteidenRakennusaine```-attribuutin arvo, jonka attribuutin ```ensisijainen``` arvo to ```true```.
+{% include common/clause_end.html %}
+
+{% include common/clause_start.html type="req" id="laatu/vaat-ensisijainen-julkisivumateriaali" %}
+[Materiaalitiedot](dokumentaatio/#materiaalitiedot)-luokan kuvaamassa rakenteisessa attribuutissa tulee olla enintään yksi sellainen attribuutin ```julkisivumateriaali```-attribuutin arvo, jonka attribuutin ```ensisijainen``` arvo to ```true```.
+{% include common/clause_end.html %}
+
+### RakennuksenKäyttötiedot
+
+{% include common/clause_start.html type="req" id="laatu/vaat-rakennuksen-ensisijainen-kayttotarkoitus" %}
+[RakennuksenKäyttötiedot](dokumentaatio/#rakennuksenkäyttötiedot)-luokan kuvaamassa rakenteisessa attribuutissa tulee olla enintään yksi sellainen attribuutin ```käyttötarkoitus```-attribuutin arvo, jonka attribuutin ```ensisijainen``` arvo to ```true```.
+{% include common/clause_end.html %}
+
+{% include common/question.html content="Tulisiko kaikilla rakennuksilla olla ensisijainen käyttötarkoitus?" %}
+
+### Energiatiedot
+
+{% include common/clause_start.html type="req" id="laatu/vaat-ensisijainen-lammitystapa" %}
+[Energiatiedot](dokumentaatio/#energiatiedot)-luokan kuvaamassa rakenteisessa attribuutissa tulee olla enintään yksi sellainen attribuutin ```lämmitystapa```-attribuutin arvo, jonka attribuutin ```ensisijainen``` arvo to ```true```.
+{% include common/clause_end.html %}
+
+{% include common/clause_start.html type="req" id="laatu/vaat-ensisijainen-lammitysenergian-lahde" %}
+[Energiatiedot](dokumentaatio/#energiatiedot)-luokan kuvaamassa rakenteisessa attribuutissa tulee olla enintään yksi sellainen attribuutin ```lämmitysenergianLähde```-attribuutin arvo, jonka attribuutin ```ensisijainen``` arvo to ```true```.
+{% include common/clause_end.html %}
+
+{% include common/clause_start.html type="req" id="laatu/vaat-ensisijainen-jaahdytystapa" %}
+[Energiatiedot](dokumentaatio/#energiatiedot)-luokan kuvaamassa rakenteisessa attribuutissa tulee olla enintään yksi sellainen attribuutin ```jäähdytystapa```-attribuutin arvo, jonka attribuutin ```ensisijainen``` arvo to ```true```.
+{% include common/clause_end.html %}
+
+{% include common/clause_start.html type="req" id="laatu/vaat-ensisijainen-jaahdytysenergian-lahde" %}
+[Energiatiedot](dokumentaatio/#energiatiedot)-luokan kuvaamassa rakenteisessa attribuutissa tulee olla enintään yksi sellainen attribuutin ```jäähdytysenergianLähde```-attribuutin arvo, jonka attribuutin ```ensisijainen``` arvo to ```true```.
+{% include common/clause_end.html %}
+
+{% include common/clause_start.html type="req" id="laatu/vaat-ensisijainen-sahkoenergian-lahde" %}
+[Energiatiedot](dokumentaatio/#energiatiedot)-luokan kuvaamassa rakenteisessa attribuutissa tulee olla enintään yksi sellainen attribuutin ```sähköenergianLähde```-attribuutin arvo, jonka attribuutin ```ensisijainen``` arvo to ```true```.
+{% include common/clause_end.html %}
 
 
-### Huone
+### Talotekniikkatiedot
 
-### Sisäänkäynti
-
-RakennuksenSisäänkäynti-assosiaatioluokka
-
+{% include common/clause_start.html type="req" id="laatu/vaat-ensisijainen-ilmanvaihtotapa" %}
+[Talotekniikkatiedot](dokumentaatio/#talotekniikkatiedot)-luokan kuvaamassa rakenteisessa attribuutissa tulee olla enintään yksi sellainen attribuutin ```ilmanvaihtotapa```-attribuutin arvo, jonka attribuutin ```ensisijainen``` arvo to ```true```.
+{% include common/clause_end.html %}
 
 ### Ilmastoselvitys
 

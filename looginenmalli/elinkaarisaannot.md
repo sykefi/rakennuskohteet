@@ -387,11 +387,12 @@ Rakennettujen tilojen ja huoneistojen tietoja voidaan muuttaa osana [Rakennuskoh
 {% include common/clause_start.html type="req" id="elinkaari/vaat-huoneisto-elinkaaren-vaiheen-sallitut-muutokset" %}
 [Huoneisto](dokumentaatio/#huoneisto)-luokan objektien ```elinkaarenVaihe``` arvot voivat muuttua [RakennuskohteenToimenpide](dokumentaatio/#rakennuskohteentoimenpide)-luokan kuvaamana vain seuraavasti:
 
-* Arvosta ```1 - Suunnitteilla``` arvoihin ```2 - Muuttovalmis```, ```3 - Käytössä``` tai ```4 - Muuttokiellossa```.
-* Arvosta ```2 - Muuttovalmis``` arvoihin ```3 - Käytössä```, ```4 - Muuttokiellossa```, ```5 - Purettu```, ```6 - Tuhoutunut```, ```7 - Poistettu``` tai ```8 - Yhdistetty tai jaettu```.
-* Arvosta ```3 - Käytössä``` arvoihin ```4 - Muuttokiellossa```, ```5 - Purettu```, ```6 - Tuhoutunut```, ```7 - Poistettu``` tai ```8 - Yhdistetty tai jaettu```.
-* Arvosta ```4 - Muuttokiellossa``` arvoihin ```2 - Muuttovalmis```, ```3 - Käytössä```, ```5 - Purettu```, ```6 - Tuhoutunut```, ```7 - Poistettu``` tai ```8 - Yhdistetty tai jaettu```.
-* Arvoista ```5 - Purettu```, ```6 - Tuhoutunut```, ```7 - Poistettu``` ja ```8 - Yhdistetty tai jaettu``` ei ole sallittuja siirtymiä.
+* Arvosta ```1 - Suunnitteilla``` arvoihin ```3 - Muuttovalmis```, ```4 - Käytössä``` tai ```5 - Muuttokiellossa```.
+* Arvosta ```2 - Rakenteilla``` arvoihin ```3 - Muuttovalmis```, ```4 - Käytössä``` tai ```5 - Muuttokiellossa```, ```6 - Purettu```, ```7 - Tuhoutunut``` tai ```8 - Poistettu```.
+* Arvosta ```3 - Muuttovalmis``` arvoihin ```4 - Käytössä```, ```5 - Muuttokiellossa```, ```6 - Purettu```, ```7 - Tuhoutunut```, ```8 - Poistettu``` tai ```9 - Yhdistetty tai jaettu```.
+* Arvosta ```4 - Käytössä``` arvoihin ```5 - Muuttokiellossa```, ```6 - Purettu```, ```7 - Tuhoutunut```, ```8 - Poistettu``` tai ```9 - Yhdistetty tai jaettu```.
+* Arvosta ```5 - Muuttokiellossa``` arvoihin ```3 - Muuttovalmis```, ```4 - Käytössä```, ```6 - Purettu```, ```7 - Tuhoutunut```, ```8 - Poistettu``` tai ```9 - Yhdistetty tai jaettu```.
+* Arvoista ```6 - Purettu```, ```7 - Tuhoutunut```, ```8 - Poistettu``` ja ```9 - Yhdistetty tai jaettu``` ei ole sallittuja siirtymiä.
 {% include common/clause_end.html %}
 
 {% include common/clause_start.html type="req" id="elinkaari/vaat-huoneiston-varusteiden-muutokset" %}
@@ -405,11 +406,12 @@ Huoneistoon sen muutostoimenpiteen johdosta lisättävät ja poistuvat varusteet
 {% include common/clause_start.html type="req" id="elinkaari/vaat-hissi-sisaankaynti-elinkaaren-vaiheen-sallitut-muutokset" %}
 [Hissi](dokumentaatio/#hissi)- ja [Sisäänkäynti](dokumentaatio/#sisäänkäynti)-luokan objektien ```elinkaarenVaihe```-attribuuttien arvot voivat muuttua [RakennuskohteenToimenpide](dokumentaatio/#rakennuskohteentoimenpide)-luokan kuvaamana vain seuraavasti:
 
-* Arvosta ```1 - Suunnitteilla``` arvoihin ```2 - Käytössä```, ```3 - Tilapäisesti pois käytöstä``` tai ```5 - Poistettu```.
-* Arvosta ```2 - Käytössä``` arvoihin ```3 - Tilapäisesti pois käytöstä```, ```4 - Poistettu käytöstä```, ```5 - Poistettu``` tai ```6 - Purettu```.
-* Arvosta ```3 - Tilapäisesti pois käytöstä``` arvoihin ```2 - Käytössä```, ```4 - Poistettu käytöstä```, ```5 - Poistettu``` tai ```6 - Purettu```.
-* Arvosta ```4 - Poistettu käytöstä``` arvoihin ```2 - Käytössä```, ```3 - Tilapäisesti pois käytöstä```, ```5 - Poistettu``` tai ```6 - Purettu```.
-* Arvoista ```5 - Poistettu``` ja ```6 - Purettu``` ei ole sallittuja siirtymiä.
+* Arvosta ```1 - Suunnitteilla``` arvoihin ```2 - Rakenteilla```, ```3 - Käytössä```, ```4 - Tilapäisesti pois käytöstä``` tai ```6 - Poistettu```.
+* Arvosta ```2 - Rakenteilla``` arvoihin ```3 - Käytössä```, ```4 - Tilapäisesti pois käytöstä```, ```6 - Poistettu``` tai ```7 - Purettu```.
+* Arvosta ```3 - Käytössä``` arvoihin ```4 - Tilapäisesti pois käytöstä```, ```5 - Poistettu käytöstä```, ```6 - Poistettu``` tai ```7 - Purettu```.
+* Arvosta ```4 - Tilapäisesti pois käytöstä``` arvoihin ```3 - Käytössä```, ```5 - Poistettu käytöstä```, ```6 - Poistettu``` tai ```7 - Purettu```.
+* Arvosta ```5 - Poistettu käytöstä``` arvoihin ```3 - Käytössä```, ```4 - Tilapäisesti pois käytöstä```, ```6 - Poistettu``` tai ```7 - Purettu```.
+* Arvoista ```6 - Poistettu``` ja ```7 - Purettu``` ei ole sallittuja siirtymiä.
 {% include common/clause_end.html %}
 
 
@@ -418,11 +420,11 @@ Mikäli [Rakennus](dokumentaatio)-luokan objektin ```elinkaarenVaihe```-attribuu
 
 | Rakennuksen elinkaarenVaihe         | Hissin tai Sisäänkäynnin elinkaarenVaihe      |
 |-------------------------------------|-----------------------------------------------|
-| ```05 - tuhoutunut```               | ```5 - Poistettu``` *                        |
-| ```06 - purettu```                  | ```6 - Purettu``` *                          |
-| ```07 - yhdistetty tai jaettu```    | ```5 - Poistettu``` *                        |
+| ```05 - tuhoutunut```               | ```6 - Poistettu``` *                        |
+| ```06 - purettu```                  | ```7 - Purettu``` *                          |
+| ```07 - yhdistetty tai jaettu```    | ```6 - Poistettu``` *                        |
 
-*) ellei ```elinkaarenVaihe``` ole jo ennestään joko ```5 - Poistettu``` tai ```6 - Purettu```.
+*) ellei ```elinkaarenVaihe``` ole jo ennestään joko ```6 - Poistettu``` tai ```7 - Purettu```.
 
 Mikäli [Rakennus](dokumentaatio)-luokan objektin ```elinkaarenVaihe```-attribuutin arvo on ```01 - suunnitteilla```, siihen mahdollisesti liitettyjen [Hissi](dokumentaatio/#hissi)- ja [Sisäänkäynti](dokumentaatio/#sisäänkäynti)-luokan objektien ```elinkaarenVaihe```-attribuuttien arvojen on oltava ```1 - Suunnitteilla```.
 
