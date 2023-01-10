@@ -5,8 +5,35 @@ id: "muutosloki"
 ---
 # Muutosloki
 
+## 10.1.2023
+
+- Siirretty ```Ilmastoselvitys```-luokan attribuutti ```rakennuksenTavoitteellinenKäyttöikä``` ```RakennuksenKäyttötiedot```-luokan ```tavoitteellinenKäyttöikä```-attribuutiksi.
+- Siirretty ```Ilmastoselvitys```-luokan attribuutti ```rakennuksenSuunniteltuKäyttäjämäärä``` ```RakennuksenKäyttötiedot```-luokan ```suunniteltuKäyttäjämäärä```-attribuutiksi.
+- Siirretty ```RakennuskohteenVähähiilisyystiedot``` attribuutti ```toimenpidealueenLämmitettyNettoala``` luokkaan ```RakennuskohteenToimenpide```.
+- Muutettu ```Hiilijalanjälkitiedot```-luokan stereotyyppi FeatureType->DataType ja poistettu perintä luokasta ```Tietoryhmä```. Lisätty attribuutit ```rajaArvostaPoikkeamisenPeruste```ja ```osatekijä``` ja muokattu rajoitteita. Nyt rajoitteissa mukana vaadittujen osatekijöiden suureiden tunnukset, suureiden arvojen tyypit ja mittayksiköt.  
+- Muutettu ```Hiilikädenjälkitiedot```-luokan stereotyyppi FeatureType->DataType ja poistettu perintä luokasta ```Tietoryhmä```. Lisätty attribuutit ```rajaArvostaPoikkeamisenPeruste```ja ```osatekijä``` ja muokattu rajoitteita. Nyt rajoitteissa mukana vaadittujen osatekijöiden suureiden tunnukset, suureiden arvojen tyypit ja mittayksiköt.  
+- Muokattu luokasta ```RakennuskohteenVähähiilisyystiedot``` (FeatureType) uusi luokka ```RakennuskohdekohtaisetVähähiilisyystiedot```, joka ei enää periydy luokasta ```Tietoyksikkö```. Poistettu attribuutit ```rajaArvostaPoikkeamisenPeruste``` ja ```toimenpidealueenLämmitettyNettoala```, ja lisätty attribuutit ```hiilijalanjälki```ja ```hiilikädenjälki``` sekä assosiaatio ```kohde:RakennusTaiSenOsa```. Muokattu rajoitteita.
+- Muokattu luokasta ```RakennuspaikanVähähiilisyystiedot``` (FeatureType) uusi luokka ```RakennuspaikkakohtaisetVähähiilisyystiedot```, joka ei enää periydy luokasta ```Tietoyksikkö```. Poistettu attribuutti ```rajaArvostaPoikkeamisenPeruste``` , ja lisätty attribuutit ```hiilijalanjälki```ja ```hiilikädenjälki``` sekä assosiaatio ```paikka:Rakennuspaikka```.
+- Lisätty luokkaan ```Ilmastoselvitys``` attribuutit ```kohteenVähähiilisyys``` ja ```paikanVähähiilisyys``` sekä rajoitteet koskien pysyvää rakennustunnusta, laskennallista energiankulutusta, rakennuksen suunniteltua käyttäjämäärää, rakennuksen tavoitteellista käyttöikää, rakennuspaikan pinta-alaa ja toimenpidealueen lämmitetylle nettoalaa.
+- Lisätty luokkaan ```Materiaaliseloste``` attribuutit ```otsikko```, ```kuvaus```, ```laatimispäivä```, ```rakennuksenOsienMateriaalit```, ```rakennuspaikanMateriaalit```, ```materiaalilajinMäärä```, ```vaarallistenAineidenMäärä```, ```uusituvanMateriaalinMäärä```, ```uusiutumattomanMateriaaliMäärä```, ```kierrätetynMateriaalinMäärä```, ```uudelleenkäytetynMateriaalinMäärä```.
+- Lisätty luokkaan ```Materiaaliseloste``` rajoitteet vaadituille materiaalilajien määrille, pysyvälle rakennustunukselle, tavoitteelliselle käytöiälle, rakennuspaikan pinta-alalle ja toimenpidealueen lämmitetylle nettoalalle.
+- Lisätty luokat ```RakennuskohdekohtaisetMateriaalimäärät``` ja ```RakennuspaikkakohtaisetMateriaalimäärät```.
+- Korjattu koodiston Verkostoliittymän laji viittaus, fixes #70
+- Muutettu koodiston EnergianLähde nimi ja koodistoviittaus, fixes #69
+- Muutettu koodiston PolttoaineTaiLämmönLähde nimi ja koodistoviittaus, fixes #68
+- Korjattu kantavien rakenteiden rakennusaine -koodiston viittaus, fixes #67
+- Korjattu julkisivumateriaali-koodiston viittaus ja nimi, fixes #66
+- Korjattu ilmanvaihtotavan laji -koodiston viite, fixes #65
+- Lisätty koodiston TalousvedenLaji koodistoviittaus, fixes #56
+- Lisätty koodiston SähköenergianLähteenLaji koodistoviittaus, fixes #52
+- Lisätty koodiston JäähdytystavanLaji koodistoviittaus, fixes #51
+- Lisätty koodiston HissinLaji koodistoviittaus, fixes #49
+- Lisätty koodiston SisäänkäynninTyyppi koodistoviittaus, fixes #48
+- Värjätty Y-alustalta puuttuvat koodistot punaisella.
+
 
 ## 3.1.2023
+
 - Päivitetty uusin ry-yhteiset dev.
 - Uudelleennimetty koodistoluokka SisäänkäynninTaiHissinElinkaarenVaihe -> RakennuksenToiminnallisenOsanElinkaarenVaihe.
 - Lisätty Y-alustan koodistoihin viittaavat vocabulary-tagien arvot koodistoluokille RakennuksenToiminnallisenOsanElinkaarenVaihe, RakennuskohteenTiedonLaji, RakennuksenOsittelunLaji, HuoneistonElinkaarenVaihe, fixes #47, #50, #58
@@ -98,6 +125,7 @@ Rakentamistapa, Paloluokka, KantavienRakenteidenRakennusaine, Julkisivumateriaal
 - Siirretty rakennuspaikan pinta-ala Ilmastoselvitys-luokasta Rakennuspaikka-luokkaan, fixes #31.
 - Tehty Ilmastoselvitys- ja Rakennuskohde-luokkien välinen assosiaatio kahdensuuntaiseksi: Rakennuskohde-luokkaan voi liittyä nolla tai useampi Ilmastoselvitys. Siirretty Ilmastoselvitys luokan assosiaatio ```rakennuskohde``` viittaamaan RakennusTaiSenOsa-luokkaan Rakennuskohde-luokan sijasta: Ilmastoselvitys voi siis liittyä vain Rakennukseen tai RakennuksenOsaan.
 - Lisätty Materiaaliseloste-luokka tyhjänä, assosiaatiot RakennusTaiSenOsa- ja Rakentamistoimenpide-luokkiin.
+- Siirretty Ilmastoselvitys-luokan attribuutti ```rakennuksenLaskennallinenOstoenergianKulutus``` Energiatiedot-luokan ```laskennallinenOstoenergianKulutus```-attribuutiksi.
 
 ## 7.12.2022
 

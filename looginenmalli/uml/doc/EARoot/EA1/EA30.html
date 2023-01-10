@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>RakennuksenSisäänkäynti</title>
+<title>RakennuskohdekohtaisetMateriaalimäärät</title>
 <link href="../../css/ea.css" rel="stylesheet" type="text/css" />
 <script>
 function initPage(src) {	
@@ -34,15 +34,15 @@ function nameClassifier(name, separator)
 <div class="pageHeader"></div>
 <div class="PageBody">
 	<div id="name_classifier" style="display: none;"></div>
-	<span class="ObjectTitle"><script type="text/javascript">document.write(nameClassifier("RakennuksenSisäänkäynti", " : "))</script>  : Public   Association Class</span>
+	<span class="ObjectTitle"><script type="text/javascript">document.write(nameClassifier("RakennuskohdekohtaisetMateriaalimäärät", " : "))</script>  : Public  &lt;&lt;DataType&gt;&gt; Class</span>
 	<table border="0" cellpadding="0" cellspacing="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">15.12.2022 15.03.55</td>
+			<td width="85%" class="ObjectDetailsValue">4.1.2023 9.53.30</td>
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">15.12.2022 15.04.43</td>
+			<td class="ObjectDetailsValue">10.1.2023 11.13.25</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>
@@ -87,18 +87,22 @@ function nameClassifier(name, separator)
 		</tr>
 		<tr id="adv00" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">UUID:</td>
-			<td class="ObjectDetailsValue">{50867CAE-2966-4d04-980A-BD66376B2D7C}</td>
+			<td class="ObjectDetailsValue">{91B8E8F0-9278-4259-BD3D-79B0C76BC2AE}</td>
 		</tr>
 		<tr id="adv01" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Appears In:</td>
-			<td class="ObjectDetailsValue"><a href="EA13.html">Rakennuskohteet</a></td>
+			<td class="ObjectDetailsValue"><a href="EA9.html">Materiaaliseloste</a></td>
 		</tr>
 	</table>
 	
 	<div class="TableGroup" id="TableGroup">
 		<ul class="ItemTitle">
 			<li onClick="parent.toggleItem('Attributes');" id="AttributesTitle">Attributes</li>
+			<li onClick="parent.toggleItem('AssociationsTo');" id="AssociationsToTitle">Associations To</li>
+			<li onClick="parent.toggleItem('TaggedVal');" id="TaggedValTitle">Tagged Values</li>
+			<li onClick="parent.toggleItem('Constraints');" id="ConstraintsTitle">Constraints</li>
 			<li onClick="parent.toggleItem('CustomProperties');" id="CustomPropertiesTitle">Advanced</li>
+			<li onClick="parent.toggleItem('Links');" id="LinksTitle">Other Links</li>
 		</ul>
 <div class="ItemBody" id="AttributesTable">
 	<table border="0" cellspacing="0" cellpadding="0" class="Table">
@@ -107,43 +111,43 @@ function nameClassifier(name, separator)
 		</tr>
 						<tr>
 				<td width="100%" class="TableRow">
-					<i>Public boolean</i><br /><strong>&nbsp;&nbsp;ensisijainen</strong>
+					<i>Public <a href="../EA3/EA235.html">SuureenArvo</a></i><br /><strong>&nbsp;&nbsp;rakennusosanOsuus</strong>
 				</td>
 			</tr>
 			<tr>
 				<td class="TableRowBottomDashed"  colspan="1">										
-					<a href="#" onclick="parent.toggleData('DetailsImageAttributes50')" style="text-decoration: none; color: #000000;"><img src="../../images/plus03.gif" align="absmiddle" id="DetailsImageAttributes50" border="0" />Details:</a>
+					<a href="#" onclick="parent.toggleData('DetailsImageAttributes79')" style="text-decoration: none; color: #000000;"><img src="../../images/plus03.gif" align="absmiddle" id="DetailsImageAttributes79" border="0" />Details:</a>
 					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
 					
-						<tr id="DetailsImageAttributes50_00" style="display: none;">
+						<tr id="DetailsImageAttributes79_00" style="display: none;">
 							<td width="75"><i>Alias:</i></td>
 							<td></td>
 						</tr>
-						<tr id="DetailsImageAttributes50_01" style="display: none;">
+						<tr id="DetailsImageAttributes79_01" style="display: none;">
 							<td width="75"><i>Initial:</i></td>
 							<td></td>
 						</tr>
-						<tr id="DetailsImageAttributes50_02" style="display: none;">
+						<tr id="DetailsImageAttributes79_02" style="display: none;">
 							<td width="75"><i>Stereotype: </i></td>
 							<td></td>
 						</tr>
-						<tr id="DetailsImageAttributes50_03" style="display: none;">
+						<tr id="DetailsImageAttributes79_03" style="display: none;">
 							<td width="75"><i>Ordered: </i></td>
 							<td></td>
 						</tr>
-						<tr id="DetailsImageAttributes50_04" style="display: none;">
+						<tr id="DetailsImageAttributes79_04" style="display: none;">
 							<td width="75"><i>Range: </i></td>
-							<td></td>
+							<td>Range:0 to *</td>
 						</tr>
-						<tr id="DetailsImageAttributes50_05" style="display: none;">
+						<tr id="DetailsImageAttributes79_05" style="display: none;">
 							<td width="75"><i>Transient: </i></td>
 							<td>False</td>
 						</tr>
-						<tr id="DetailsImageAttributes50_06" style="display: none;">
+						<tr id="DetailsImageAttributes79_06" style="display: none;">
 							<td width="75"><i>Derived: </i></td>
 							<td>False</td>
 						</tr>
-							<tr id="DetailsImageAttributes50_07" style="display: none;">
+							<tr id="DetailsImageAttributes79_07" style="display: none;">
 							<td width="75"><i>IsID: </i></td>
 						<td>False</td>
 						</tr>
@@ -156,6 +160,447 @@ function nameClassifier(name, separator)
 			</tr>
 	</table>
 </div>
+		<div class="ItemBody" id="AssociationsToTable">
+			<table border="0" cellspacing="0" cellpadding="0" class="Table">
+				<tr>
+					<td width="40%" class="TableHeading">Element</td>
+					<td width="30%" class="TableHeading">Source Role</td>
+					<td width="30%" class="TableHeading">Target Role</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="EA92.html">«FeatureType» RakennusTaiSenOsa</a><br />
+						Class &nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> kohde<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink80" onclick="parent.toggleDiv('detailsDIVLink80','DetailsImageLink80')" />Details:
+							<div id="detailsDIVLink80" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+
+			</table>
+		</div>
+<div class="ItemBody" id="TaggedValTable">
+	<table align="center" border="0" cellspacing="0" cellpadding="0" class="Table">
+		<tr>
+			<td width="50%" class="TableHeading">Tag</td>
+			<td width="50%" class="TableHeading">Value</td>
+		</tr>
+					<tr>
+				<td width="50%" class="TableRow" valign="top">isCollection</td>
+				<td width="50%" class="TableRow" valign="top">false</td>
+			</tr>	
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="2">
+					<div class="DetailsDivParent"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario81" onclick="parent.toggleDiv('detailsDIVScenario81','DetailsImageScenario81')" />Details:
+						<div id="detailsDIVScenario81" class="DetailsDiv" >
+						<div class="ObjectDetailsNotes">Values: true,false<br />Default: false<br />Description: Identifies the class as a collection<br /></div>
+
+						</div>
+					</div>
+				</td>
+			</tr>			<tr>
+				<td width="50%" class="TableRow" valign="top">noPropertyType</td>
+				<td width="50%" class="TableRow" valign="top">false</td>
+			</tr>	
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="2">
+					<div class="DetailsDivParent"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario82" onclick="parent.toggleDiv('detailsDIVScenario82','DetailsImageScenario82')" />Details:
+						<div id="detailsDIVScenario82" class="DetailsDiv" >
+						<div class="ObjectDetailsNotes">Values: true,false<br />Default: false<br />Description: Suppress creation of a named complex type ( property type ) that supports inline or byReference encoding<br /></div>
+
+						</div>
+					</div>
+				</td>
+			</tr>
+	</table>
+</div>		<div class="ItemBody" id="ConstraintsTable">
+			<table border="0" cellspacing="0" cellpadding="0" class="Table">
+			  	<tr>
+					<td width="80%" class="TableHeading">Constraint</td>
+					<td width="10%" class="TableHeading">Type</td>
+					<td width="10%" class="TableHeading">Status</td>
+				</tr>
+				<tr>
+					<td width="80%" class="TableRow">rakennusosanOsuus->forAll(arvo->forAll(self.oclIsKindOf(NumeerinenArvo) and self.mittayksikkö = 'kg'))</td>
+					<td width="10%" class="TableRow">OCL</td>
+					<td width="10%" class="TableRow">Approved</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageConstraints83" onclick="parent.toggleDiv('detailsDIVConstraints83','DetailsImageConstraints83')" />Details:
+							<div id="detailsDIVConstraints83" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="80%" class="TableRow">rakennusosanOsuus->isUnique(suure.tunnus.koodi = http://uri.suomi.fi/codelist/rytj/ms-rakennusosan-materiaalimaara/code/2002')</td>
+					<td width="10%" class="TableRow">OCL</td>
+					<td width="10%" class="TableRow">Approved</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageConstraints84" onclick="parent.toggleDiv('detailsDIVConstraints84','DetailsImageConstraints84')" />Details:
+							<div id="detailsDIVConstraints84" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="80%" class="TableRow">rakennusosanOsuus->isUnique(suure.tunnus.koodi = http://uri.suomi.fi/codelist/rytj/ms-rakennusosan-materiaalimaara/code/2003')</td>
+					<td width="10%" class="TableRow">OCL</td>
+					<td width="10%" class="TableRow">Approved</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageConstraints85" onclick="parent.toggleDiv('detailsDIVConstraints85','DetailsImageConstraints85')" />Details:
+							<div id="detailsDIVConstraints85" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="80%" class="TableRow">rakennusosanOsuus->isUnique(suure.tunnus.koodi = http://uri.suomi.fi/codelist/rytj/ms-rakennusosan-materiaalimaara/code/2004')</td>
+					<td width="10%" class="TableRow">OCL</td>
+					<td width="10%" class="TableRow">Approved</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageConstraints86" onclick="parent.toggleDiv('detailsDIVConstraints86','DetailsImageConstraints86')" />Details:
+							<div id="detailsDIVConstraints86" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="80%" class="TableRow">rakennusosanOsuus->isUnique(suure.tunnus.koodi = http://uri.suomi.fi/codelist/rytj/ms-rakennusosan-materiaalimaara/code/2005')</td>
+					<td width="10%" class="TableRow">OCL</td>
+					<td width="10%" class="TableRow">Approved</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageConstraints87" onclick="parent.toggleDiv('detailsDIVConstraints87','DetailsImageConstraints87')" />Details:
+							<div id="detailsDIVConstraints87" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="80%" class="TableRow">rakennusosanOsuus->isUnique(suure.tunnus.koodi = http://uri.suomi.fi/codelist/rytj/ms-rakennusosan-materiaalimaara/code/2006')</td>
+					<td width="10%" class="TableRow">OCL</td>
+					<td width="10%" class="TableRow">Approved</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageConstraints88" onclick="parent.toggleDiv('detailsDIVConstraints88','DetailsImageConstraints88')" />Details:
+							<div id="detailsDIVConstraints88" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="80%" class="TableRow">rakennusosanOsuus->isUnique(suure.tunnus.koodi = http://uri.suomi.fi/codelist/rytj/ms-rakennusosan-materiaalimaara/code/2007')</td>
+					<td width="10%" class="TableRow">OCL</td>
+					<td width="10%" class="TableRow">Approved</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageConstraints89" onclick="parent.toggleDiv('detailsDIVConstraints89','DetailsImageConstraints89')" />Details:
+							<div id="detailsDIVConstraints89" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="80%" class="TableRow">rakennusosanOsuus->isUnique(suure.tunnus.koodi = http://uri.suomi.fi/codelist/rytj/ms-rakennusosan-materiaalimaara/code/2008')</td>
+					<td width="10%" class="TableRow">OCL</td>
+					<td width="10%" class="TableRow">Approved</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageConstraints90" onclick="parent.toggleDiv('detailsDIVConstraints90','DetailsImageConstraints90')" />Details:
+							<div id="detailsDIVConstraints90" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="80%" class="TableRow">rakennusosanOsuus->isUnique(suure.tunnus.koodi = http://uri.suomi.fi/codelist/rytj/ms-rakennusosan-materiaalimaara/code/3001')</td>
+					<td width="10%" class="TableRow">OCL</td>
+					<td width="10%" class="TableRow">Approved</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageConstraints91" onclick="parent.toggleDiv('detailsDIVConstraints91','DetailsImageConstraints91')" />Details:
+							<div id="detailsDIVConstraints91" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="80%" class="TableRow">rakennusosanOsuus->isUnique(suure.tunnus.koodi = http://uri.suomi.fi/codelist/rytj/ms-rakennusosan-materiaalimaara/code/3002')</td>
+					<td width="10%" class="TableRow">OCL</td>
+					<td width="10%" class="TableRow">Approved</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageConstraints92" onclick="parent.toggleDiv('detailsDIVConstraints92','DetailsImageConstraints92')" />Details:
+							<div id="detailsDIVConstraints92" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="80%" class="TableRow">rakennusosanOsuus->isUnique(suure.tunnus.koodi = http://uri.suomi.fi/codelist/rytj/ms-rakennusosan-materiaalimaara/code/3003')</td>
+					<td width="10%" class="TableRow">OCL</td>
+					<td width="10%" class="TableRow">Approved</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageConstraints93" onclick="parent.toggleDiv('detailsDIVConstraints93','DetailsImageConstraints93')" />Details:
+							<div id="detailsDIVConstraints93" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="80%" class="TableRow">rakennusosanOsuus->isUnique(suure.tunnus.koodi = http://uri.suomi.fi/codelist/rytj/ms-rakennusosan-materiaalimaara/code/3004')</td>
+					<td width="10%" class="TableRow">OCL</td>
+					<td width="10%" class="TableRow">Approved</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageConstraints94" onclick="parent.toggleDiv('detailsDIVConstraints94','DetailsImageConstraints94')" />Details:
+							<div id="detailsDIVConstraints94" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="80%" class="TableRow">rakennusosanOsuus->isUnique(suure.tunnus.koodi = http://uri.suomi.fi/codelist/rytj/ms-rakennusosan-materiaalimaara/code/3005')</td>
+					<td width="10%" class="TableRow">OCL</td>
+					<td width="10%" class="TableRow">Approved</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageConstraints95" onclick="parent.toggleDiv('detailsDIVConstraints95','DetailsImageConstraints95')" />Details:
+							<div id="detailsDIVConstraints95" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="80%" class="TableRow">rakennusosanOsuus->isUnique(suure.tunnus.koodi = http://uri.suomi.fi/codelist/rytj/ms-rakennusosan-materiaalimaara/code/3006')</td>
+					<td width="10%" class="TableRow">OCL</td>
+					<td width="10%" class="TableRow">Approved</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageConstraints96" onclick="parent.toggleDiv('detailsDIVConstraints96','DetailsImageConstraints96')" />Details:
+							<div id="detailsDIVConstraints96" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="80%" class="TableRow">rakennusosanOsuus->isUnique(suure.tunnus.koodi = http://uri.suomi.fi/codelist/rytj/ms-rakennusosan-materiaalimaara/code/3008')</td>
+					<td width="10%" class="TableRow">OCL</td>
+					<td width="10%" class="TableRow">Approved</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageConstraints97" onclick="parent.toggleDiv('detailsDIVConstraints97','DetailsImageConstraints97')" />Details:
+							<div id="detailsDIVConstraints97" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="80%" class="TableRow">rakennusosanOsuus->isUnique(suure.tunnus.koodi = http://uri.suomi.fi/codelist/rytj/ms-rakennusosan-materiaalimaara/code/3009')</td>
+					<td width="10%" class="TableRow">OCL</td>
+					<td width="10%" class="TableRow">Approved</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageConstraints98" onclick="parent.toggleDiv('detailsDIVConstraints98','DetailsImageConstraints98')" />Details:
+							<div id="detailsDIVConstraints98" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="80%" class="TableRow">rakennusosanOsuus->isUnique(suure.tunnus.koodi = http://uri.suomi.fi/codelist/rytj/ms-rakennusosan-materiaalimaara/code/3010')</td>
+					<td width="10%" class="TableRow">OCL</td>
+					<td width="10%" class="TableRow">Approved</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageConstraints99" onclick="parent.toggleDiv('detailsDIVConstraints99','DetailsImageConstraints99')" />Details:
+							<div id="detailsDIVConstraints99" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="80%" class="TableRow">rakennusosanOsuus->isUnique(suure.tunnus.koodi = http://uri.suomi.fi/codelist/rytj/ms-rakennusosan-materiaalimaara/code/3011')</td>
+					<td width="10%" class="TableRow">OCL</td>
+					<td width="10%" class="TableRow">Approved</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageConstraints100" onclick="parent.toggleDiv('detailsDIVConstraints100','DetailsImageConstraints100')" />Details:
+							<div id="detailsDIVConstraints100" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="80%" class="TableRow">rakennusosanOsuus->isUnique(suure.tunnus.koodi = http://uri.suomi.fi/codelist/rytj/ms-rakennusosan-materiaalimaara/code/3012')</td>
+					<td width="10%" class="TableRow">OCL</td>
+					<td width="10%" class="TableRow">Approved</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageConstraints101" onclick="parent.toggleDiv('detailsDIVConstraints101','DetailsImageConstraints101')" />Details:
+							<div id="detailsDIVConstraints101" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="80%" class="TableRow">rakennusosanOsuus->isUnique(suure.tunnus.koodi = http://uri.suomi.fi/codelist/rytj/ms-rakennusosan-materiaalimaara/code/4001')</td>
+					<td width="10%" class="TableRow">OCL</td>
+					<td width="10%" class="TableRow">Approved</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageConstraints102" onclick="parent.toggleDiv('detailsDIVConstraints102','DetailsImageConstraints102')" />Details:
+							<div id="detailsDIVConstraints102" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="80%" class="TableRow">rakennusosanOsuus->isUnique(suure.tunnus.koodi = http://uri.suomi.fi/codelist/rytj/ms-rakennusosan-materiaalimaara/code/4002')</td>
+					<td width="10%" class="TableRow">OCL</td>
+					<td width="10%" class="TableRow">Approved</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageConstraints103" onclick="parent.toggleDiv('detailsDIVConstraints103','DetailsImageConstraints103')" />Details:
+							<div id="detailsDIVConstraints103" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="80%" class="TableRow">rakennusosanOsuus->isUnique(suure.tunnus.koodi = http://uri.suomi.fi/codelist/rytj/ms-rakennusosan-materiaalimaara/code/4003')</td>
+					<td width="10%" class="TableRow">OCL</td>
+					<td width="10%" class="TableRow">Approved</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageConstraints104" onclick="parent.toggleDiv('detailsDIVConstraints104','DetailsImageConstraints104')" />Details:
+							<div id="detailsDIVConstraints104" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="80%" class="TableRow">rakennusosanOsuus->isUnique(suure.tunnus.koodi = http://uri.suomi.fi/codelist/rytj/ms-rakennusosan-materiaalimaara/code/4004')</td>
+					<td width="10%" class="TableRow">OCL</td>
+					<td width="10%" class="TableRow">Approved</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageConstraints105" onclick="parent.toggleDiv('detailsDIVConstraints105','DetailsImageConstraints105')" />Details:
+							<div id="detailsDIVConstraints105" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="80%" class="TableRow">rakennusosanOsuus->isUnique(suure.tunnus.koodi = http://uri.suomi.fi/codelist/rytj/ms-rakennusosan-materiaalimaara/code/4005')</td>
+					<td width="10%" class="TableRow">OCL</td>
+					<td width="10%" class="TableRow">Approved</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageConstraints106" onclick="parent.toggleDiv('detailsDIVConstraints106','DetailsImageConstraints106')" />Details:
+							<div id="detailsDIVConstraints106" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="80%" class="TableRow">rakennusosanOsuus->isUnique(suure.tunnus.koodi = http://uri.suomi.fi/codelist/rytj/ms-rakennusosan-materiaalimaara/code/4006')</td>
+					<td width="10%" class="TableRow">OCL</td>
+					<td width="10%" class="TableRow">Approved</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageConstraints107" onclick="parent.toggleDiv('detailsDIVConstraints107','DetailsImageConstraints107')" />Details:
+							<div id="detailsDIVConstraints107" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="80%" class="TableRow">rakennusosanOsuus->isUnique(suure.tunnus.koodi = http://uri.suomi.fi/codelist/rytj/ms-rakennusosan-materiaalimaara/code/4007')</td>
+					<td width="10%" class="TableRow">OCL</td>
+					<td width="10%" class="TableRow">Approved</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageConstraints108" onclick="parent.toggleDiv('detailsDIVConstraints108','DetailsImageConstraints108')" />Details:
+							<div id="detailsDIVConstraints108" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+
+			</table>
+		</div>
 		<div class="ItemBody" id="CustomPropertiesTable">
 			<table border="0" cellspacing="0" cellpadding="0" class="Table">
 				<tr>
@@ -169,7 +614,33 @@ function nameClassifier(name, separator)
 
 
 			</table>
-		</div>	</div>
+		</div>		<div class="ItemBody" id="LinksTable">
+			<table align="center" border="0" cellspacing="0" cellpadding="0" class="Table">
+				<tr>
+					<td width="30%" class="TableHeading">Object</td>
+					<td width="10%" class="TableHeading">Type</td>
+					<td width="10%" class="TableHeading">Connection</td>
+					<td width="10%" class="TableHeading">Direction</td>
+					<td width="40%" class="TableHeading">Notes</td>
+				</tr>
+				<tr>
+					<td width="30%" class="TableRow" valign="top"><a href="../EA3/EA235.html">«DataType» SuureenArvo</a></td>
+					<td width="10%" class="TableRow" valign="top">Class</td>
+					<td width="10%" class="TableRow" valign="top">Usage</td>
+					<td width="10%" class="TableRow" valign="top">To</td>
+					<td width="40%" class="TableRow" valign="top">&nbsp;</td>
+				</tr>
+				<tr>
+					<td width="30%" class="TableRow" valign="top"><a href="EA27.html">«FeatureType» Materiaaliseloste</a></td>
+					<td width="10%" class="TableRow" valign="top">Class</td>
+					<td width="10%" class="TableRow" valign="top">Usage</td>
+					<td width="10%" class="TableRow" valign="top">From</td>
+					<td width="40%" class="TableRow" valign="top">&nbsp;</td>
+				</tr>
+
+			</table>
+		</div>
+	</div>
 <div class="pageFooter"></div>
  
 </body>
