@@ -252,7 +252,7 @@ Kunkin yhden [Rakennus](dokumentaatio/#rakennus)-luokan objektin sisältämien [
 
 ### Rakennelma
 
-{% include common/clause_start.html type="req" id="laatu/vaat-rakennuksen-geometria" %}
+{% include common/clause_start.html type="req" id="laatu/vaat-rakennelman-geometria" %}
 [Rakennelma](dokumentaatio/#rakennelma)-luokan objektilla on oltava ```geometria``` attribuutin arvo, joka kuvaa kyseisen rakennelman sijainnin aluemaisena tai 3-ulotteisena geometriana. Mikäli geometria annetaan aluemaisena, sen tulee vastata rakennelman pohjapinta-alaa.
 {% include common/clause_end.html %}
 
@@ -262,7 +262,7 @@ Kunkin yhden [Rakennus](dokumentaatio/#rakennus)-luokan objektin sisältämien [
 [RakennelmanOsa](dokumentaatio/#rakennelmanosa)-luokan objektilla on oltava ```geometria``` attribuutin arvo, joka kuvaa kyseisen rakennelman osan aluemaisena tai 3-ulotteisena geometriana. Mikäli geometria annetaan aluemaisena, sen tulee vastata rakennelman osan pohjapinta-alaa.
 {% include common/clause_end.html %}
 
-{% include common/clause_start.html type="req" id="laatu/vaat-rakennelman-osien-geometriat" %}
+{% include common/clause_start.html type="req" id="laatu/vaat-rakennelman-ja-sen-osien-geometriat" %}
 [Rakennelma](dokumentaatio/#rakennelma)-luokan objektiin assosiaation ```osa``` avulla sisältyvien [RakennelmanOsa](dokumentaatio/#rakennelmanosa)-luokkien objektien ```geometria```-attribuutin arvojen tulee olla sen [Rakennelma](dokumentaatio/#rakennelma)-luokan objektin ```geometria```-attribuutin arvon sisällä, johon ne kuuluvat, poislukien osat, jotka ovat elinkaaren vaiheissa ```05 - tuhoutunut```, ```06 - purettu``` tai ```07 - yhdistetty tai jaettu```.
 {% include common/clause_end.html %}
 
