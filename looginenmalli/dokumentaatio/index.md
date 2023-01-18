@@ -25,7 +25,7 @@ Seuraavat dokumentit ovat välttämättömiä tämän dokumentin täysipainoises
 * [ISO 19505-2:ISO/IEC 19505-2:2012, Information technology — Object Management Group Unified Modeling Language (OMG UML) — Part 2: Superstructure][ISO-19505-2]
 
 ## Standardienmukaisuus
-Kuvattu tietomalli perustuu [ISO 19109][ISO-19109]-standardin yleinen kohdetietomalliin (General Feature Model, GFM), joka määrittelee rakennuspalikat paikkatiedon ISO-standardiperheen mukaisten sovellusskeemojen määrittelyyn. GFM kuvaa muun muassa metaluokat ```FeatureType```, ```AttributeType``` ja ```FeatureAssociationType```. Kaavatietomallissa kaikki tietokohteet, joilla on tunnus ja jota voivat esiintyä erillään toisista kohteista on määritelty kohdetyypeinä (stereotyyppi ```FeatureType```. Sellaiset tietokohteet, joilla ei ole omaa tunnusta ja jotka voivat esiintyä vain kohdetyyppien attribuuttien arvoina on määritelty [ISO 19103][ISO-19103]-standardin ```DataType```-stereotyypin avulla. Lisäksi [HallinnollinenAlue](#hallinnollinenalue) ja [Organisaatio](#organisaatio) on mallinnettu vain rajapintojen (```Interface```) avulla, koska on niitä ei ole tarpeen kuvata kaavatietomallissa yksityiskohtaisesti, ja on todennäköistä, että tietovarastoja ylläpitävät tietojärjestelmät tarjovat niille konkreettiset toteuttavat luokat.
+Kuvattu tietomalli perustuu [ISO 19109][ISO-19109]-standardin yleinen kohdetietomalliin (General Feature Model, GFM), joka määrittelee rakennuspalikat paikkatiedon ISO-standardiperheen mukaisten sovellusskeemojen määrittelyyn. GFM kuvaa muun muassa metaluokat ```FeatureType```, ```AttributeType``` ja ```FeatureAssociationType```. Kaavatietomallissa kaikki tietokohteet, joilla on tunnus ja jota voivat esiintyä erillään toisista kohteista on määritelty kohdetyypeinä (stereotyyppi ```FeatureType```. Sellaiset tietokohteet, joilla ei ole omaa tunnusta ja jotka voivat esiintyä vain kohdetyyppien attribuuttien arvoina on määritelty [ISO 19103][ISO-19103]-standardin ```DataType```-stereotyypin avulla.
 
 [ISO 19109][ISO-19109] -standardin lisäksi tietomalli perustuu muihin paikkatiedon ISO-standardeihin, joista keskeisimpiä ovat [ISO 19103][ISO-19103] (UML-kielen käyttö paikkatietojen mallinnuksessa), [ISO 19107][ISO-19107] (sijaintitiedon mallintaminen) ja [ISO 19108][ISO-19108] (aikaan sidotun tiedon mallintaminen).
 
@@ -94,7 +94,7 @@ Täsmälleen yhdestä pisteestä koostuva geometriatyyppi. Määritelty rajapint
 
 ### RakennuksenOsa
 
-### ErityistäToimintaaVarteRakennettavaAlue
+### ErityistäToimintaaVartenRakennettavaAlue
 
 ### RakennelmaTaiSenOsa
 
@@ -133,8 +133,6 @@ Täsmälleen yhdestä pisteestä koostuva geometriatyyppi. Määritelty rajapint
 ### Materiaalitiedot
 
 #### KantavienRakenteidenRakennusaine
-
-#### MateriaalinMäärä
 
 #### Julkisivumateriaali
 
@@ -186,15 +184,220 @@ Täsmälleen yhdestä pisteestä koostuva geometriatyyppi. Määritelty rajapint
 
 ### Hiilikädenjälkitiedot
 
-### RakennuskohteenVähähiilisyystiedot
+### RakennuskohdekohtaisetVähähiilisyystiedot
 
-### RakennuspaikanVähähiilisyystiedot
+### RakennuspaikkakohtaisetVähähiilisyystiedot
 
 ### PoikkeamisenPeruste
 
 ## Materiaaliseloste
 
+### Materiaaliseloste
+
+### RakennuspaikkakohtaisetMateriaalimäärät
+
+### RakennuskohdekohtaisetMateriaalimäärät
+
 ## Koodistot
+
+### RakennuksenElinkaarenVaihe
+
+{% include common/codelistref.html registry="rakrek" id="rakelinvaih" name="Rakennuksen elinkaaren vaihe" %}
+
+### Rakennusluokitus2018
+
+{% include common/codelistref.html registry="jhs" id="rakennus_1_20180712" name="Rakennusluokitus 2018" %}
+
+### RakennelmanKäyttötarkoitus
+
+{% include common/codelistref.html registry="rytj" id="RakennelmanKayttotarkoitus" name="Rakennelman käyttötarkoitus" %}
+
+### RakentamistoimenpiteenLaji
+
+{% include common/codelistref.html registry="rytj" id="Rakentamistoimenpide" name="Rakentamistoimenpide" %}
+
+### RakennuksenVarusteenLaji
+
+{% include common/codelistref.html registry="rytj" id="RakennusVaruste" name="Rakennuksen varusteet" %}
+
+### Rakennustietomallinlaji
+
+{% include common/codelistref.html registry="rytj" id="rakennuksentietomallinlaji" name="Rakennuksen tietomallin laji" %}
+
+### RakennuskohteenTiedonLaji
+
+{% include common/codelistref.html registry="rytj" id="rakkohteen-tiedon-laji" name="Rakennuskohteen tiedon laji" %}
+
+### RakennuskohteenTiedonLähteenLaji
+
+{% include common/codelistref.html registry="rytj" id="RakennuskohteenTiedonlahde" name="Rakennuskohteen tiedon lähde" %}
+
+### Suojelutapa
+
+{% include common/codelistref.html registry="rytj" id="suojtapa" name="Suojelutapa" %}
+
+### RakennuksenOsittelunLaji
+
+{% include common/codelistref.html registry="rytj" id="rak-osittelun-laji" name="Rakennuksen osittelun laji" %}
+
+### ErityistäToimintaaVartenRakennettavanAlueenTyyppi
+
+{% include common/codelistref.html registry="rakrek" id="erityistatoimintaavartenrakennettavanalueentyyppi" name="Erityistä toimintaa varten rakennettavan alueen tyyppi" %}
+
+### SuhdeMaanpintaan
+
+{% include common/codelistref.html registry="rytj" id="Suhde_pintaan" name="Suhde maan pintaan" %}
+
+### Omistajalaji
+
+{% include common/codelistref.html registry="rytj" id="Omistajalaji" name="Omistajalaji" %}
+
+### OmistuksenLaji
+
+{% include common/codelistref.html registry="rytj" id="Omistuksenlaji" name="Omistuksen laji" %}
+
+### KulttuurihistoriallinenMerkittävyys
+
+{% include common/codelistref.html registry="rakrek" id="kulthistmer" name="Kulttuurihistoriallinen merkittävyys" %}
+
+### LuvanvaraisenRakentamisenAsiakirjanLaji
+
+Laajentaa luokkaa AbstraktiAsiakirjanLaji
+
+Y-alustan koodisto puuttuu toistaiseksi
+
+### KantavienRakenteidenRakennusaineenLaji
+
+{% include common/codelistref.html registry="rytj" id="kantavanrakenteenrakennusaine" name="Kantavan rakenteen rakennusaine" %}
+
+### Rakentamistapa
+
+{% include common/codelistref.html registry="vtj" id="Rake_runkotapa" name="Rakentamistapa" %}
+
+### IlmastoselvityksenHiilijalanjälkisuure
+
+{% include common/codelistref.html registry="rytj" id="is-hiilijalanjalkisuure" name="Ilmastoselvityksen hiilijalanjälkisuure" %}
+
+### IlmastoselvityksenHiilikädenjälkisuure
+
+{% include common/codelistref.html registry="rytj" id="is-hiilikadenjalkisuure" name="Ilmastoselvityksen hiilikädenjälkisuure" %}
+
+### JulkisivunRakennusaineenLaji
+
+{% include common/codelistref.html registry="rytj" id="julkisivunrakennusaine" name="Julkisivun rakennusaineen laji" %}
+
+### Paloluokka
+
+{% include common/codelistref.html registry="rytj" id="Paloluokka" name="Paloluokka" %}
+
+### RakennusosanMateriaalinMäärä
+
+{% include common/codelistref.html registry="rytj" id="ms-rakennusosan-materiaalimaara" name="Rakennuksen rakennusosan materiaalin määrä" %}
+
+### RakentamisessaKäytettävänMaterialilajinMäärä
+
+{% include common/codelistref.html registry="rytj" id="ms-materiaalilajin-maara" name="Rakentamisessa käytettävän materiaalin määrä" %}
+
+### IlmastoselvityksenRajaArvoistaPoikkeamisenPerusteenLaji
+
+{% include common/codelistref.html registry="rytj" id="is-raja-arvoista-poikkeamisen-laji" name="Ilmastoselvityksen raja-arvoista poikkeamisen perusteen laji" %}
+
+### RakennuksenKäyttötarkoitusluokkaEnergiatehokkuudenArvioinnissa
+
+{% include common/codelistref.html registry="rytj" id="rak-kt-luokka-energiatehokkuus" name="Rakennuksen käyttötarkoitusluokka energiatehokkuuden arvionnissa" %}
+
+### Energialuokka
+
+{% include common/codelistref.html registry="rytj" id="Energialuokka" name="Energialuokka" %}
+
+### LämmitystavanLaji
+
+{% include common/codelistref.html registry="rytj" id="lammitystapa" name="Lämmitystavan laji" %}
+
+### JäähdytystavanLaji
+
+{% include common/codelistref.html registry="rytj" id="jaahdytystapa" name="Jäähdytystavan laji" %}
+
+### SähköenergianLähteenLaji
+
+{% include common/codelistref.html registry="rytj" id="sahkoenergianlahde" name="Sähköenergianlähteen laji" %}
+
+### HulevedenKäsittelynLaji
+
+{% include common/codelistref.html registry="rytj" id="hulevedenkasittely" name="Huleveden käsittelyn laji" %}
+
+### JäähdytysenergianLähteenLaji
+
+Y-alustan koodisto puuttuu toistaiseksi
+
+### LämmitysenergianLähteenLaji
+
+{% include common/codelistref.html registry="rytj" id="lammitysenergianlahde" name="Lämmitysenergianlähteen laji" %}
+
+### OstoenergianLaji
+
+{% include common/codelistref.html registry="rytj" id="ostoenergia" name="Ostoenergian laji" %}
+
+### JätevesienKäsittelynLaji
+
+{% include common/codelistref.html registry="rytj" id="jatevesienkasittely" name="Jätevesien käsittelyn laji" %}
+
+### IlmanvaihtotavanLaji
+
+{% include common/codelistref.html registry="rytj" id="ilmanvaihto" name="Ilmanvaihtotavan laji" %}
+
+### VerkostoliittymänLaji
+
+{% include common/codelistref.html registry="rytj" id="verkliit" name="Verkostoliittymän laji" %}
+
+### TalousvedenLaji
+
+{% include common/codelistref.html registry="rytj" id="talousvesi" name="Talousveden laji" %}
+
+### SisäänkäynninTyyppi
+
+{% include common/codelistref.html registry="rytj" id="sisaankaynti" name="Sisäänkäynnin tyyppi" %}
+
+### HissinLaji
+
+{% include common/codelistref.html registry="rytj" id="hissi" name="Hissin laji" %}
+
+### RakennuksenToiminnallisenOsanElinkaarenVaihe
+
+{% include common/codelistref.html registry="rytj" id="rakennuksen-toim-osan-elinkaaren-vaihe" name="Rakennuksen toiminnallisen osan elinkaaren vaihe" %}
+
+### HuoneenTaiMuunTilanKäyttötarkoitus
+
+Y-alustan koodisto puuttuu toistaiseksi
+
+### HuoneenTaiMuunTilanLaji
+
+{% include common/codelistref.html registry="jhs" id="huonelaji" name="Huoneiden ja muiden tilojen lajit" %}
+
+### Huoneistotyyppi
+
+{% include common/codelistref.html registry="rytj" id="Huoneistotyyppi" name="Huoneistotyyppi" %}
+
+### HuoneistonVarusteenLaji
+
+{% include common/codelistref.html registry="rytj" id="HuoneistoVaruste" name="Huoneiston varusteet" %}
+
+### HuoneistonElinkaarenVaihe
+
+{% include common/codelistref.html registry="rytj" id="huon-elinkaaren-vaihe" name="Huoneiston elinkaaren vaihe" %}
+
+### Keittiötyyppi
+
+{% include common/codelistref.html registry="rytj" id="Keittiotyyppi" name="Keittiötyyppi" %}
+
+### HuoneistonMuutoksenLaji
+
+{% include common/codelistref.html registry="rytj" id="huoneistonmuutoksenlaji" name="Huoneiston muutoksen laji" %}
+
+### Käymälätyyppi
+
+{% include common/codelistref.html registry="rytj" id="kaymalatyyppi" name="Käymälätyyppi" %}
+
 
 [ISO-8601-1]: https://www.iso.org/standard/70907.html "ISO 8601-1:2019 Date and time — Representations for information interchange — Part 1: Basic rules"
 [ISO-639-2]: https://www.iso.org/standard/4767.html "ISO 639-2:1998 Codes for the representation of names of languages — Part 2: Alpha-3 code"

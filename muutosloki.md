@@ -4,6 +4,19 @@ description: ""
 id: "muutosloki"
 ---
 # Muutosloki
+{:.no_toc}
+
+## 18.1.2020
+
+- Yhdistetty koodistoluokat EnergiaJaIlmastoselvityksenLaji, OhjeasiakirjanLaji ja RakentamisenSuunnitelmanLaji uudeksi yleisemmäksi koodistoksi LuvanvaraisenRakentamisenAsiakirjanLaji. Y-alustan koodisto puuttuu edelleen.
+- Uudelleennimetty ViemäröintitavanLaji -> JätevesienKäsittelynLaji, ja kytketty Y-alustan koodistoon http://uri.suomi.fi/codelist/rytj/jatevesienkasittely
+- Lisätty uusi attribuutti Huoneisto.käymälätyyppi ja sille uusi koodistoluokka Käymälätyyppi.
+- Lisätty uudet attribuutit Rakennuspaikka.hulevedenKäsittelytapa ja Talotekniikkatiedot.hulevedenKäsittelytapa ja niille uusi yhteinen koodistoluokka HulevedenKäsittelynLaji.
+- Poistettu RakennuskohteenToimenpide-luokan attribuutti toimenpidealueenLämmitettyNettoala ja lisätty attribuutti RakennuskohdekohtaisetVähähiilisyystiedot.kohteenToimenpidealueenLämmitettyNettoala.
+- Lisätty attribuutti Materiaaliseloste.toimenpidealueenLämmitettyNettoala.
+- Lisätty attribuutti Materiaaliseloste.rakennuksenKäyttötarkoitus.
+- Päivitetty laatusäännöt vastaamaan muutettua ilmastoselvityksen luokkarakennetta.
+- Päivitetty dokumentaatio-sivun otsikot vastaamaan muutettua ilmastoselvityksen luokkarakennetta ja lisätty koodistoluokkien otsikot ja Y-alustaviittaukset.
 
 ## 10.1.2023
 
