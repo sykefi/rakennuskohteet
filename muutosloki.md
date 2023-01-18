@@ -17,6 +17,7 @@ id: "muutosloki"
 - Lisätty attribuutti Materiaaliseloste.rakennuksenKäyttötarkoitus.
 - Päivitetty laatusäännöt vastaamaan muutettua ilmastoselvityksen luokkarakennetta.
 - Päivitetty dokumentaatio-sivun otsikot vastaamaan muutettua ilmastoselvityksen luokkarakennetta ja lisätty koodistoluokkien otsikot ja Y-alustaviittaukset.
+- Lisätty laatusääntöihin materiaaliselosteen sisältöä koskevat vaatimukset.
 
 ## 10.1.2023
 

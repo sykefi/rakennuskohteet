@@ -368,7 +368,7 @@ Kuhunkin [Ilmastoselvitys](dokumentaatio/#ilmastoselvitys)-luokan objektiin tule
 {% include common/clause_end.html %}
 
 {% include common/clause_start.html type="req" id="laatu/vaat-ilmastoselvitys-rakennuspaikan-pinta-ala" %}
-[Ilmastoselvitys](dokumentaatio/#ilmastoselvitys)-luokan objektin tulee sisältää tiedot rakennuksen rakennuspaikan pinta-alasta. Kullakin siihen assosiaation ```kohde``` avulla liittyvien [RakennusTaiSenOsa](dokumentaatio/#rakennustaisenosa)-luokan objektin assosiaatiolla ```paikka``` viitatuilla [Rakennuspaikka](dokumentaatio/#rakennuspaikka)-luokan objekteilla tulee olla attribuutin ```pintaAla``` arvo, jonka yksikön tulee olla neliömetri (```m2```).
+[Ilmastoselvitys](dokumentaatio/#ilmastoselvitys)-luokan objektin tulee sisältää tiedot rakennuksen rakennuspaikan pinta-alasta. Rakenteisen attribuutin ```paikanVähähiilisyys``` assosiaatiolla ```paikka``` viitatuilla [Rakennuspaikka](dokumentaatio/#rakennuspaikka)-luokan objekteilla tulee olla attribuutin ```pintaAla``` arvo, jonka yksikön tulee olla neliömetri (```m2```).
 {% include common/clause_end.html %}
 
 {% include common/clause_start.html type="req" id="laatu/vaat-ilmastoselvitys-arviointijakso-yksikko" %}
@@ -401,7 +401,7 @@ Sekä [Hiilijalanjälkitiedot](dokumentaatio/#hiilijalanjälkitiedot)-luokkien e
 
 Yllä luetellut päästötiedot ilmoitetaan siten, että kukin [Hiilijalanjälkitiedot](dokumentaatio/#hiilijalanjälkitiedot)-luokan objekti sisältää tasan yhden (1) kappaleen kutakin yllä lueteltua rakennuksen elinkaaren vaiheen päästötietoa koskevaa ```osatekijä```-attribuutin arvoa. Näiden ```osatekijä```-attribuutin arvojen {% include common/moduleLink.html moduleId="yhteisetkomponentit" path="looginenmalli/dokumentaatio/#suureenarvo" title="SuureenArvo" %}-luokan ```suure```-attribuutin ```tunnus```-attribuutin arvojen on oltava [IlmastoselvityksenHiilijalanjälkisuure](dokumentaatio/#ilmastoselvityksenhiilijalanjälkisuure)-koodiston koodien tunnuksia. 
 
-[Hiilijalanjälkitiedot](dokumentaatio/#hiilijalanjälkitiedot)-luokan objektin voivat sisältää myös ```osatekijä```-attribuutin arvoja, jotka kuvaavat muita [IlmastoselvityksenHiilijalanjälkisuure](dokumentaatio/#ilmastoselvityksenhiilijalanjälkisuure)-koodiston kuvaamia suureita.
+[Hiilijalanjälkitiedot](dokumentaatio/#hiilijalanjälkitiedot)-luokan objektin voivat sisältää myös ```osatekijä```-attribuutin arvoja, jotka kuvaavat muita kuin [IlmastoselvityksenHiilijalanjälkisuure](dokumentaatio/#ilmastoselvityksenhiilijalanjälkisuure)-koodiston kuvaamia suureita.
 {% include common/clause_end.html %}
 
 {% include common/clause_start.html type="req" id="laatu/vaat-hiilijalanjalki-paastosumma-yksikko" %}
@@ -430,7 +430,7 @@ Osatekijä "D6 - Istutettu puusto" tulee sisällyttää ainoastaan sellaisiin il
 
 Yllä luetellut osatekijöiden tiedot ilmoitetaan siten, että kukin [Hiilikädenjälkitiedot](dokumentaatio/#hiilikädenjälkitiedot)-luokan objekti sisältää tasan yhden (1) kappaleen kutakin yllä lueteltua osatekijää koskevaa ```osatekijä```-attribuutin arvoa. Näiden ```osatekijä```-attribuutin arvojen {% include common/moduleLink.html moduleId="yhteisetkomponentit" path="looginenmalli/dokumentaatio/#suureenarvo" title="SuureenArvo" %}-luokan ```suure```-attribuutin ```tunnus```-attribuutin arvojen on oltava [IlmastoselvityksenHiilikädenjälkisuure](dokumentaatio/#ilmastoselvityksenhiilikädenjälkisuure)-koodiston koodien tunnuksia. 
 
-[Hiilikädenjälkitiedot](dokumentaatio/#hiilikädenjälkitiedot)-luokan objektin voivat sisältää myös ```osatekijä```-attribuutin arvoja, jotka kuvaavat muita [IlmastoselvityksenHiilikädenjälkisuure](dokumentaatio/#ilmastoselvityksenhiilikädenjälkisuure)-koodiston kuvaamia suureita.
+[Hiilikädenjälkitiedot](dokumentaatio/#hiilikädenjälkitiedot)-luokan objektin voivat sisältää myös ```osatekijä```-attribuutin arvoja, jotka kuvaavat muita kuin [IlmastoselvityksenHiilikädenjälkisuure](dokumentaatio/#ilmastoselvityksenhiilikädenjälkisuure)-koodiston kuvaamia suureita.
 {% include common/clause_end.html %}
 
 {% include common/clause_start.html type="req" id="laatu/vaat-hiilikadenjalki-per-ala-per-vuosi-yksikko" %}
@@ -450,7 +450,7 @@ Ilmastoselvityksessä voidaan viitata vain sellaisiin rakennuksen osiin, jotka o
 {% include common/clause_end.html %}
 
 {% include common/clause_start.html type="req" id="laatu/vaat-rakennuskohteenvahahiilisyystiedot-lammitetty-nettoala" %}
-Rakennuksen lämmitetyllä nettoalalla tarkoitetaan lämmitettyjen kerrostasoalojen summaa kerrostasoja ympäröivien ulkoseinien sisäpintojen mukaan laskettuna. Rakennuksen lämmitetty nettoalalla kunkin [Rakennuskohde](dokumentaatio/#rakennuskohde)-luokan objektin tiettyyn käyttötarkoitukseen varatun osan osalta ilmoitetaan [RakennuskohdekohtaisetVähähiilisyystiedot](dokumentaatio/#rakennuskohdekohtaisetvähäliilisyystiedot)-luokan objektien ```lämmitettyNettoala```-attribuuttien avulla, yksikkönä neliömetri (```m2```).  
+Rakennuksen lämmitetyllä nettoalalla tarkoitetaan lämmitettyjen kerrostasoalojen summaa kerrostasoja ympäröivien ulkoseinien sisäpintojen mukaan laskettuna. Rakennuksen toimenpidealueen lämmitetty nettoalalla kunkin [Rakennuskohde](dokumentaatio/#rakennuskohde)-luokan objektin tiettyyn käyttötarkoitukseen varatun osan osalta ilmoitetaan [RakennuskohdekohtaisetVähähiilisyystiedot](dokumentaatio/#rakennuskohdekohtaisetvähäliilisyystiedot)-luokan objektien ```lämmitettyNettoala```-attribuuttien avulla, yksikkönä neliömetri (```m2```).  
 {% include common/clause_end.html %}
 
 {% include common/clause_start.html type="req" id="laatu/vaat-rakennuskohteen-hiilijalanjalki-per-pinta-ala-per-vuosi" %}
@@ -603,4 +603,166 @@ for each ilmastoselvitys.paikanVähähiilisyys.hiilijalanjälki.osatekija as ot 
 
 ### Materiaaliseloste
 
-TODO
+Materialiseloste tulee voida aina liittää rakennukseen sen pysyvän rakennustunnuksen (PRT) kautta. Rakentamisen lupapäätösten tietomallissa [Materiaaliseloste](dokumentaatio/#materiaaliseloste)-luokalla on ```1..*``` assosiaatio [Rakennuskohde](dokumentaatio/#rakennuskohde)-luokkaan, jonka konkreettisia aliluokkia ovat muun muassa [Rakennus](dokumentaatio/#rakennus) ja [RakennuksenOsa](dokumentaatio/#rakennuksenosa).
+
+Materiaaliseloste liitetään tavallisesti joko suoraan koko rakennusta kuvaavaan [Rakennus](dokumentaatio/#rakennus)-luokan objektiin tai siihen [RakennuksenOsa](dokumentaatio/#rakennuksenosa)-luokan objektiin, jota luvanvaraisella toimenpiteellä muutetaan, tai joka syntyy suunnitellun laajennuksen tuloksena. Jälkimmäisessä tapauksessa yhteys pysyvään rakennustunnukseen syntyy [RakennuksenOsa](dokumentaatio/#rakennuksenosa)-luokan pakollisen ```rakennus:Rakennus```-assosiaation kautta.
+
+{% include common/clause_start.html type="req" id="laatu/vaat-materialiseloste-rakennuskohde-pysyva-rakennustunnus-oltava" %}
+Kuhunkin [Materiaaliseloste](dokumentaatio/#materiaaliseloste)-luokan objektiin tulee liittyä vähintään yksi (1) [Rakennuskohde](dokumentaatio/#rakennuskohde)-luokan aliluokkien objekti, jonka kautta materiaaliseloste voidaan liittää rakennuksen pysyvään rakennustunnukseen. 
+{% include common/clause_end.html %}
+
+{% include common/clause_start.html type="req" id="laatu/vaat-materiaaliseloste-rakennuksen-kayttoika" %}
+[Materiaaliseloste](dokumentaatio/#materiaaliseloste)-luokan objektin tulee sisältää tiedot rakennuksen rakennuksen tavoitteellisesta käyttöiästä. Tavoitteellinen käyttöikä annetaan assosiaation ```kohde``` kautta liitettyjen [RakennusTaiSenOsa](dokumentaatio/#rakennustaisenosa)-luokan objektin rakenteisen ```käyttötiedot```-attribuutin osana olevan ```tavoitteellinenKäyttöikä```-attribuutin avulla. Attribuutin arvon yksikön tulee olla yksi vuosi (```a```).
+{% include common/clause_end.html %}
+
+{% include common/clause_start.html type="req" id="laatu/vaat-materiaaliseloste-rakennuspaikan-pinta-ala" %}
+[Materiaaliseloste](dokumentaatio/#materiaaliseloste)-luokan objektin tulee sisältää tiedot rakennuksen rakennuspaikan pinta-alasta.  Rakenteisen attribuutin ```rakennuspaikanMateriaalit``` assosiaatiolla ```paikka``` viitatuilla [Rakennuspaikka](dokumentaatio/#rakennuspaikka)-luokan objekteilla tulee olla attribuutin ```pintaAla``` arvo, jonka yksikön tulee olla neliömetri (```m2```).
+{% include common/clause_end.html %}
+
+{% include common/clause_start.html type="req" id="laatu/vaat-materiaaliselostus-lammitetty-nettoala" %}
+Rakennuksen lämmitetyllä nettoalalla tarkoitetaan lämmitettyjen kerrostasoalojen summaa kerrostasoja ympäröivien ulkoseinien sisäpintojen mukaan laskettuna. Rakennuksen toimenpidealueen lämmitetty nettoala ilmoitetaan [Materiaaliseloste](dokumentaatio/#materiaaliseloste)-luokan objektin ```toimenpidealueenLämmitettyNettoala```-attribuutin avulla, yksikkönä neliömetri (```m2```).
+{% include common/clause_end.html %}
+
+#### Materiaalimäärät lajeittain
+
+{% include common/clause_start.html type="req" id="laatu/vaat-materiaalilajin-maara" %}
+[Materiaaliseloste](dokumentaatio/#materiaaliseloste)-luokan objektin tulee sisältää tiedot rakennustoimenpiteen yhteydessä käytettävien materiaalien määristä painon mukaan niiden tyypillisessä käyttökosteudessa kuvaavina kokonaislukuarvoina seuraavien materiaalilajien osalta:
+
+* Betoni-, tiili-, kivennäislaatta-, keramiikka- ja luonnonkivimateriaalit
+* Puu- ja luonnonkuitupohjaiset materiaalit rakennustuotteissa
+* Lasimateriaalit
+* Muovit ja kumit
+* Bitumimateriaalit ja -seokset
+* Metallit
+* Lämmöneristemateriaalit
+* Kipsit
+* Koneet ja laitteet
+* Muut materiaalit
+* Maa- ja kiviainekset ja
+* Istutetut puut
+
+Materiaalilaji ```Istutetut puut``` tulee sisällyttää ainoastaan sellaisiin materiaaliselosteisiin, jotka koskevat asemakaava-alueella tapahtumaa rakentamista.
+
+Yllä luetellut materiaalilajien tiedot ilmoitetaan siten, että kukin [Materiaaliseloste](dokumentaatio/#materiaaliseloste)-luokan objekti sisältää tasan yhden (1) kappaleen kutakin yllä lueteltua materiaalilajia koskevaa ```materiaalilajinMäärä```-attribuutin arvoa. Näiden ```materiaalilajinMäärä```-attribuutin arvojen {% include common/moduleLink.html moduleId="yhteisetkomponentit" path="looginenmalli/dokumentaatio/#suureenarvo" title="SuureenArvo" %}-luokan ```suure```-attribuutin ```tunnus```-attribuutin arvojen on oltava [RakentamisessaKäytettävänMateriaalilajinMäärä](dokumentaatio/#rakentamisessakäytettävänmateriaalilajinmäärä)-koodiston koodien tunnuksia, ja 
+ niiden ```arvo```-attribuuttien arvot ovat luokan {% include common/moduleLink.html moduleId="yhteisetkomponentit" path="looginenmalli/dokumentaatio/#numeerinenarvo" title="NumeerinenArvo" %} objekteja, joiden attribuutin arvo ```yksikkö``` on kilogramma (```kg```), ja joiden ```numero``` -attribuutin arvo on ilmoitettu pyöristettynä kokonaiseen lukuun ilman desimaaleja.
+
+[Materiaaliseloste](dokumentaatio/#materiaaliseloste)-luokan objektin voivat sisältää myös ```materiaalilajinMäärä```-attribuutin arvoja, jotka kuvaavat muita kuin [RakentamisessaKäytettävänMateriaalilajinMäärä](dokumentaatio/#rakentamisessakäytettävänmateriaalilajinmäärä)-koodiston kuvaamia suureita.
+{% include common/clause_end.html %}
+
+#### Materiaalien alkuperä
+
+##### Vaarallisten aineiden määrä
+
+{% include common/clause_start.html type="req" id="laatu/vaat-materiaaliselostus-vaaralliset-aineiden-maara" %}
+Materiaaliselosteessa ilmoitettava vaarallisten aineiden kokonaismäärä ilmoitetaan [Materiaaliseloste](dokumentaatio/#materiaaliseloste)-luokan objektien ```vaarallistenAineidenMäärä```-attribuutin avulla, yksikkönä neliömetri (```kg```), ja joiden ```numero``` -attribuutin arvo on ilmoitettu pyöristettynä kokonaiseen lukuun ilman desimaaleja.
+{% include common/clause_end.html %}
+
+##### Uusiutuvan materiaalin määrä
+
+{% include common/clause_start.html type="req" id="laatu/vaat-materiaaliselostus-uusiutuvan-materiaalin-maara" %}
+Materiaaliselosteessa ilmoitettava uusiutuvan materiaalin kokonaismäärä ilmoitetaan [Materiaaliseloste](dokumentaatio/#materiaaliseloste)-luokan objektien ```uusiutuvanMateriaalinMäärä```-attribuutin avulla, yksikkönä neliömetri (```kg```), ja joiden ```numero``` -attribuutin arvo on ilmoitettu pyöristettynä kokonaiseen lukuun ilman desimaaleja.
+{% include common/clause_end.html %}
+
+##### Uusiutumattoman materiaalin määrä
+
+{% include common/clause_start.html type="req" id="laatu/vaat-materiaaliselostus-uusiutumattoman-materiaalin-maara" %}
+Materiaaliselosteessa ilmoitettava uusiutumattoman materiaalin kokonaismäärä ilmoitetaan [Materiaaliseloste](dokumentaatio/#materiaaliseloste)-luokan objektien ```uusiutumattomanMateriaalinMäärä```-attribuutin avulla, yksikkönä neliömetri (```kg```), ja joiden ```numero``` -attribuutin arvo on ilmoitettu pyöristettynä kokonaiseen lukuun ilman desimaaleja.
+{% include common/clause_end.html %}
+
+##### Kierrätetyn materiaalin määrä
+
+{% include common/clause_start.html type="req" id="laatu/vaat-materiaaliselostus-kierratetyn-materiaalin-maara" %}
+Materiaaliselosteessa ilmoitettava kierrätetyn materiaalin kokonaismäärä ilmoitetaan [Materiaaliseloste](dokumentaatio/#materiaaliseloste)-luokan objektien ```kierrätetynMateriaalinMäärä```-attribuutin avulla, yksikkönä neliömetri (```kg```), ja joiden ```numero``` -attribuutin arvo on ilmoitettu pyöristettynä kokonaiseen lukuun ilman desimaaleja.
+{% include common/clause_end.html %}
+
+##### Uudelleenkäytetyn materiaalin määrä
+
+{% include common/clause_start.html type="req" id="laatu/vaat-materiaaliselostus-uudelleenkaytetyn-materiaalin-maara" %}
+Materiaaliselosteessa ilmoitettava uudelleenkäytetyn materiaalin kokonaismäärä ilmoitetaan [Materiaaliseloste](dokumentaatio/#materiaaliseloste)-luokan objektien ```uudelleenkäytetynMateriaalinMäärä```-attribuutin avulla, yksikkönä neliömetri (```kg```), ja joiden ```numero``` -attribuutin arvo on ilmoitettu pyöristettynä kokonaiseen lukuun ilman desimaaleja.
+{% include common/clause_end.html %}
+
+### Rakennuspaikkakohteiset materiaalimäärät rakennusosittain
+
+{% include common/clause_start.html type="req" id="laatu/vaat-rakennuspaikan-materiaalimäärät-rakennusosittain" %}
+Materiaaliselosteen on sisällettävä tiedot rakentamistoimenpiteessä käytettävien materiaalien määristä siltä osin, kuin ne kohdistuvat rakennuspaikkaan. Materiaalimäärät on ilmoitettava seuraavien rakennusosaluokkien osalta (suluissa koodiston [Rakennuksen rakennusosan materiaalin määrä](http://uri.suomi.fi/codelist/rytj/ms-rakennusosan-materiaalimaara) käytettävä koodi):
+
+**Alueosat**:
+
+* Maaosat (koodi [1001](http://uri.suomi.fi/codelist/rytj/ms-rakennusosan-materiaalimaara/code/1001))
+* Tuennat (koodi [1002](http://uri.suomi.fi/codelist/rytj/ms-rakennusosan-materiaalimaara/code/1002))
+* Päällysteet (koodi [1003](http://uri.suomi.fi/codelist/rytj/ms-rakennusosan-materiaalimaara/code/1003))
+* Alueen rakenteet (koodi [1004](http://uri.suomi.fi/codelist/rytj/ms-rakennusosan-materiaalimaara/code/1004))
+
+**Rakennusosat**:
+
+* Perustukset (koodi [2001](http://uri.suomi.fi/codelist/rytj/ms-rakennusosan-materiaalimaara/code/2001))
+
+**Talotekniikka**:
+
+* Lämmitysjärjestelmän pääosat (koodi [4001](http://uri.suomi.fi/codelist/rytj/ms-rakennusosan-materiaalimaara/code/4001))
+* Vesi- ja viemärijärjestelmän pääosat (koodi [4002](http://uri.suomi.fi/codelist/rytj/ms-rakennusosan-materiaalimaara/code/4002))
+* Jäähdytysjärjestelmän pääosat (koodi [4004](http://uri.suomi.fi/codelist/rytj/ms-rakennusosan-materiaalimaara/code/4004))
+* Sähköjärjestelmän pääosat (koodi [4006](http://uri.suomi.fi/codelist/rytj/ms-rakennusosan-materiaalimaara/code/4006))
+
+Yllä luetellut rakennusosakohtaisten materiaalimäärien tiedot ilmoitetaan siten, että kukin [RakennuspaikkakohteisetMateriaalimäärät](dokumentaatio/#rakennuspaikkakohtaisetmateriaalimäärät)-luokan objekti sisältää tasan yhden (1) kappaleen kutakin yllä lueteltua rakennusosaa koskevaa ```rakennusosanOsuus```-attribuutin arvoa. Näiden ```rakennusosanOsuus```-attribuutin arvojen {% include common/moduleLink.html moduleId="yhteisetkomponentit" path="looginenmalli/dokumentaatio/#suureenarvo" title="SuureenArvo" %}-luokan ```suure```-attribuutin ```tunnus```-attribuutin arvojen on oltava [Rakennuksen rakennusosan materiaalin määrä](http://uri.suomi.fi/codelist/rytj/ms-rakennusosan-materiaalimaara)-koodiston koodien tunnuksia.
+
+[RakennuspaikkakohteisetMateriaalimäärät](dokumentaatio/#rakennuspaikkakohtaisetmateriaalimäärät)-luokan objektin voivat sisältää myös ```rakennusosanOsuus```-attribuutin arvoja, jotka kuvaavat muita kuin yllä lueteltuja suureita.
+{% include common/clause_end.html %}
+
+{% include common/clause_start.html type="req" id="laatu/vaat-rakennuspaikan-osien-materiaalimäärät-suureen-arvo" %}
+[RakennuspaikkakohteisetMateriaalimäärät](dokumentaatio/#rakennuspaikkakohtaisetmateriaalimäärät)-luokkien objektien ```rakennusosanOsuus```-attribuuttien arvot annetaan luokan {% include common/moduleLink.html moduleId="yhteisetkomponentit" path="looginenmalli/dokumentaatio/#suureenarvo" title="SuureenArvo" %} objekteina siten, että niiden ```arvo```-attribuuttien arvot ovat luokan {% include common/moduleLink.html moduleId="yhteisetkomponentit" path="looginenmalli/dokumentaatio/#numeerinenarvo" title="NumeerinenArvo" %} objekteja, joiden attribuutin arvo ```yksikkö``` on kilogramma (```kg```), ja joiden ```numero``` -attribuutin arvo on ilmoitettu pyöristettynä kokonaiseen lukuun ilman desimaaleja.
+{% include common/clause_end.html %}
+
+
+### Rakennuskohdekohteiset materiaalimäärät rakennusosittain
+
+{% include common/clause_start.html type="req" id="laatu/vaat-rakennuskohteen-materiaalimäärät-rakennusosittain" %}
+Materiaaliselosteen on sisällettävä tiedot rakentamistoimenpiteessä käytettävien materiaalien määristä siltä osin, kuin ne kohdistuvat rakennukseen. Materiaalimäärät on ilmoitettava seuraavien rakennusosaluokkien osalta (suluissa koodiston [Rakennuksen rakennusosan materiaalin määrä](http://uri.suomi.fi/codelist/rytj/ms-rakennusosan-materiaalimaara) käytettävä koodi):
+
+**Rakennusosat**:
+
+* Alapohjat (koodi [2002](http://uri.suomi.fi/codelist/rytj/ms-rakennusosan-materiaalimaara/code/2002))
+* Runko (koodi [2003](http://uri.suomi.fi/codelist/rytj/ms-rakennusosan-materiaalimaara/code/2003))
+* Julkisivut (koodi [2004](http://uri.suomi.fi/codelist/rytj/ms-rakennusosan-materiaalimaara/code/2004))
+* Ovet (koodi [2005](http://uri.suomi.fi/codelist/rytj/ms-rakennusosan-materiaalimaara/code/2005))
+* Ikkunat (koodi [2006](http://uri.suomi.fi/codelist/rytj/ms-rakennusosan-materiaalimaara/code/2006))
+* Ulkotasot ja parvekkeet (koodi [2007](http://uri.suomi.fi/codelist/rytj/ms-rakennusosan-materiaalimaara/code/2007))
+* Katot (koodi [2008](http://uri.suomi.fi/codelist/rytj/ms-rakennusosan-materiaalimaara/code/2008))
+
+**Tilaosat**:
+
+* Väliseinät (koodi [3001](http://uri.suomi.fi/codelist/rytj/ms-rakennusosan-materiaalimaara/code/3001))
+* Väliovet (koodi [3002](http://uri.suomi.fi/codelist/rytj/ms-rakennusosan-materiaalimaara/code/3002))
+* Portaat (koodi [3003](http://uri.suomi.fi/codelist/rytj/ms-rakennusosan-materiaalimaara/code/3003))
+* Lattiat (koodi [3004](http://uri.suomi.fi/codelist/rytj/ms-rakennusosan-materiaalimaara/code/3004))
+* Sisäkatot (koodi [3005](http://uri.suomi.fi/codelist/rytj/ms-rakennusosan-materiaalimaara/code/3005))
+* Seinät (koodi [3006](http://uri.suomi.fi/codelist/rytj/ms-rakennusosan-materiaalimaara/code/3006))
+* Pintakäsittelyt (koodi [3007](http://uri.suomi.fi/codelist/rytj/ms-rakennusosan-materiaalimaara/code/3007))
+* Kiintokalusteet (koodi [3008](http://uri.suomi.fi/codelist/rytj/ms-rakennusosan-materiaalimaara/code/3008))
+* Keittiölaitteet (koodi [3009](http://uri.suomi.fi/codelist/rytj/ms-rakennusosan-materiaalimaara/code/3009))
+* Hormit (koodi [3010](http://uri.suomi.fi/codelist/rytj/ms-rakennusosan-materiaalimaara/code/3010))
+* Tulisijat (koodi [3011](http://uri.suomi.fi/codelist/rytj/ms-rakennusosan-materiaalimaara/code/3011))
+* Tilaelementit (koodi [3012](http://uri.suomi.fi/codelist/rytj/ms-rakennusosan-materiaalimaara/code/3012))
+
+**Talotekniikka**:
+
+* Lämmitysjärjestelmän pääosat (koodi [4001](http://uri.suomi.fi/codelist/rytj/ms-rakennusosan-materiaalimaara/code/4001))
+* Vesi- ja viemärijärjestelmän pääosat (koodi [4002](http://uri.suomi.fi/codelist/rytj/ms-rakennusosan-materiaalimaara/code/4002))
+* Ilmastointijärjestelmän pääosat  (koodi [4003](http://uri.suomi.fi/codelist/rytj/ms-rakennusosan-materiaalimaara/code/4003))
+* Jäähdytysjärjestelmän pääosat (koodi [4004](http://uri.suomi.fi/codelist/rytj/ms-rakennusosan-materiaalimaara/code/4004))
+* Sprinklerijärjestelmän pääosat (koodi [4005](http://uri.suomi.fi/codelist/rytj/ms-rakennusosan-materiaalimaara/code/4005))
+* Sähköjärjestelmän pääosat (koodi [4006](http://uri.suomi.fi/codelist/rytj/ms-rakennusosan-materiaalimaara/code/4006))
+* Hissit ja liukuportaat (koodi [4007](http://uri.suomi.fi/codelist/rytj/ms-rakennusosan-materiaalimaara/code/4007))
+
+Yllä luetellut rakennusosakohtaisten materiaalimäärien tiedot ilmoitetaan siten, että kukin [RakennuskohdekohteisetMateriaalimäärät](dokumentaatio/#rakennuskohdekohtaisetmateriaalimäärät)-luokan objekti sisältää tasan yhden (1) kappaleen kutakin yllä lueteltua rakennusosaa koskevaa ```rakennusosanOsuus```-attribuutin arvoa. Näiden ```rakennusosanOsuus```-attribuutin arvojen {% include common/moduleLink.html moduleId="yhteisetkomponentit" path="looginenmalli/dokumentaatio/#suureenarvo" title="SuureenArvo" %}-luokan ```suure```-attribuutin ```tunnus```-attribuutin arvojen on oltava [Rakennuksen rakennusosan materiaalin määrä](http://uri.suomi.fi/codelist/rytj/ms-rakennusosan-materiaalimaara)-koodiston koodien tunnuksia.
+
+[RakennuskohdekohteisetMateriaalimäärät](dokumentaatio/#rakennuskohdekohtaisetmateriaalimäärät)-luokan objektin voivat sisältää myös ```rakennusosanOsuus```-attribuutin arvoja, jotka kuvaavat muita kuin yllä lueteltuja suureita.
+{% include common/clause_end.html %}
+
+{% include common/clause_start.html type="req" id="laatu/vaat-rakennuskohteen-osien-materiaalimäärät-suureen-arvo" %}
+[RakennuskohdekohteisetMateriaalimäärät](dokumentaatio/#rakennuskohdekohtaisetmateriaalimäärät)-luokkien objektien ```rakennusosanOsuus```-attribuuttien arvot annetaan luokan {% include common/moduleLink.html moduleId="yhteisetkomponentit" path="looginenmalli/dokumentaatio/#suureenarvo" title="SuureenArvo" %} objekteina siten, että niiden ```arvo```-attribuuttien arvot ovat luokan {% include common/moduleLink.html moduleId="yhteisetkomponentit" path="looginenmalli/dokumentaatio/#numeerinenarvo" title="NumeerinenArvo" %} objekteja, joiden attribuutin arvo ```yksikkö``` on kilogramma (```kg```), ja joiden ```numero``` -attribuutin arvo on ilmoitettu pyöristettynä kokonaiseen lukuun ilman desimaaleja.
+{% include common/clause_end.html %}
+
+
+
+
