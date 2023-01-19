@@ -399,6 +399,14 @@ Rakennettujen tilojen ja huoneistojen tietoja voidaan muuttaa osana [Rakennuskoh
 Huoneistoon sen muutostoimenpiteen johdosta lisättävät ja poistuvat varusteet kuvataan  [HuoneistonMuutos](dokumentaatio/#huoneistonmuutos)-luokan Luokan [HuoneistonVaruste](dokumentaatio/#huoneistonvaruste) mukaisen rakenteisen attribuutin ```varustemuutos``` avulla. Lisättävien varusteiden osalta käytetään attribuutin ```kuuluuKohteeseen``` arvoa ```true```, ja poistuvien varusteen osalta arvoa ```false```.
 {% include common/clause_end.html %}
 
+{% include common/clause_start.html type="req" id="elinkaari/vaat-huoneiston-muutokset" %}
+[Huoneisto](dokumentaatio/#huoneisto)-luokan objektien tietoja voi päivittää ainoastaan, kun päivitetyt tiedot liittyvät [HuoneistonMuutos](dokumentaatio/#huoneistonmuutos)-luokan objektiin sen ```muuttunutHuoneisto```-assosiaation kautta. 
+{% include common/clause_end.html %}
+
+{% include common/clause_start.html type="req" id="elinkaari/vaat-huoneiston-tunnus-lisayksessa" %}
+Mikäli [HuoneistonMuutos](dokumentaatio/#huoneistonmuutos)-luokan objektilla on attribuutin ```laji``` on koodi [01 - Lisäys](http://uri.suomi.fi/codelist/rytj/huoneistonmuutoksenlaji/code/01), ei tietovarastossa saa ennestään olla Huoneisto-luokan objektia, jonka attribuutit ```osoiteHuoneistoTunnus``` tai ```pysyväHuoneistoTunnus``` ovat samat kuin [HuoneistonMuutos](dokumentaatio/#huoneistonmuutos)-luokan objektiin assosiaation ```muuttunutHuoneisto``` kautta liitetyllä [Huoneisto](dokumentaatio/#huoneisto)-luokan objektilla.
+{% include common/clause_end.html %}
+
 ### Hissien ja sisäänkäyntien muutokset
 
 [Rakennus](dokumentaatio/#rakennus)-luokan objektiin voi liittyä nolla tai useampia [Hissi](dokumentaatio/#hissi)- ja [Sisäänkäynti](dokumentaatio/#sisäänkäynti)-luokan objekteja. Assosiaation tyyppi on kompositio, joten hissit ja sisäänkäynnit kuuluvat elinkaarensa aikana vain yhteen rakennukseen, eivätkä ne voi olla olemassa, jos rakennus lakkaa olemasta. Tietomallissa hissillä tarkoitetaan siis juuri tiettyyn rakennukseen rakennettua hissiä, jota ei voida siirtää toiseen rakennukseen, ei tiettyä hissikoneistoa. Vastaavasti sisäänkäynnillä tarkoitetaan tietyn rakennuksen ovean tai aukkoa, josta on kulku kohteeseen sen ulkopuolelta, ei tiettyä fyysistä ovea tai sen rakenteita.

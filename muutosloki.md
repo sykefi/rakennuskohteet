@@ -6,7 +6,35 @@ id: "muutosloki"
 # Muutosloki
 {:.no_toc}
 
-## 18.1.2020
+## 19.1.2023
+
+- Korjattu kirjoitusvirhe koodiston RakennuksenKäyttötarkoitusluokkaEnergiatehokkuudenArvionnissa nimessä.
+- Lisätty laatusääntö kuntanumerolle, fixes #72
+- Lisätty laatusääntö huoneistoala- ja huoneiston käyttöala -attribuuteille, fixes #73
+- Lisätty laatusääntö huoneiston huoneiden lukumäärälle, fixes #74
+- Lisätty laatusääntö kerrosalalle, fixes #75
+- Lisätty laatusääntö kerrosluvulle, fixes #76
+- Lisätty laatusääntö tilavuudelle, fixes #77
+- Lisätty laatusääntö kellarialalle, fixes #78
+- Lisätty laatusääntö väestösuojen henkilömäärälle, fixes #79
+- Lisätty laatusääntö rakennuskohteen kokonaisalalle, fixes #80
+- Lisätty laatusääntö huoneiston muutoksen huonemäärän muutokselle, fixes #81
+- Lisätty laatusääntö asuinrakennuksen kerrosalan vähimmäismäärälle, fixes #82
+- Lisätty laatusääntö sähkölämmityksen ja sähköliittymän suhteesta, fixes #83
+- Lisätty elinkaarisääntö huoneiston muutostietojen antamisesesta, fixes #84
+- Lisätty laatusääntö huoneiston muutoksen pakollisista huoneisto-attribuuteista, fixes #85
+- Lisätty elinkaarisääntö olemassaolevasta huoneistotunnuksesta huoneiston lisäyksessä, fixes #86
+- Lisätty laatusääntö huonesalan vähimmäismäärästä, fixes #87
+- Lisätty laatusääntö sähkölämmityslähteen ja sähkölämmitysenergian lähteen yhteydestä, fixes #88
+- Lisätty kaksi laatusääntöä koskien laajentamistoimenpiteen muutostietoja ja laajennusosaa, fixes #90
+- Lisätty laatusääntö lämmitystavan ja lämmmitysenergian lähteen yhteydelle, fixes #91
+- Lisäty laatusääntö asuinrakennuksen äänestysaluenumerolle, fixes #92
+- Lisätty laaatusääntö rakennuksen pakollisesta tilavuudesta, fixes #93
+- Lisätty laaatusääntö rakennuksen pakollisesta kerrosalasta, fixes #94
+- Lisätty laaatusääntö rakennuksen pakollisesta kokonaisalasta, fixes #95
+- Lisätty laaatusääntö rakennuksen pakollisesta kerroluvusta, fixes #96
+
+## 18.1.2023
 
 - Yhdistetty koodistoluokat EnergiaJaIlmastoselvityksenLaji, OhjeasiakirjanLaji ja RakentamisenSuunnitelmanLaji uudeksi yleisemmäksi koodistoksi LuvanvaraisenRakentamisenAsiakirjanLaji. Y-alustan koodisto puuttuu edelleen.
 - Uudelleennimetty ViemäröintitavanLaji -> JätevesienKäsittelynLaji, ja kytketty Y-alustan koodistoon http://uri.suomi.fi/codelist/rytj/jatevesienkasittely

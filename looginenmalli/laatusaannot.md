@@ -176,10 +176,28 @@ Mikäli vähintään yksi [Rakennuspaikka](dokumentaatio/#rakennuspaikka)-luokan
 [RakennuskohteenToimenpide](dokumentaatio/#rakennuskohteentoimenpide)-luokan objektin on sisällettävä vähintään yksi [RakennuskohteenMuutos](dokumentaatio/#rakennuskohteenmuutos)-luokan kuvaama tietokokonaisuus attribuutin ```suunniteltuMuutos``` arvona. Samaan rakennuskohteen toimenpiteeseen voi kuulua saman rakennuksen tai rakennelman eri osia koskevia suunniteltuja muutoksia. 
 {% include common/clause_end.html %}
 
+{% include common/clause_start.html type="req" id="laatu/vaat-laajentamistoimenpiteen-muutostiedot" %}
+Mikäli [RakennuskohteenToimenpide](dokumentaatio/#rakennuskohteentoimenpide)-luokan objektin attribuutilla ```toimenpiteenLaji``` on arvo [02 - Laajentaminen](http://uri.suomi.fi/codelist/rytj/Rakentamistoimenpide/code/02), tulee sen rakenteisella attribuutin ```suunniteltuMuutos``` attribuuteilla ```tilavuudenMuutos```, ```kerrosalanMuutos``` ja ```kokonaisalanMuutos``` olla arvot.
+{% include common/clause_end.html %}
+
+{% include common/clause_start.html type="rec" id="laatu/suos-laajentamistoimenpiteen-laajennusosa" %}
+Mikäli [RakennuskohteenToimenpide](dokumentaatio/#rakennuskohteentoimenpide)-luokan objektin attribuutilla ```toimenpiteenLaji``` on arvo [02 - Laajentaminen](http://uri.suomi.fi/codelist/rytj/Rakentamistoimenpide/code/02), tulisi rakennuksen laajennososa kuvata omana [RakennuksenOsa](dokumentaatio/#rakennuksenosa)-luokan objektinaan siten, että ```suunniteltuMuutos```-attribuutin assosiaatiolla ```kohdeMuutoksenJälkeen``` viitattu [Rakennus](dokumentaatio/#rakennus)-luokan objekti sisältää kyseisen laajennusosan sen sellaisen rakenteisen attribuutin ```osittelu``` assosiaation ```osa``` kautta liitettynä, jonka ```ositteluperuste```-attribuutilla on arvo [2 - Rakentamishistoriaan perustuva osittelu](http://uri.suomi.fi/codelist/rytj/rak-osittelun-laji/code/2). Kyseisellä [RakennuksenOsa](dokumentaatio/#rakennuksenosa)-luokan objektilla on tällöin myös oltava rakenteisen attribuutin ```ulkokuorenTiedot``` attribuuttien ```tilavuus```, ```kerrosala``` ja ```kokonaisala```.
+{% include common/clause_end.html %}
+
 ### Rakennuskohde
 
 {% include common/clause_start.html type="req" id="laatu/vaat-rakennuskohteen-geometria" %}
 [Rakennuskohde](dokumentaatio/#rakennuskohde)-luokan jonkin konkreettisen aliluokan objektilla on oltava ```geometria``` attribuutin arvo, joka kuvaa kyseisen rakennuskohteen sijainnin.
+{% include common/clause_end.html %}
+
+{% include common/clause_start.html type="req" id="laatu/vaat-rakennuskohteen-kokonaisala" %}
+Mikäli [Rakennuskohde](dokumentaatio/#rakennuskohde)-luokan jonkin konkreettisen aliluokan objektilla on attribuutin ```kokonaisala``` arvo, sen arvon tulee olla kokonaisluku väliltä 1 - 9999999 (1 <= x < 10^7), ja yksikkö neliömetri (```m2```).
+{% include common/clause_end.html %}
+
+### RakennuskohteenSijaintitiedot
+
+{% include common/clause_start.html type="req" id="laatu/vaat-rakennuskohteen-sijainnin-kuntanumero" %}
+Mikäli [RakennuskohteenSijaintitiedot](dokumentaatio/#rakennuskohteensijaintitiedot)-luokan objektille on annettu ```kuntanumero```-attribuutin arvo, sen tulee vastata rakennuskohteen sijaintikuntaa tiedon päivityshetkellä. ```kuntanumero```-attribuutin arvon on oltava merkkijono, joka esittää numeroa 0-999 siten, että numeroiden 1-9 edessä käytetään kahta alkunollaa ja numeroiden 10-99 edessä yhtä alkunollaa.
 {% include common/clause_end.html %}
 
 ### RakennuskohteenOmistaja
@@ -198,7 +216,50 @@ RakennuskohteenMuutos-luokan assosiaation ```kohdeMuutoksenJälkeen``` tulee vii
 {% include common/clause_end.html %}
 
 ### HuoneistonMuutos
+
+{% include common/clause_start.html type="req" id="laatu/vaat-huoneiston-muutos-huonemaara" %}
+Mikäli [HuoneistonMuutos](dokumentaatio/#huoneistonmuutos)-luokan objektilla on attribuutin ```huonemääränMuutos``` arvo, sen arvon tulee olla kokonaisluku, joka on yli -1000 ja alle 1000.
+{% include common/clause_end.html %}
+
+{% include common/clause_start.html type="req" id="laatu/vaat-huoneiston-muutos-pakolliset-attribuutit" %}
+Mikäli [HuoneistonMuutos](dokumentaatio/#huoneistonmuutos)-luokan objektilla on attribuutin ```laji``` on koodi [01 - Lisäys](http://uri.suomi.fi/codelist/rytj/huoneistonmuutoksenlaji/code/01) tai [02 - Muutos](http://uri.suomi.fi/codelist/rytj/huoneistonmuutoksenlaji/code/02), tulee siihen assosiaation ```muuttunutHuoneisto``` kautta liittyvällä [Huoneisto](dokumentaatio/#huoneisto)-luokan objektin seuraavilla attribuuteilla olla arvo:
+
+* ```huoneidenLukumäärä```
+* ```keittötyyppi``` ja
+* ```huoneistoala```
+{% include common/clause_end.html %}
+
+{% include common/clause_start.html type="req" id="laatu/vaat-huoneiston-tilavuuden-muutos" %}
+Mikäli [HuoneistonMuutos](dokumentaatio/#huoneistonmuutos)-luokan objektilla on attribuutin ```tilavuudenMuutos``` arvo, sen arvon tulee olla kokonaisluku väliltä -9999999 - 9999999 (-10^7 < x < 10^7), ja yksikkö neliömetri (```m2```).
+{% include common/clause_end.html %}
+
+{% include common/clause_start.html type="req" id="laatu/vaat-huoneiston-kerrosalan-muutos" %}
+Mikäli [HuoneistonMuutos](dokumentaatio/#huoneistonmuutos)-luokan objektilla on attribuutin ```kerrosalanMuutos``` arvo, sen arvon tulee olla kokonaisluku väliltä -9999999 - 9999999 (-10^7 < x < 10^7), ja yksikkö neliömetri (```m2```).
+{% include common/clause_end.html %}
+
+{% include common/clause_start.html type="req" id="laatu/vaat-huoneiston-kokonaisalan-muutos" %}
+Mikäli [HuoneistonMuutos](dokumentaatio/#huoneistonmuutos)-luokan objektilla on attribuutin ```kokonaisalanMuutos``` arvo, sen arvon tulee olla kokonaisluku väliltä -9999999 - 9999999 (-10^7 < x < 10^7), ja yksikkö neliömetri (```m2```).
+{% include common/clause_end.html %}
+
 {% include common/question.html content="HuoneistonMuutos.muutoksenLaji-attribuutin arvojen (lisäys, muutos, poisto) arvojen yhteyttä liittyvien Huoneistojen ```elinkaarenVaihe```-attribuutin arvoihin tulisi ehkä tarkentaa. Kaikki kombinaatiot eivät liene mielekkäitä, esim. puretun huoneiston lisäys rakennukseen" %}
+
+### RakennusTaiSenOsa
+
+{% include common/clause_start.html type="req" id="laatu/vaat-sahkolammitys-sahkoliittyma" %}
+Mikäli [RakennusTaiSenOsa](dokumentaatio/#rakennustaisenosa)-luokan konkreettisen aliluokan rakenteisella attribuutilla ```energiatiedot``` attribuutilla ```lämmitysenergianLähde``` on arvo, joka on koodiston [Lämmitysenergianlähteen laji](http://uri.suomi.fi/codelist/rytj/lammitysenergianlahde) koodi [04 - Sähkö](http://uri.suomi.fi/codelist/rytj/lammitysenergianlahde/code/04), niin sillä on oltava
+* rakenteisen attribuutin ```varuste``` arvo, jonka attribuutti ```laji``` on koodisto [Rakennuksen varusteet](http://uri.suomi.fi/codelist/rytj/RakennusVaruste) koodi [01 - Sähkö](http://uri.suomi.fi/codelist/rytj/RakennusVaruste/code/01) ja attribuutin ```kuuluuKohteeseen``` arvo ```true```, ja
+* rakenteisen attribuutin ```talotekniikkatiedot``` rakenteisen attribuutin ```verkostoliittymä``` arvo, jonka attribuutin ```laji``` arvo on koodiston [Verkostoliittymän laji](http://uri.suomi.fi/codelist/rytj/verkliit) koodi [04 - sähkö](http://uri.suomi.fi/codelist/rytj/verkliit/code/04).
+{% include common/clause_end.html %}
+
+{% include common/clause_start.html type="req" id="laatu/vaat-sahkolammitystapa-sahkoenergianlahde" %}
+Mikäli [RakennusTaiSenOsa](dokumentaatio/#rakennustaisenosa)-luokan konkreettisen aliluokan rakenteisella attribuutilla ```energiatiedot``` attribuutilla ```lämmitystapa``` on arvo, joka on koodiston [Lämmitystavan laji](http://uri.suomi.fi/codelist/rytj/lammitystapa) koodi [03 - Sähkölämmitys](http://uri.suomi.fi/codelist/rytj/lammitystapa/code/03), niin sen rakenteisen attribuutin ```energiatiedot``` attribuutilla ```lämmitysenergianLähde``` on oltava arvo, joka on koodiston [Lämmitysenergianlähteen laji](http://uri.suomi.fi/codelist/rytj/lammitysenergianlahde) koodi [04 - Sähkö](http://uri.suomi.fi/codelist/rytj/lammitysenergianlahde/code/04).
+{% include common/clause_end.html %}
+
+{% include common/clause_start.html type="req" id="laatu/vaat-lammitystapa-lammitysenergianlahde" %}
+Mikäli [RakennusTaiSenOsa](dokumentaatio/#rakennustaisenosa)-luokan konkreettisen aliluokan rakenteisella attribuutilla ```energiatiedot``` attribuutilla ```lämmitystapa``` on arvo, joka on koodiston [Lämmitystavan laji](http://uri.suomi.fi/codelist/rytj/lammitystapa) koodi [07 - Ei kiinteää lämmityslaitetta](http://uri.suomi.fi/codelist/rytj/lammitystapa/code/07), niin sen rakenteisen attribuutin ```energiatiedot``` attribuutilla ```lämmitysenergianLähde``` ei saa olla arvoa.
+
+Toisaalta mikäli ```lämmitystapa``` on arvo, joka koodiston [Lämmitystavan laji](http://uri.suomi.fi/codelist/rytj/lammitystapa) on jokin muu koodi koodi kuin [07 - Ei kiinteää lämmityslaitetta](http://uri.suomi.fi/codelist/rytj/lammitystapa/code/07), tulee sen rakenteisen attribuutin ```energiatiedot``` attribuutilla ```lämmitysenergianLähde``` olla arvo.
+{% include common/clause_end.html %}
 
 ### Rakennus
 
@@ -210,6 +271,30 @@ RakennuskohteenMuutos-luokan assosiaation ```kohdeMuutoksenJälkeen``` tulee vii
 [Rakennus](dokumentaatio/#rakennus)-luokan objektilla voi olla enintään yksi sellainen assosiaatio ```sisäänkäynti```, jonka assosiaatioluokan [RakennuksenSisäänkäynti](dokumentaatio/#rakennuksensisäänkäynti) attribuutin ```ensisijainen``` arvo on ```true```. 
 {% include common/clause_end.html %}
 
+{% include common/clause_start.html type="req" id="laatu/vaat-rakennuksen-tilavuus-pakollinen" %}
+[Rakennus](dokumentaatio/#rakennus)-luokan objektin rakenteisen attribuutin ```ulkokuorenTiedot``` attribuutilla ```tilavuus``` tulee olla arvo.
+{% include common/clause_end.html %}
+
+{% include common/clause_start.html type="req" id="laatu/vaat-rakennuksen-kerrosala-pakollinen" %}
+[Rakennus](dokumentaatio/#rakennus)-luokan objektin rakenteisen attribuutin ```ulkokuorenTiedot``` attribuutilla ```kerrosala``` tulee olla arvo.
+{% include common/clause_end.html %}
+
+{% include common/clause_start.html type="req" id="laatu/vaat-rakennuksen-kerrosluku-pakollinen" %}
+[Rakennus](dokumentaatio/#rakennus)-luokan objektin rakenteisen attribuutin ```ulkokuorenTiedot``` attribuutilla ```kerrosluku``` tulee olla arvo.
+{% include common/clause_end.html %}
+
+{% include common/clause_start.html type="req" id="laatu/vaat-rakennuksen-kokonaisala-pakollinen" %}
+[Rakennus](dokumentaatio/#rakennus)-luokan objektin attribuutilla ```kokonaisala``` tulee olla arvo.
+{% include common/clause_end.html %}
+
+{% include common/clause_start.html type="req" id="laatu/vaat-asuinrakennuksen-vahimmaispinta-ala" %}
+Mikäli [Rakennus](dokumentaatio/#rakennus)-luokan objektin rakenteisen attribuutin ```käyttötiedot``` rakenteisen attribuutin ```käyttötarkoitus``` attribuutin ```ensisijainen``` arvo on ```true``` ja attribuutin ```laji``` arvo on [Rakennusluokitus 2018](http://uri.suomi.fi/codelist/jhs/rakennus_1_20180712)-koodiston koodi [01 -Asuinrakennukset](http://uri.suomi.fi/codelist/jhs/rakennus_1_20180712/code/01) tai jokin sen alakoodeista, ja rakenteisen attribuutin ```ulkokuorenTiedot``` attribuutille ```kerrosala``` on annettu arvo, sen arvon tulee olla suurempi kuin ```7```, ja yksikön neliömetri (```m2```).
+{% include common/clause_end.html %}
+
+{% include common/clause_start.html type="req" id="laatu/vaat-asuinrakennuksen-aanestysaluenro" %}
+Mikäli [Rakennus](dokumentaatio/#rakennus)-luokan objektin rakenteisen attribuutin ```käyttötiedot``` rakenteisen attribuutin ```käyttötarkoitus``` attribuutin ```ensisijainen``` arvo on ```true``` ja attribuutin ```laji``` arvo on [Rakennusluokitus 2018](http://uri.suomi.fi/codelist/jhs/rakennus_1_20180712)-koodiston koodi [01 -Asuinrakennukset](http://uri.suomi.fi/codelist/jhs/rakennus_1_20180712/code/01) tai jokin sen alakoodeista, ja rakenteisen attribuutin ```sijaintitiedot``` attribuutilla ```äänestysaluenumero``` on oltava arvo.
+{% include common/clause_end.html %}
+
 #### Rakennuksen osittelut
 
 {% include common/clause_start.html type="req" id="laatu/vaat-rakennuksen-osittelu-maaritelma" %}
@@ -219,8 +304,6 @@ RakennuskohteenMuutos-luokan assosiaation ```kohdeMuutoksenJälkeen``` tulee vii
 {% include common/clause_start.html type="req" id="laatu/vaat-rakennuksen-uniikki-osittelu" %}
 [Rakennus](dokumentaatio/#rakennus)-luokan objekti voi sisältää enintään yhden rakenteisen ```osittelu```-attributin arvon kutakin attribuutin ```osittelunPeruste``` arvoa kohti.
 {% include common/clause_end.html %}
-
-
 
 {% include common/clause_start.html type="req" id="laatu/vaat-rakennuksen-osittelun-geometriat" %}
 [Rakennus](dokumentaatio/#rakennus)-luokan objektiin sen eri ```osittelu```-attribuuttien arvojen avulla liitettyjen [RakennuksenOsa](dokumentaatio/#rakennuksenosa)-luokan objektien ```geometria```-attribuutin ilmaisemat alueet voivat olla päällekkäisiä tai sisäkkäisiä keskenään tai leikata toisiaan.
@@ -275,6 +358,12 @@ Mikäli [Rakennus](dokumentaatio/#rakennus)-luokan objekti kuvaava rakennusta, j
 [RakennettuTila](dokumentaatio/#rakennettutila)-luokan objekti tulisi liittää kuhunkin [RakennuksenOsa](dokumentaatio/#rakennuksenosa)-luokan objektiin, johon se fyysisesti sisältyy käyttäen assosiaatiota ```sisältäväRakennuksenOsa```.
 {% include common/clause_end.html %}
 
+### Huone
+
+{% include common/clause_start.html type="req" id="laatu/vaat-huoneala-vahimmaismaara" %}
+Mikäli [Huone](dokumentaatio/#huone)-luokan objektin attribuutille ```huoneala``` on annettu arvo, sen tulee olla suurempi kuin ```7```, yksikkönä neliömetri (```m2```). 
+{% include common/clause_end.html %}
+
 ### Huoneisto
 
 {% include common/clause_start.html type="req" id="laatu/vaat-huoneiston-tunnus" %}
@@ -283,6 +372,18 @@ Mikäli [Huoneisto](dokumentaatio/#huoneisto)-luokan objektilla ei ole attribuut
 
 {% include common/clause_start.html type="rec" id="laatu/suos-huoneiston-yhteys-rakennuksen-osaan" %}
 [Huoneisto](dokumentaatio/#huoneisto)-luokan objekti tulisi liittää kuhunkin [RakennuksenOsa](dokumentaatio/#rakennuksenosa)-luokan objektiin, johon se fyysisesti sisältyy käyttäen assosiaatiota ```sisältäväRakennuksenOsa```.
+{% include common/clause_end.html %}
+
+{% include common/clause_start.html type="req" id="laatu/vaat-huoneistoala" %}
+Mikäli [Huoneisto](dokumentaatio/#huoneisto)-luokan objektilla on attribuutin ```huoneistoala``` arvo, sen arvon tulee olla kokonaisluku väliltä 1 - 99999 (1 <= x < 10^5), ja yksikkö neliömetri (```m2```). 
+{% include common/clause_end.html %}
+
+{% include common/clause_start.html type="req" id="laatu/vaat-huoneisto-kayttoala" %}
+Mikäli [Huoneisto](dokumentaatio/#huoneisto)-luokan objektilla on attribuutin ```käyttöala``` arvo, sen arvon tulee olla kokonaisluku väliltä 1 - 99999 (1 <= x < 10^5), ja yksikkö neliömetri (```m2```).
+{% include common/clause_end.html %}
+
+{% include common/clause_start.html type="req" id="laatu/vaat-huoneisto-huoneiden-lkm" %}
+Mikäli [Huoneisto](dokumentaatio/#huoneisto)-luokan objektilla on attribuutin ```huoneidenLukumäärä``` arvo, sen arvon tulee olla kokonaisluku väliltä 1 - 99 ilman yksikkötietoa.
 {% include common/clause_end.html %}
 
 ### Sisäänkäynti
@@ -343,6 +444,31 @@ Mikäli [Hissi](dokumentaatio/#hissi)-luokan objektille annetaan ```geometria```
 
 {% include common/clause_start.html type="req" id="laatu/vaat-ensisijainen-ilmanvaihtotapa" %}
 [Talotekniikkatiedot](dokumentaatio/#talotekniikkatiedot)-luokan kuvaamassa rakenteisessa attribuutissa tulee olla enintään yksi sellainen attribuutin ```ilmanvaihtotapa```-attribuutin arvo, jonka attribuutin ```ensisijainen``` arvo to ```true```.
+{% include common/clause_end.html %}
+
+
+### UlkokuorenTiedot
+
+{% include common/clause_start.html type="req" id="laatu/vaat-rakennuksen-kerrosala" %}
+Mikäli [UlkokuorenTiedot](dokumentaatio/#ulkokuorentiedot)-luokan objektilla on attribuutin ```kerrosala``` arvo, sen arvon tulee olla kokonaisluku väliltä 1 - 9999999 (1 <= x <  10^7) ja yksikkö neliömetri (```m2```).
+{% include common/clause_end.html %}
+
+{% include common/clause_start.html type="req" id="laatu/vaat-rakennuksen-kerrosluku" %}
+Mikäli [UlkokuorenTiedot](dokumentaatio/#ulkokuorentiedot)-luokan objektilla on attribuutin ```kerrosluku``` arvo, sen arvon tulee olla kokonaisluku väliltä 1 - 99 ilman yksikkötietoa.
+{% include common/clause_end.html %}
+
+{% include common/clause_start.html type="req" id="laatu/vaat-rakennuksen-tilavuus" %}
+Mikäli [UlkokuorenTiedot](dokumentaatio/#ulkokuorentiedot)-luokan objektilla on attribuutin ```tilavuus``` arvo, sen arvon tulee olla kokonaisluku väliltä 1 - 9999999 (1 <= x <  10^7) ja yksikkö kuutiometri (```m3```).
+{% include common/clause_end.html %}
+
+### SisätilojenTiedot
+
+{% include common/clause_start.html type="req" id="laatu/vaat-rakennuksen-kellariala" %}
+Mikäli [SisätilojenTiedot](dokumentaatio/#sisätilojentiedot)-luokan objektilla on attribuutin ```kellariala``` arvo, sen arvon tulee olla kokonaisluku väliltä 1 - 9999999 (1 <= x <  10^7) ja yksikkö neliömetri (```m2```).
+{% include common/clause_end.html %}
+
+{% include common/clause_start.html type="req" id="laatu/vaat-vaestosuojan-hlomaara" %}
+Mikäli [SisätilojenTiedot](dokumentaatio/#sisätilojentiedot)-luokan objektilla on attribuutin ```väestösuojanHenkilömäärä``` arvo, sen arvon tulee olla kokonaisluku väliltä 1 - 99999 (1 <= x <  10^5).
 {% include common/clause_end.html %}
 
 ### Ilmastoselvitys

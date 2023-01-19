@@ -42,7 +42,7 @@ function nameClassifier(name, separator)
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">16.1.2023 16.32.01</td>
+			<td class="ObjectDetailsValue">18.1.2023 13.19.38</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>
@@ -898,7 +898,7 @@ function nameClassifier(name, separator)
 					</td>
 				</tr>
 				<tr>
-					<td width="80%" class="TableRow">kohde->forAll(paikka.pintaAla->exists())</td>
+					<td width="80%" class="TableRow">materiaalilajinMäärä->forAll(arvo->forAll(self.oclIsKindOf(NumeerinenArvo) and self.mittayksikkö = 'kg'))</td>
 					<td width="10%" class="TableRow">OCL</td>
 					<td width="10%" class="TableRow">Approved</td>
 				</tr>
@@ -912,7 +912,7 @@ function nameClassifier(name, separator)
 					</td>
 				</tr>
 				<tr>
-					<td width="80%" class="TableRow">materiaalilajinMäärä->forAll(arvo->forAll(self.oclIsKindOf(NumeerinenArvo) and self.mittayksikkö = 'kg'))</td>
+					<td width="80%" class="TableRow">materiaalilajinMäärä->isUnique(suure.tunnus.koodi = 'http://uri.suomi.fi/codelist/rytj/ms-materiaalilajin-maara/code/01')</td>
 					<td width="10%" class="TableRow">OCL</td>
 					<td width="10%" class="TableRow">Approved</td>
 				</tr>
@@ -926,7 +926,7 @@ function nameClassifier(name, separator)
 					</td>
 				</tr>
 				<tr>
-					<td width="80%" class="TableRow">materiaalilajinMäärä->isUnique(suure.tunnus.koodi = 'http://uri.suomi.fi/codelist/rytj/ms-materiaalilajin-maara/code/01')</td>
+					<td width="80%" class="TableRow">materiaalilajinMäärä->isUnique(suure.tunnus.koodi = 'http://uri.suomi.fi/codelist/rytj/ms-materiaalilajin-maara/code/02')</td>
 					<td width="10%" class="TableRow">OCL</td>
 					<td width="10%" class="TableRow">Approved</td>
 				</tr>
@@ -940,7 +940,7 @@ function nameClassifier(name, separator)
 					</td>
 				</tr>
 				<tr>
-					<td width="80%" class="TableRow">materiaalilajinMäärä->isUnique(suure.tunnus.koodi = 'http://uri.suomi.fi/codelist/rytj/ms-materiaalilajin-maara/code/02')</td>
+					<td width="80%" class="TableRow">materiaalilajinMäärä->isUnique(suure.tunnus.koodi = 'http://uri.suomi.fi/codelist/rytj/ms-materiaalilajin-maara/code/03')</td>
 					<td width="10%" class="TableRow">OCL</td>
 					<td width="10%" class="TableRow">Approved</td>
 				</tr>
@@ -954,7 +954,7 @@ function nameClassifier(name, separator)
 					</td>
 				</tr>
 				<tr>
-					<td width="80%" class="TableRow">materiaalilajinMäärä->isUnique(suure.tunnus.koodi = 'http://uri.suomi.fi/codelist/rytj/ms-materiaalilajin-maara/code/03')</td>
+					<td width="80%" class="TableRow">materiaalilajinMäärä->isUnique(suure.tunnus.koodi = 'http://uri.suomi.fi/codelist/rytj/ms-materiaalilajin-maara/code/04')</td>
 					<td width="10%" class="TableRow">OCL</td>
 					<td width="10%" class="TableRow">Approved</td>
 				</tr>
@@ -968,7 +968,7 @@ function nameClassifier(name, separator)
 					</td>
 				</tr>
 				<tr>
-					<td width="80%" class="TableRow">materiaalilajinMäärä->isUnique(suure.tunnus.koodi = 'http://uri.suomi.fi/codelist/rytj/ms-materiaalilajin-maara/code/04')</td>
+					<td width="80%" class="TableRow">materiaalilajinMäärä->isUnique(suure.tunnus.koodi = 'http://uri.suomi.fi/codelist/rytj/ms-materiaalilajin-maara/code/05')</td>
 					<td width="10%" class="TableRow">OCL</td>
 					<td width="10%" class="TableRow">Approved</td>
 				</tr>
@@ -982,7 +982,7 @@ function nameClassifier(name, separator)
 					</td>
 				</tr>
 				<tr>
-					<td width="80%" class="TableRow">materiaalilajinMäärä->isUnique(suure.tunnus.koodi = 'http://uri.suomi.fi/codelist/rytj/ms-materiaalilajin-maara/code/05')</td>
+					<td width="80%" class="TableRow">materiaalilajinMäärä->isUnique(suure.tunnus.koodi = 'http://uri.suomi.fi/codelist/rytj/ms-materiaalilajin-maara/code/06')</td>
 					<td width="10%" class="TableRow">OCL</td>
 					<td width="10%" class="TableRow">Approved</td>
 				</tr>
@@ -996,7 +996,7 @@ function nameClassifier(name, separator)
 					</td>
 				</tr>
 				<tr>
-					<td width="80%" class="TableRow">materiaalilajinMäärä->isUnique(suure.tunnus.koodi = 'http://uri.suomi.fi/codelist/rytj/ms-materiaalilajin-maara/code/06')</td>
+					<td width="80%" class="TableRow">materiaalilajinMäärä->isUnique(suure.tunnus.koodi = 'http://uri.suomi.fi/codelist/rytj/ms-materiaalilajin-maara/code/07')</td>
 					<td width="10%" class="TableRow">OCL</td>
 					<td width="10%" class="TableRow">Approved</td>
 				</tr>
@@ -1010,7 +1010,7 @@ function nameClassifier(name, separator)
 					</td>
 				</tr>
 				<tr>
-					<td width="80%" class="TableRow">materiaalilajinMäärä->isUnique(suure.tunnus.koodi = 'http://uri.suomi.fi/codelist/rytj/ms-materiaalilajin-maara/code/07')</td>
+					<td width="80%" class="TableRow">materiaalilajinMäärä->isUnique(suure.tunnus.koodi = 'http://uri.suomi.fi/codelist/rytj/ms-materiaalilajin-maara/code/08')</td>
 					<td width="10%" class="TableRow">OCL</td>
 					<td width="10%" class="TableRow">Approved</td>
 				</tr>
@@ -1024,7 +1024,7 @@ function nameClassifier(name, separator)
 					</td>
 				</tr>
 				<tr>
-					<td width="80%" class="TableRow">materiaalilajinMäärä->isUnique(suure.tunnus.koodi = 'http://uri.suomi.fi/codelist/rytj/ms-materiaalilajin-maara/code/08')</td>
+					<td width="80%" class="TableRow">materiaalilajinMäärä->isUnique(suure.tunnus.koodi = 'http://uri.suomi.fi/codelist/rytj/ms-materiaalilajin-maara/code/09')</td>
 					<td width="10%" class="TableRow">OCL</td>
 					<td width="10%" class="TableRow">Approved</td>
 				</tr>
@@ -1038,7 +1038,7 @@ function nameClassifier(name, separator)
 					</td>
 				</tr>
 				<tr>
-					<td width="80%" class="TableRow">materiaalilajinMäärä->isUnique(suure.tunnus.koodi = 'http://uri.suomi.fi/codelist/rytj/ms-materiaalilajin-maara/code/09')</td>
+					<td width="80%" class="TableRow">materiaalilajinMäärä->isUnique(suure.tunnus.koodi = 'http://uri.suomi.fi/codelist/rytj/ms-materiaalilajin-maara/code/10')</td>
 					<td width="10%" class="TableRow">OCL</td>
 					<td width="10%" class="TableRow">Approved</td>
 				</tr>
@@ -1052,7 +1052,7 @@ function nameClassifier(name, separator)
 					</td>
 				</tr>
 				<tr>
-					<td width="80%" class="TableRow">materiaalilajinMäärä->isUnique(suure.tunnus.koodi = 'http://uri.suomi.fi/codelist/rytj/ms-materiaalilajin-maara/code/10')</td>
+					<td width="80%" class="TableRow">materiaalilajinMäärä->isUnique(suure.tunnus.koodi = 'http://uri.suomi.fi/codelist/rytj/ms-materiaalilajin-maara/code/11')</td>
 					<td width="10%" class="TableRow">OCL</td>
 					<td width="10%" class="TableRow">Approved</td>
 				</tr>
@@ -1066,7 +1066,7 @@ function nameClassifier(name, separator)
 					</td>
 				</tr>
 				<tr>
-					<td width="80%" class="TableRow">materiaalilajinMäärä->isUnique(suure.tunnus.koodi = 'http://uri.suomi.fi/codelist/rytj/ms-materiaalilajin-maara/code/11')</td>
+					<td width="80%" class="TableRow">rakennuspaikanMateriaalit.paikka.pintaAla->exists()</td>
 					<td width="10%" class="TableRow">OCL</td>
 					<td width="10%" class="TableRow">Approved</td>
 				</tr>
