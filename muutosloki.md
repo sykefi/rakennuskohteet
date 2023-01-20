@@ -6,6 +6,10 @@ id: "muutosloki"
 # Muutosloki
 {:.no_toc}
 
+## 20.1.2023
+
+-  Päivitetty UML-malliin Yhteiset tietokomponentit -kirjaston pre-1.0 -versio (commit f70db7122fa6113965dabcdde365a12d8b99beb3). Ei muutoksia tämän tietomallin sisältöön.
+
 ## 19.1.2023
 
 - Korjattu kirjoitusvirhe koodiston RakennuksenKäyttötarkoitusluokkaEnergiatehokkuudenArvionnissa nimessä.
