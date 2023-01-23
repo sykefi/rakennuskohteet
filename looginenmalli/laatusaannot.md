@@ -197,7 +197,7 @@ Mikäli [Rakennuskohde](dokumentaatio/#rakennuskohde)-luokan jonkin konkreettise
 ### RakennuskohteenSijaintitiedot
 
 {% include common/clause_start.html type="req" id="laatu/vaat-rakennuskohteen-sijainnin-kuntanumero" %}
-Mikäli [RakennuskohteenSijaintitiedot](dokumentaatio/#rakennuskohteensijaintitiedot)-luokan objektille on annettu ```kuntanumero```-attribuutin arvo, sen tulee vastata rakennuskohteen sijaintikuntaa tiedon päivityshetkellä. ```kuntanumero```-attribuutin arvon on oltava merkkijono, joka esittää numeroa 0-999 siten, että numeroiden 1-9 edessä käytetään kahta alkunollaa ja numeroiden 10-99 edessä yhtä alkunollaa.
+Mikäli [RakennuskohteenSijaintitiedot](dokumentaatio/#rakennuskohteensijaintitiedot)-luokan objektiin in liitetty {% include common/moduleLink.html moduleId="yhteisetkomponentit" path="looginenmalli/dokumentaatio/#hallinnollinenalue" title="HallinnollinenAlue" %}-rajapinnan mukainen objekti assosiaation ```hallinnollinenAlue``` kautta, tulee sen tulee viitata rakennuskohteen sijaintikuntaan tiedon päivityshetkellä. Operaation ```HallinnollinenAlue.tunnnus``` palauttaman arvon tulee olla kyseisen kunnan kuntanumeroa esittävä numeromerkeistä koostuva kolmemerkkinen numeromerkeistä koostuva merkkijono, joka kuvaa vastaa numeroa 1-999 siten, että numeroiden 1-9 edessä käytetään kahta alkunollaa ja numeroiden 10-99 edessä yhtä alkunollaa.
 {% include common/clause_end.html %}
 
 ### RakennuskohteenOmistaja

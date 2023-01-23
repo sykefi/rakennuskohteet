@@ -7,6 +7,9 @@ status: "Keskeneräinen"
 # Loogisen tason rakennuskohteiden ja huoneistojen tietomalli
 {:.no_toc}
 
+
+{% include common/note.html content="Tietomallin dokumentaatio on toistaiseksi puutteellinen. Täydelliset luokkien, niiden attribuuttien ja assosiaatioden kuvaukset laaditaan mahdollisimman pian" %}
+
 1. 
 {:toc}
 
@@ -16,6 +19,7 @@ Loogisen tason Rakennuskohteiden ja huoneistojen tietomalli määrittelee yhteis
 ## Normatiiviset viittaukset
 Seuraavat dokumentit ovat välttämättömiä tämän dokumentin täysipainoisessa soveltamisessa:
 
+* {% include common/moduleLink.html moduleId="yhteisetkomponentit" path="looginenmalli/dokumentaatio/" title="Rakennetun ympäristön yhteiset tietokomponentit" %}, versio 1.0
 * [ISO 639-2:1998 Codes for the representation of names of languages — Part 2: Alpha-3 code][ISO-639-2]
 * [ISO 8601-1:2019 Date and time — Representations for information interchange — Part 1: Basic rules][ISO-8601-1]
 * [ISO 19103:2015 Geographic information — Conceptual schema language][ISO-19103]
@@ -30,6 +34,24 @@ Kuvattu tietomalli perustuu [ISO 19109][ISO-19109]-standardin yleinen kohdetieto
 [ISO 19109][ISO-19109] -standardin lisäksi tietomalli perustuu muihin paikkatiedon ISO-standardeihin, joista keskeisimpiä ovat [ISO 19103][ISO-19103] (UML-kielen käyttö paikkatietojen mallinnuksessa), [ISO 19107][ISO-19107] (sijaintitiedon mallintaminen) ja [ISO 19108][ISO-19108] (aikaan sidotun tiedon mallintaminen).
 
 ### Muulla määritellyt luokat ja tietotyypit
+
+#### Rakennetun ympäristön yhteiset tietokomponentit
+Malli perustuu {% include common/moduleLink.html moduleId="yhteisetkomponentit" path="looginenmalli/dokumentaatio/" title="Rakennetun ympäristön yhteiset tietokomponentit" %} -kirjaston määrittelyille. Tässä mallissa hyönnetään suoraan seuraavia kirjaston luokkia:
+
+* {% include common/moduleLink.html moduleId="yhteisetkomponentit" path="looginenmalli/dokumentaatio/#versioituobjekti" title="VersioituObjekti" %}
+* {% include common/moduleLink.html moduleId="yhteisetkomponentit" path="looginenmalli/dokumentaatio/#liiteasiakirja" title="Liiteasiakirja" %}
+* {% include common/moduleLink.html moduleId="yhteisetkomponentit" path="looginenmalli/dokumentaatio/#rakennetunympäristönkohde" title="RakennetunYmpäristönKohde" %}
+* {% include common/moduleLink.html moduleId="yhteisetkomponentit" path="looginenmalli/dokumentaatio/#osoite" title="Osoite" %}
+* {% include common/moduleLink.html moduleId="yhteisetkomponentit" path="looginenmalli/dokumentaatio/#kiinteistö" title="Kiinteistö" %}
+* {% include common/moduleLink.html moduleId="yhteisetkomponentit" path="looginenmalli/dokumentaatio/#toimija" title="Toimija" %}
+* {% include common/moduleLink.html moduleId="yhteisetkomponentit" path="looginenmalli/dokumentaatio/#hallinnollinenAlue" title="HallinnollinenAlue" %}
+* {% include common/moduleLink.html moduleId="yhteisetkomponentit" path="looginenmalli/dokumentaatio/#alueidenkäyttöjarakentamisasia" title="AlueidenkäyttöJaRakentamisasia" %}
+* {% include common/moduleLink.html moduleId="yhteisetkomponentit" path="looginenmalli/dokumentaatio/#suunnitelmanlaatija" title="SuunnitelmanLaatija" %}
+* {% include common/moduleLink.html moduleId="yhteisetkomponentit" path="looginenmalli/dokumentaatio/#suureenarvo" title="SuureenArvo" %}
+* {% include common/moduleLink.html moduleId="yhteisetkomponentit" path="looginenmalli/dokumentaatio/#suure" title="Suure" %}
+* {% include common/moduleLink.html moduleId="yhteisetkomponentit" path="looginenmalli/dokumentaatio/#koodiarvo" title="Koodiarvo" %}
+* {% include common/moduleLink.html moduleId="yhteisetkomponentit" path="looginenmalli/dokumentaatio/#numeerinenarvo" title="NumeerinenArvo" %}
+* {% include common/moduleLink.html moduleId="yhteisetkomponentit" path="looginenmalli/dokumentaatio/#abstraktiasiakirjanlaji" title="AbstraktiAsiakirjanLaji" %}
 
 #### CharacterString
 

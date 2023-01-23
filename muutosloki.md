@@ -6,6 +6,12 @@ id: "muutosloki"
 # Muutosloki
 {:.no_toc}
 
+## 23.1.2023
+
+- Lisätty johdanto- ja README-sivujen sisällöt.
+- Lisätty assosiaatio RakennuskohteenSijaintitiedot.hallinnollinenAlue, poistettu RakennuskohteenSijaintitiedot.kuntanumero. Muutettu kuntanumeroa koskeva laatusääntö vastaavasti.
+- Valmistelua 1.0-version julkaisua varten. 
+
 ## 20.1.2023
 
 -  Päivitetty UML-malliin Yhteiset tietokomponentit -kirjaston pre-1.0 -versio (commit f70db7122fa6113965dabcdde365a12d8b99beb3). Ei muutoksia tämän tietomallin sisältöön.
