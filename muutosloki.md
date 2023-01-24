@@ -6,6 +6,10 @@ id: "muutosloki"
 # Muutosloki
 {:.no_toc}
 
+## Versio 1.0.1
+
+- Korjattu virhe Rakennskohteet-kaavion Talotekniikkatietot-luokassa viemäröintitapa: Kaaviossa näkyi vielä vanha koodistoluokka "ViemäröintitavanLaji", korjattu muotoon "JätevesienKäsittelynLaji".
+
 ## Versio 1.0.0
 
 -  Ensimmäinen julkaisuversio.

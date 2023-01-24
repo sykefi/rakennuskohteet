@@ -6899,7 +6899,7 @@
 						<initial/>
 						<documentation/>
 						<model ea_localid="1701" ea_guid="{93E31F24-1911-4f48-A33D-FA3A97C107A5}"/>
-						<properties type="ViemäröintitavanLaji" collection="false" static="0" duplicates="0" changeability="changeable"/>
+						<properties type="JätevesienKäsittelynLaji" collection="false" static="0" duplicates="0" changeability="changeable"/>
 						<coords ordered="0"/>
 						<containment containment="Not Specified" position="1"/>
 						<stereotype/>
